@@ -1,0 +1,8 @@
+i {
+  font-family: fontawesome !important;
+}
+.iconPlacement {
+  position: relative;
+  left: -5px;
+  top: 5px;
+}
