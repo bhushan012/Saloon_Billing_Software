@@ -97,11 +97,12 @@ class Operations {
         $sql = "SELECT * FROM service_details where serviceCategoryId = ".$categoryId;
         global $conn;
         $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            return $result;
-        }else{
-            return "";
-        }
+        return $result;
+        // if ($result->num_rows > 0) {
+        //     return $result;
+        // }else{
+        //     return "";
+        // }
     }
     Function getCustomerType(){
         $sql = "SELECT * FROM customer_type";
