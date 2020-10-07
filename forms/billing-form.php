@@ -30,7 +30,7 @@ if (isset($_GET['success'])) {
                         <option value="">Service Name</option>
                     </select>
                 </div>
-                <div class="form-group col-md-4 text-center" style="place-self: flex-end;">
+                <div class="form-group col-md-4 text-center mb-2" style="place-self: flex-end;">
                     <div class="input-group-btn">
                         <button class="btn btn-success" id="billingAddService" type="button"><i class="fa fa-plus"></i><span class="h6"> Add Service</span></button>
                     </div>
