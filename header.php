@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?=$homeUrl;?>/assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="<?=$homeUrl;?>/assets/dataTables/css/addons/datatables.min.css">
     <link rel="stylesheet" href="<?=$homeUrl;?>/assets/autoComplete/autocomplete.min.css">
+    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/css/mdb.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -31,89 +32,78 @@
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <i class="fa fa-home"></i>
+                         <li class="nav-item">
+                            <a class="nav-link" href="<?=$formUrl;?>/dashboard.php">
+                                <i class="fa fa-circle-o-notch " style="
+    width: 16px;
+    height: 16px;
+"></i>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> 
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fa fa-plus"></i>
                                 Fund
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fa fa-minus"></i>
                                 Expense
                             </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <!-- <a class="nav-link" href=""> -->
+                                <i class="fa fa-users" style="
+    width: 16px;
+    height: 16px;
+"></i>
+                                Customers
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/customer-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/customer.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?=$formUrl;?>/customer-form.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-users">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                Customers ADD
+                            <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseService" aria-expanded="false" aria-controls="collapseService">
+                                <i class="fa fa-handshake-o" style="
+    width: 16px;
+    height: 16px;
+"></i>
+                                Service
                             </a>
+                            <div class="collapse" id="collapseService">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/services-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/services.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?=$viewDataUrl;?>/customer.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-users">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                Customers VIEW
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?=$formUrl;?>/services-form.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-users">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                Services ADD
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?=$viewDataUrl;?>/services.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-users">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                Services VIEW
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="<?=$formUrl;?>/billing-form.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-bar-chart-2">
-                                    <line x1="18" y1="20" x2="18" y2="10"></line>
-                                    <line x1="12" y1="20" x2="12" y2="4"></line>
-                                    <line x1="6" y1="20" x2="6" y2="14"></line>
-                                </svg>
+                               <i class="fa fa-usd" style="
+    width: 16px;
+    height: 16px;
+"></i>
                                 Billing
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -124,10 +114,10 @@
                                 </svg>
                                 Integrations
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
 
-                    <h6
+                    <!-- <h6
                         class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>Saved reports</span>
                         <a class="d-flex align-items-center text-muted" href="#">
@@ -139,8 +129,8 @@
                                 <line x1="8" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </a>
-                    </h6>
-                    <ul class="nav flex-column mb-2">
+                    </h6> -->
+                    <!-- <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -197,7 +187,7 @@
                                 Year-end sale
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </nav>
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">

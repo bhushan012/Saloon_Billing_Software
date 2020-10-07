@@ -1,7 +1,7 @@
 <?php 
 include "../header.php"; 
 include "../operations.php";
-$successResponse = "";
+$successResponse = "3";
 if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
 }

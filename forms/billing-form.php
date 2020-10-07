@@ -67,7 +67,6 @@ if (isset($_GET['success'])) {
                         </div>
                         <div class="col-md-6">Customer Name: <span id="searchedNameByName"></span></div>
                     </div>
-
                 </div>
                 <div class="col-md-12 d-none" id="customerSearchContact">
                     <div class="row mt-3">
@@ -77,13 +76,32 @@ if (isset($_GET['success'])) {
                         <div class="col-md-6">Customer Name: <span id="searchedNameByContact"></span>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
-
-
+            <div class="dropdown-divider"></div>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Discount
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 dicountCol" style="display:none;">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">%</span>
+                        </div>
+                        <input type="text" id="discountPercent" class="form-control" placeholder="Percentage" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                <div class="col-md-4 dicountCol" style="display:none;">
+                    <div class="input-group-btn ">
+                        <button class="btn btn-success" id="discountBtn" type="button"><i class="fa fa-check-square-o"></i><span class="h6"> Discount</span></button>
+                    </div>
+                </div>
+            </div>
             <?php
             $response = "";
             if ($successResponse == 1) {
@@ -118,17 +136,17 @@ if (isset($_GET['success'])) {
                     <p class="font-weight-bold pl-4 mb-0">Total</p>
 
                     <p class="font-weight-bold pl-4 mb-0">Discount</p>
-                    <p class="font-weight-bold pl-4 mb-0">Taxes</p>
+                    <!-- <p class="font-weight-bold pl-4 mb-0">Taxes</p> -->
                     <div class="dropdown-divider"></div>
                     <p class="font-weight-bold pl-4 mb-0">Amount Payable</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <p class="mb-0" id="total">0</p>
 
-                    <p class="mb-0" id="discount">1000</p>
-                    <p class="mb-0" id="taxes">1000</p>
+                    <p class="mb-0" id="discount">0</p>
+                    <!-- <p class="mb-0" id="taxes">1000</p> -->
                     <div class="dropdown-divider"></div>
-                    <p class="mb-0" id="subTotal">1000</p>
+                    <p class="mb-0" id="subTotal">0</p>
                 </div>
             </div>
             <div class="text-center"><button class="mt-2 btn btn-success">PRINT BILL</button></div>

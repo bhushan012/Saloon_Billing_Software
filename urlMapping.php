@@ -1,4 +1,4 @@
 <?php
-$homeUrl = "http://localhost/billing";
-$formUrl = "http://localhost/billing/forms";
-$viewDataUrl = "http://localhost/billing/viewData";
+$homeUrl = "http://parlourbilling.weblozee.com";
+$formUrl = "http://parlourbilling.weblozee.com/forms";
+$viewDataUrl = "http://parlourbilling.weblozee.com/viewData";

@@ -1,3 +1,4 @@
-<?php include "header.php"; ?>
+<?php 
+include 'urlMapping.php';
 
-<?php include "footer.php"; ?>
+header('Location: '.$formUrl.'/dashboard.php'); ?>
