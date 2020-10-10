@@ -134,7 +134,7 @@ class Operations {
             $prodID = $conn->insert_id;
             $totalamount = $qty*$productCost;
             $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `date`, `totalamount`) VALUES ('".$prodID."','".$productCost."', '".$qty."','".$date."','".$totalamount."')";
-            if($conn->query($sql) === TRUE){
+            if($conn->query($subSql) === TRUE){
                 return true;
             }
             
