@@ -92,6 +92,30 @@
                                     </li>
                                 </ul>
                             </div>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseService" aria-expanded="false" aria-controls="collapseService">
+                                <i class="fa fa-handshake-o" style="
+    width: 16px;
+    height: 16px;
+"></i>
+                                Inventory
+                            </a>
+                            <div class="collapse" id="collapseService">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/product-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/services.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/services.php"><i class="fa fa-eye p-1"></i>MANAGE INVENTORY</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
                         </li>
                         
                         <li class="nav-item">
