@@ -125,13 +125,19 @@ class Operations {
         }
     }
     ///ADD PRODUCT
-    function addNewProduct($productName,$productCost)
+    function addNewProduct($productName,$productCost,$qty)
     {
         $date = date('Y-m-d');
         $sql = "INSERT INTO `productList` (`productName`, `date`) VALUES ('".$productName."', '".$date."')";
         global $conn;
         if ($conn->query($sql) === TRUE) {
-            return true;
+            $prodID = $conn->insert_id;
+            $totalamount = $qty*$productCost;
+            $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `date`, `totalamount`) VALUES ('".$prodID."','".$productCost."', '".$qty."','".$date."','".$totalamount."')";
+            if($conn->query($sql) === TRUE){
+                return true;
+            }
+            
         } else {
             $log = "Error: " . $sql . "<br>" . $conn->error;
             file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
