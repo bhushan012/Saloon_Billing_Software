@@ -45,3 +45,18 @@ endif;
 if(isset($_POST['billFormSubmit'])):
     print_r($_REQUEST['serviceCategory']);
 endif;
+
+////////////////////////ADD NEW PRODUCT
+if(isset($_POST['productFormSubmit'])):
+    $productName = htmlentities($_POST['productName'],ENT_QUOTES,'utf-8', TRUE);
+    $productCost = htmlentities($_POST['productCost'],ENT_QUOTES,'utf-8', TRUE);
+    $response = $operationInstance->addNewProduct($productName,$productCost);
+    if($response):
+        $actual_link = $formUrl."/product-form.php?success=1";
+        header("Location: $actual_link");
+    else:
+        echo "something went wrong.";
+        $actual_link = $formUrl."/product-form.php?success=0";
+        header("Location: $actual_link");
+    endif;
+endif;

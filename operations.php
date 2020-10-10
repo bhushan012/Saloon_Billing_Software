@@ -124,4 +124,18 @@ class Operations {
             return "";
         }
     }
+    ///ADD PRODUCT
+    function addNewProduct($productName,$productCost)
+    {
+        $date = date('Y-m-d');
+        $sql = "INSERT INTO `productList` (`productName`, `date`) VALUES ('".$productName."', '".$date."')";
+        global $conn;
+        if ($conn->query($sql) === TRUE) {
+            return true;
+        } else {
+            $log = "Error: " . $sql . "<br>" . $conn->error;
+            file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+            return false;
+        }
+    }
 }
