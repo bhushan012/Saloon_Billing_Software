@@ -111,7 +111,7 @@
                                         <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/services.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/services.php"><i class="fa fa-eye p-1"></i>MANAGE INVENTORY</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/inventory-form.php"><i class="fa fa-eye p-1"></i>MANAGE INVENTORY</a>
                                     </li>
                                 </ul>
                             </div>

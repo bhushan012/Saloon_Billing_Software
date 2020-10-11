@@ -144,4 +144,15 @@ class Operations {
             return false;
         }
     }
+    //GET PRODUCTS
+    function getAllProducts(){
+        $sql = "SELECT * FROM productList where 1";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
 }
