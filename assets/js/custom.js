@@ -125,8 +125,8 @@ $(document).ready(function () {
             data: { month: month , prodID: prodID },
             success: function (data) {
                 console.log(data);
-                $('#customersData').html('');
-                $('#customersData').html(data);
+                $('#inventoryData').html('');
+                $('#inventoryData').html(data);
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
