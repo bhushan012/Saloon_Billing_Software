@@ -37,8 +37,10 @@ for ($i = 1; $i < 12; $i++) {
             ?>
         </select>
     </div>
+<div id="inventoryData">
 
-<table id="inventoryData" class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
+</div>
+
 
 </table>
 <?php include "../footer.php"; ?>
