@@ -155,4 +155,15 @@ class Operations {
             return "";
         }
     }
+    //GET PRODUCT PRICE
+    function getProductPrice($prodID){
+        $sql = "SELECT * FROM inventory where `productID` = '".$prodID."'";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
 }

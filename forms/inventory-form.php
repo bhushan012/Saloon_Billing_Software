@@ -10,9 +10,9 @@ if(isset($_GET['success'])){
 <form id="customerForm" method="POST" action="../submitData.php">
     <h1 class="display-5">Inventory </h1>
     <div class="mt-3">
-        <label>Service Category:</label>
+        <label>Select Product:</label>
         <select class="form-control" id="productSelect" name="productSelect" required>
-            <option value="">Service Category</option>
+            <option value="">Products</option>
             <?php
             $result = $operationInstance->getAllProducts();
             while ($row = $result->fetch_assoc()) {
@@ -22,7 +22,7 @@ if(isset($_GET['success'])){
         </select>
     </div>
     <div class="form-row mt-3">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6" id="priceDisplay">
             <label for="firstName">Price</label>
             <input type="text" name="productName" class="form-control" id="serviceName" required>
         </div>

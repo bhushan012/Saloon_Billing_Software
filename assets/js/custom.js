@@ -95,6 +95,24 @@ $(document).ready(function () {
             }
         });
     });
+    //GET PRODUCT PRICE AJAX
+    $("#productSelect").on('change', function (e) {
+        var productSelect = $(this).val();
+        console.log(productSelect);
+        $.ajax({
+            url: siteUrl + '/logic/productLatestPrice.php',
+            type: 'POST',
+            data: { productSelect: productSelect },
+            success: function (data) {
+                console.log(data);
+                $('#priceDisplay').html('');
+                $('#priceDisplay').html(data);
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
+    });
     $("#billingAddService").click(function () {
         var serviceId = $("#serviceCategory").val();
         console.log(serviceId);
