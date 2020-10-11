@@ -9,8 +9,8 @@ $operationInstance = new Operations();
         <?php
         $months = array();
 for ($i = 1; $i < 12; $i++) {
-    $timestamp = mktime(0, 0, 0, date('n') - $i, 1);
-    $months[date('n', $i)] = date('F', $i);
+    $timestamp = mktime(0, 0, 0, $i, 1);
+    $months[date('n', $timestamp)] = date('F', $timestamp);
 } print_r($months);?>
         <select class="form-control" id="productSelect" name="productSelect" required>
             <option value="">Products</option>
