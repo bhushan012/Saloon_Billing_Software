@@ -50,7 +50,22 @@ if ($result->num_rows > 0) {
     }
     ?>
      </tbody>
-     <tfoot>
+    
+    <?php
+}
+else{?>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><p>NO DATA FOUND</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr> 
+<?php
+}
+?>
+ <tfoot>
         <tr>
         <th >Sr. No.
             </th>
@@ -66,9 +81,6 @@ if ($result->num_rows > 0) {
             </th>
         </tr>
     </tfoot>
-    <?php
-}
-?>
 </table>
 <div class="mt-3 row">
     <div class="col-md-4">
@@ -79,7 +91,7 @@ if ($result->num_rows > 0) {
 
     </div>
     <div class="col-md-4">
-       <h3><?echo $totalExpense;?></h3>
+       <h3>Rs. <?echo $totalExpense;?></h3>
     </div>
 </div>
 <?php
