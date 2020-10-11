@@ -119,19 +119,19 @@ $(document).ready(function () {
         var prodID = $('#prodList').val();
         console.log("month" + month);
         console.log("prod" + prodID);
-        // $.ajax({
-        //     url: siteUrl + '/logic/productLatestPrice.php',
-        //     type: 'POST',
-        //     data: { productSelect: productSelect },
-        //     success: function (data) {
-        //         console.log(data);
-        //         $('#priceDisplay').html('');
-        //         $('#priceDisplay').html(data);
-        //     },
-        //     error: function (data) {
-        //         console.log('failed ajax with error: ' + data);
-        //     }
-        // });
+        $.ajax({
+            url: siteUrl + '/logic/inventoryTable.php',
+            type: 'POST',
+            data: { month: month , prodID: prodID },
+            success: function (data) {
+                console.log(data);
+                $('#queryResult').html('');
+                $('#queryResult').html(data);
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
     });
     $("#billingAddService").click(function () {
         var serviceId = $("#serviceCategory").val();

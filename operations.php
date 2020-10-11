@@ -182,4 +182,24 @@ class Operations {
             return "";
         }
     }
+    //PRODUCT INVENTORY TABLE
+    function getProductInventory($month,$prodID){
+        if(!empty($month)){
+            $first_day = date('Y-$month-01'); 
+            $last_day  = date('Y-$month-t');
+            $betweenQuery = "inventory.date BETWEEN '".$first_day."' AND '".$last_day."'";
+        }
+        if(!empty($prodID)){
+            $prodQuery = "inventory.productID = '".$prodID."'";
+        }
+        $sql = "SELECT * FROM inventory INNER JOIN productList ON inventory.productID = productList.productID WHERE ".$betweenQuery."AND".$prodQuery;
+        return $sql;
+        // global $conn;
+        // $result = $conn->query($sql);
+        // if ($result->num_rows > 0) {
+        //     return $result;
+        // }else{
+        //     return "";
+        // }
+    }
 }

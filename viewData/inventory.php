@@ -25,6 +25,8 @@ for ($i = 1; $i < 12; $i++) {
             ?>
         </select>
     </div>
+    <div id="queryResult">
+    </div>
     <div class="mt-3">
         <label>Select Product:</label>
         <select class="form-control" id="prodList" name="productSelect" required>
