@@ -57,7 +57,7 @@ else{?>
     <tr>
     <td></td>
     <td></td>
-    <td><p>NO DATA FOUND</p></td>
+    <td class="text-center"><p>NO DATA FOUND</p></td>
     <td></td>
     <td></td>
     <td></td>
