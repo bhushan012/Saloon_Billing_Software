@@ -187,12 +187,16 @@ class Operations {
         if(!empty($month)){
             $first_day = date('Y-'.$month.'-01'); 
             $last_day  = date('Y-'.$month.'-t');
-            $betweenQuery = "inventory.date BETWEEN '".$first_day."' AND '".$last_day."'";
+            $query = " inventory.date BETWEEN '".$first_day."' AND '".$last_day."'";
         }
         if(!empty($prodID)){
-            $prodQuery = "inventory.productID = '".$prodID."'";
+            $prodQuery = " inventory.productID = '".$prodID."'";
         }
-        $sql = "SELECT * FROM inventory INNER JOIN productList ON inventory.productID = productList.productID WHERE ".$betweenQuery."AND".$prodQuery;
+        if(!empty($month) && !empty($prodID)){
+            $query = " inventory.date BETWEEN '".$first_day."' AND '".$last_day."' AND inventory.productID = '".$prodID."'";
+        }
+        
+        $sql = "SELECT * FROM inventory INNER JOIN productList ON inventory.productID = productList.productID WHERE ".$query;
         return $sql;
         // global $conn;
         // $result = $conn->query($sql);
