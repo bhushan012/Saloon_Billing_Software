@@ -113,6 +113,26 @@ $(document).ready(function () {
             }
         });
     });
+    //GET PRODUCT EXPANSE TABLE AJAX
+    $("#selectMonth , #prodList").on('change', function (e) {
+        var month = $('#selectMonth').val();
+        var prodID = $('#prodList').val();
+        console.log("month" + month);
+        console.log("prod" + prodID);
+        // $.ajax({
+        //     url: siteUrl + '/logic/productLatestPrice.php',
+        //     type: 'POST',
+        //     data: { productSelect: productSelect },
+        //     success: function (data) {
+        //         console.log(data);
+        //         $('#priceDisplay').html('');
+        //         $('#priceDisplay').html(data);
+        //     },
+        //     error: function (data) {
+        //         console.log('failed ajax with error: ' + data);
+        //     }
+        // });
+    });
     $("#billingAddService").click(function () {
         var serviceId = $("#serviceCategory").val();
         console.log(serviceId);
