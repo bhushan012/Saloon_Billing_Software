@@ -6,13 +6,12 @@ $operationInstance = new Operations();
 <h1 class="display-5 mt-3">Inventory </h1>
 <div class="mt-3">
         <label>Select Month:</label>
-        <select name="month">
-    <?php
-        foreach ($months as $num => $name) {
-            printf('<option value="%u">%s</option>', $num, $name);
-        }
-    ?>
-</select>
+        <?php
+        $months = array();
+for ($i = 0; $i < 8; $i++) {
+    $timestamp = mktime(0, 0, 0, date('n') - $i, 1);
+    $months[date('n', $timestamp)] = date('F', $timestamp);
+} print_r($months);?>
         <select class="form-control" id="productSelect" name="productSelect" required>
             <option value="">Products</option>
             <?php
