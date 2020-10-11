@@ -95,14 +95,14 @@
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseService" aria-expanded="false" aria-controls="collapseService">
+                            <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseInventory" aria-expanded="false" aria-controls="collapseService">
                                 <i class="fa fa-handshake-o" style="
     width: 16px;
     height: 16px;
 "></i>
                                 Inventory
                             </a>
-                            <div class="collapse" id="collapseService">
+                            <div class="collapse" id="collapseInventory">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/product-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
