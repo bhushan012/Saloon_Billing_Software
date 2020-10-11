@@ -13,7 +13,7 @@ for ($i = 1; $i < 12; $i++) {
     $months[date('n', $timestamp)] = date('F', $timestamp);
 } ?>
         <select class="form-control" id="productSelect" name="productSelect" required>
-            <option value="">Products</option>
+            <option value="">Select Month</option>
             <?php
             foreach ($months as $key => $value) {
                 echo "<option value=" . $key . ">" . $value . "</option>";
