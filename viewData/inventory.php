@@ -6,6 +6,13 @@ $operationInstance = new Operations();
 <h1 class="display-5 mt-3">Inventory </h1>
 <div class="mt-3">
         <label>Select Month:</label>
+        <select name="month">
+    <?php
+        foreach ($months as $num => $name) {
+            printf('<option value="%u">%s</option>', $num, $name);
+        }
+    ?>
+</select>
         <select class="form-control" id="productSelect" name="productSelect" required>
             <option value="">Products</option>
             <?php
