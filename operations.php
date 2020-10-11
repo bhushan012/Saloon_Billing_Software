@@ -187,7 +187,7 @@ class Operations {
         if(!empty($month)){
             $first_day = date('Y-'.$month.'-01'); 
             $last_day  = date('Y-'.$month.'-t');
-            $query = " inventory.date BETWEEN '".$first_day."' AND '".$last_day."'";
+            $query = " inventory.entrydate BETWEEN '".$first_day."' AND '".$last_day."'";
         }
         if(!empty($prodID)){
             $prodQuery = " inventory.productID = '".$prodID."'";
