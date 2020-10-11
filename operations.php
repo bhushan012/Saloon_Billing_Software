@@ -185,8 +185,8 @@ class Operations {
     //PRODUCT INVENTORY TABLE
     function getProductInventory($month,$prodID){
         if(!empty($month)){
-            $first_day = date('Y-$month-01'); 
-            $last_day  = date('Y-$month-t');
+            $first_day = date('Y-'.$month.'-01'); 
+            $last_day  = date('Y-'.$month.'-t');
             $betweenQuery = "inventory.date BETWEEN '".$first_day."' AND '".$last_day."'";
         }
         if(!empty($prodID)){
