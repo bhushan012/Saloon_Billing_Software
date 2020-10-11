@@ -11,13 +11,16 @@ $operationInstance = new Operations();
 for ($i = 1; $i < 12; $i++) {
     $timestamp = mktime(0, 0, 0, $i, 1);
     $months[date('n', $timestamp)] = date('F', $timestamp);
-} print_r($months);?>
+} ?>
         <select class="form-control" id="productSelect" name="productSelect" required>
             <option value="">Products</option>
             <?php
+            foreach ($months as $key => $value) {
+                echo "<option value=" . $key . ">" . $value . "</option>";
+            }
             // $result = $operationInstance->getAllProducts();
             // while ($row = $result->fetch_assoc()) {
-            //     echo "<option value=" . $row['productID'] . ">" . $row['productName'] . "</option>";
+            //     
             // }
             ?>
         </select>
