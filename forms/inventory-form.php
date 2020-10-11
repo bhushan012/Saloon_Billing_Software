@@ -24,14 +24,14 @@ if(isset($_GET['success'])){
     <div class="form-row mt-3">
         <div class="form-group col-md-6" id="priceDisplay">
             <label for="firstName">Price</label>
-            <input type="text" name="productName" class="form-control" id="serviceName" required>
+            <input type="text" name="prodPrice" class="form-control" id="serviceName" required>
         </div>
         <div class="form-group col-md-6">
             <label for="lastName">Quantity</label>
             <input type="number" name="qty" class="form-control" id="serviceCost" required>
         </div>
     </div>
-    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productFormSubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">Add Inventory</button>
+    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="inventorySubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">Add Inventory</button>
         <?php 
             $response = "";
             if($successResponse == 1){

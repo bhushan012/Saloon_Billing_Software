@@ -144,6 +144,22 @@ class Operations {
             return false;
         }
     }
+    //INVENTORY
+    function addInventory($prodID,$price,$qty){
+        $date = date('Y-m-d');
+        global $conn;
+        $totalamount = $qty*$price;
+        $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `date`, `totalamount`) VALUES ('".$prodID."','".$price."', '".$qty."','".$date."','".$totalamount."')";
+        if($conn->query($subSql) === TRUE){
+            return true;
+        }
+        else {
+            $log = "Error: " . $subSql . "<br>" . $conn->error;
+            file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+            return false;
+        }
+
+    }
     //GET PRODUCTS
     function getAllProducts(){
         $sql = "SELECT * FROM productList where 1";

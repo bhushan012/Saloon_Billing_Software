@@ -11,4 +11,4 @@ if ($result->num_rows > 0) {
 }
 ?>
 <label for="firstName">Price</label>
-<input type="text" name="productName" class="form-control" id="serviceName" value = "<?php echo $price;?>" required>
+<input type="text" name="prodPrice" class="form-control" id="serviceName" value = "<?php echo $price;?>" required>

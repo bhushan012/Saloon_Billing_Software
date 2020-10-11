@@ -61,3 +61,19 @@ if(isset($_POST['productFormSubmit'])):
         header("Location: $actual_link");
     endif;
 endif;
+
+//////////ADD INVENTORY OF PRODUCTS
+if(isset($_POST['inventorySubmit'])):
+    $productID = htmlentities($_POST['productSelect'],ENT_QUOTES,'utf-8', TRUE);
+    $productCost = htmlentities($_POST['prodPrice'],ENT_QUOTES,'utf-8', TRUE);
+    $qty = htmlentities($_POST['qty'],ENT_QUOTES,'utf-8', TRUE);
+    $response = $operationInstance->addInventory($productID,$productCost,$qty);
+    if($response):
+        $actual_link = $formUrl."/inventory-form.php?success=1";
+        header("Location: $actual_link");
+    else:
+        echo "something went wrong.";
+        $actual_link = $formUrl."/inventory-form.php?success=0";
+        header("Location: $actual_link");
+    endif;
+endif;
