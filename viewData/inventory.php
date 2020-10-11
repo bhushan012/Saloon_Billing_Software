@@ -2,6 +2,34 @@
 include "../header.php";
 include "../operations.php";
 ?>
+<h1 class="display-5 mt-3">Inventory </h1>
+<form id="customerForm" method="POST" action="../submitData.php">
+<div class="mt-3">
+        <label>Select Product:</label>
+        <select class="form-control" id="productSelect" name="productSelect" required>
+            <option value="">Products</option>
+            <?php
+            $result = $operationInstance->getAllProducts();
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value=" . $row['productID'] . ">" . $row['productName'] . "</option>";
+            }
+            ?>
+        </select>
+    </div>
+    <div class="mt-3">
+        <label>Select Product:</label>
+        <select class="form-control" id="productSelect" name="productSelect" required>
+            <option value="">Products</option>
+            <?php
+            $result = $operationInstance->getAllProducts();
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value=" . $row['productID'] . ">" . $row['productName'] . "</option>";
+            }
+            ?>
+        </select>
+    </div>
+</form>
+
 <table id="customersData" class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
     <thead>
         <tr>
