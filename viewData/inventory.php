@@ -1,6 +1,7 @@
 <?php
 include "../header.php";
 include "../operations.php";
+$operationInstance = new Operations();
 ?>
 <h1 class="display-5 mt-3">Inventory </h1>
 <div class="mt-3">
