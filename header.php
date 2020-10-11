@@ -96,7 +96,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseInventory" aria-expanded="false" aria-controls="collapseService">
-                                <i class="fa fa-handshake-o" style="
+                                <i class="fa fa-indent" style="
     width: 16px;
     height: 16px;
 "></i>
@@ -111,7 +111,7 @@
                                         <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/inventory-form.php"><i class="fa fa-eye p-1"></i>MANAGE INVENTORY</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
                                     </li>
                                 </ul>
                             </div>
