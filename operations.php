@@ -133,7 +133,7 @@ class Operations {
         if ($conn->query($sql) === TRUE) {
             $prodID = $conn->insert_id;
             $totalamount = $qty*$productCost;
-            $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `date`, `totalamount`) VALUES ('".$prodID."','".$productCost."', '".$qty."','".$date."','".$totalamount."')";
+            $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `entrydate`, `totalamount`) VALUES ('".$prodID."','".$productCost."', '".$qty."','".$date."','".$totalamount."')";
             if($conn->query($subSql) === TRUE){
                 return true;
             }
@@ -149,7 +149,7 @@ class Operations {
         $date = date('Y-m-d');
         global $conn;
         $totalamount = $qty*$price;
-        $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `date`, `totalamount`) VALUES ('".$prodID."','".$price."', '".$qty."','".$date."','".$totalamount."')";
+        $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `entrydate`, `totalamount`) VALUES ('".$prodID."','".$price."', '".$qty."','".$date."','".$totalamount."')";
         if($conn->query($subSql) === TRUE){
             return true;
         }
@@ -193,17 +193,17 @@ class Operations {
             $prodQuery = " inventory.productID = '".$prodID."'";
         }
         if(!empty($month) && !empty($prodID)){
-            $query = " inventory.date BETWEEN '".$first_day."' AND '".$last_day."' AND inventory.productID = '".$prodID."'";
+            $query = " inventory.entrydate BETWEEN '".$first_day."' AND '".$last_day."' AND inventory.productID = '".$prodID."'";
         }
         
         $sql = "SELECT * FROM inventory INNER JOIN productList ON inventory.productID = productList.productID WHERE ".$query;
-        return $sql;
-        // global $conn;
-        // $result = $conn->query($sql);
-        // if ($result->num_rows > 0) {
-        //     return $result;
-        // }else{
-        //     return "";
-        // }
+        
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
     }
 }
