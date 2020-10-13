@@ -169,7 +169,7 @@ $(document).ready(function () {
         // ...
         { value: 'Zimbabwe', data: 'ZZ' }
     ];
-    $('#search-formName, #search-formContact').autocomplete({
+    $('#search-formName .autocomplete-input, #search-formContact').autocomplete({
         lookup: countries,
         // hints: words,
         height: 40,
