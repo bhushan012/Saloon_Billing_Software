@@ -96,10 +96,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseInventory" aria-expanded="false" aria-controls="collapseService">
-                                <i class="fa fa-indent" style="
-    width: 16px;
-    height: 16px;
-"></i>
+                                <i class="fa fa-indent" style=" width: 16px;height: 16px;"></i>
                                 Inventory
                             </a>
                             <div class="collapse" id="collapseInventory">
@@ -117,7 +114,26 @@
                             </div>
                             
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseStaff" aria-expanded="false" aria-controls="collapseService">
+                                <i class="fa fa-indent" style=" width: 16px;height: 16px;"></i>
+                                Staff
+                            </a>
+                            <div class="collapse" id="collapseStaff">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?=$formUrl;?>/billing-form.php">
                                <i class="fa fa-usd" style="
