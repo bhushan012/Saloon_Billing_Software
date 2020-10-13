@@ -206,4 +206,19 @@ class Operations {
             return "";
         }
     }
+
+    //ADD STAFF MEMBERS
+    function addStaffMembers($name,$designation,$phno){
+       $date = date('Y-m-d');
+       $sql = "INSERT INTO `staffTable`(`staffName`, `designation`, `phno`,`entryDate`) VALUES ('".$name."','".$designation."','".$phno."','".$date."')";
+       global $conn;
+       if($conn->query($sql) === TRUE){
+            return true;
+        }
+        else {
+            $log = "Error: " . $sql . "<br>" . $conn->error;
+            file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+            return false;
+        }
+    }
 }

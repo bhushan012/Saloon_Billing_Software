@@ -11,15 +11,19 @@ if(isset($_GET['success'])){
     <h1 class="display-5 mt-3">Add Staff</h1>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
-            <label for="firstName">Staff Name</label>
-            <input type="text" name="productName" class="form-control" id="serviceName" required>
+            <label for="staffName">Staff Name</label>
+            <input type="text" name="staffName" class="form-control" id="serviceName" required>
         </div>
         <div class="form-group col-md-6">
-            <label for="lastName">Designation</label>
-            <input type="text" name="productCost" class="form-control" id="serviceCost" required>
+            <label for="designation">Designation</label>
+            <input type="text" name="designation" class="form-control" id="serviceCost" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="phno">Phone Number</label>
+            <input type="number" name="phno" class="form-control" id="serviceCost" required>
         </div>
     </div>
-    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productFormSubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">Submit form</button>
+    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="staffFormSubmit" value="staffFormSubmit" id="servicesFormSubmit" type="submit">ADD STAFF</button>
         <?php 
             $response = "";
             if($successResponse == 1){

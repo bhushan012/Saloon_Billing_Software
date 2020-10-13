@@ -77,3 +77,18 @@ if(isset($_POST['inventorySubmit'])):
         header("Location: $actual_link");
     endif;
 endif;
+////ADD STAFF MEMBERS
+if(isset($_POST['staffFormSubmit'])):
+    $name = htmlentities($_POST['staffName'],ENT_QUOTES,'utf-8', TRUE);
+    $designation = htmlentities($_POST['designation'],ENT_QUOTES,'utf-8', TRUE);
+    $phno = htmlentities($_POST['phno'],ENT_QUOTES,'utf-8', TRUE);
+    $response = $operationInstance->addStaffMembers($name,$designation,$phno);
+    if($response):
+        $actual_link = $formUrl."/staff-form.php?success=1";
+        header("Location: $actual_link");
+    else:
+        echo "something went wrong.";
+        $actual_link = $formUrl."/staff-form.php?success=0";
+        header("Location: $actual_link");
+    endif;
+endif;
