@@ -11,6 +11,7 @@ if (isset($_GET['success'])) {
     <div class="col-md-8">
         <form id="BillingForm" action="../submitData.php">
             <h1 class="display-5">Billing</h1>
+           
             <div class="form-row mt-3 after-add-more">
                 <div class="form-group col-md-4">
                     <label class="h6">Service Category:</label>
@@ -76,6 +77,21 @@ if (isset($_GET['success'])) {
                         <div class="col-md-6">Customer Name: <span id="searchedNameByContact"></span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="h6">Staff:</label>
+                    <select class="form-control" id="staffSelect" name="staffDetail" required>
+                        <option value="">Staff Names</option>
+                        <?php
+                        $result = $operationInstance->fetchStaffMembers();
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value=" . $row['staffID'] . ">" . $row['staffName'] . "</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="dropdown-divider"></div>

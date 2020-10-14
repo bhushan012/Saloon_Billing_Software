@@ -221,4 +221,14 @@ class Operations {
             return false;
         }
     }
+    function fetchStaffMembers(){
+        $sql = "SELECT staffID,staffName FROM staffTable";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
 }
