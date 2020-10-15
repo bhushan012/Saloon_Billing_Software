@@ -271,6 +271,7 @@ $(document).ready(function () {
         }
     });
     //autocomplete
+    $(function(){
     $('#searchCustomer').keyup(function () {
         /* Get input value on change */
         var inputVal = $(this).val();
@@ -300,6 +301,7 @@ $(document).ready(function () {
             resultDropdown.empty();
         }
     });
+});
     
     // Set search input value on click of result item
     $(document).on("click", ".result p", function(){
