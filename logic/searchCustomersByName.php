@@ -7,8 +7,10 @@ $output = array();
 $result =  $operationInstance->getCustomerByName($customerName,$customerType);
 if($result != ""){
     while($row = $result->fetch_assoc()) {
-        $output[] = array("value"=>$row['customer_Id'],"label"=>$row['fullName']);
+        echo "<p id='".$row["customer_id"]."'>" . $row["fullName"] . "</p>";
     }
-    echo json_encode($output);
+    // echo json_encode($output);
+}else{
+    echo "<p>No matches found</p>";
 }
 exit;
