@@ -1,8 +1,8 @@
 <?php
 include "../operations.php";
 $operationInstance = new Operations();
-$customerName = $_POST['customerName'];
-$customerType = $_POST['customerType'];
+$customerName = $_REQUEST['customerName'];
+$customerType = $_REQUEST['customerType'];
 $output = array();
 $result =  $operationInstance->getCustomerByName($customerName,$customerType);
 if($result != ""){

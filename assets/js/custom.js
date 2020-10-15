@@ -271,37 +271,20 @@ $(document).ready(function () {
         }
     });
     //autocomplete
-    $(function(){
-    $('#searchCustomer').keyup(function () {
+    $('.search-box input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
         var customerType = $('#customerTypeSelect').val();
-        var resultDropdown = $(".search-box .result");
-        console.log("Ajax called __________");
         if(inputVal.length){
-            // $.get(siteUrl + '/logic/searchCustomersByName.php', {term: inputVal}).done(function(data){
-            //     // Display the returned data in browser
-            //     resultDropdown.html(data);
-            // });
-            console.log("Ajax called");
-            $.ajax({
-                        url: siteUrl + '/logic/searchCustomersByName.php',
-                        type: 'POST',
-                        data: { customerName: inputVal, customerType: customerType },
-                        success: function (data) {
-                            resultDropdown.html(data);
-            
-                        },
-                        error: function (data) {
-                            // $('#owner_name').val("not found in record");
-                            console.log(data);
-                        }
-                    });
+            $.get(siteUrl + '/logic/searchCustomersByName.php', {customerName: inputVal, customerType: customerType}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
         } else{
             resultDropdown.empty();
         }
     });
-});
     
     // Set search input value on click of result item
     $(document).on("click", ".result p", function(){
