@@ -274,12 +274,26 @@ $(document).ready(function () {
     $('.search-box input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
+        var customerType = $('#customerTypeSelect').val();
         var resultDropdown = $(this).siblings(".result");
         if(inputVal.length){
-            $.get("backend-search.php", {term: inputVal}).done(function(data){
-                // Display the returned data in browser
-                resultDropdown.html(data);
-            });
+            // $.get(siteUrl + '/logic/searchCustomersByName.php', {term: inputVal}).done(function(data){
+            //     // Display the returned data in browser
+            //     resultDropdown.html(data);
+            // });
+            $.ajax({
+                        url: siteUrl + '/logic/searchCustomersByName.php',
+                        type: 'POST',
+                        data: { customerName: inputVal, customerType: customerType },
+                        success: function (data) {
+                            resultDropdown.html(data);
+            
+                        },
+                        error: function (data) {
+                            // $('#owner_name').val("not found in record");
+                            console.log(data);
+                        }
+                    });
         } else{
             resultDropdown.empty();
         }
