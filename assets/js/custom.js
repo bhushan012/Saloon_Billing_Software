@@ -271,7 +271,7 @@ $(document).ready(function () {
         }
     });
     //autocomplete
-    $('.search-box input[type="text"]').on("keyup", function(){
+    $('.search-box input[type="text"]').keyup(function () {
         /* Get input value on change */
         var inputVal = $(this).val();
         var customerType = $('#customerTypeSelect').val();
