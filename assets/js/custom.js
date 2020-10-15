@@ -271,11 +271,12 @@ $(document).ready(function () {
         }
     });
     //autocomplete
-    $('.search-box input[type="text"]').keyup(function () {
+    $('#searchCustomer').keyup(function () {
         /* Get input value on change */
         var inputVal = $(this).val();
         var customerType = $('#customerTypeSelect').val();
-        var resultDropdown = $(this).siblings(".result");
+        var resultDropdown = $(".search-box .result");
+        console.log("Ajax called __________");
         if(inputVal.length){
             // $.get(siteUrl + '/logic/searchCustomersByName.php', {term: inputVal}).done(function(data){
             //     // Display the returned data in browser
