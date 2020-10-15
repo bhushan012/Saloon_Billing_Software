@@ -184,27 +184,27 @@ $(document).ready(function () {
         // onSubmit: function handler called on input submit
         // onBlur: function handler called on input losing focus
     });
-    $("#search-formName .autocomplete-input").keyup(function () {
-        var searchNameValue = $(this).val();
-        var customerType = $('#customerTypeSelect').val();
-        $.ajax({
-            url: siteUrl + '/logic/searchCustomersByName.php',
-            type: 'POST',
-            data: { customerName: searchNameValue, customerType: customerType },
-            success: function (data) {
-                console.log(data);
-                // words = [];
-                // $('#searchedNameByName').html(data['fullName']);
-                words = words.concat(data);
-                console.log(words + "hello");
+    // $("#search-formName .autocomplete-input").keyup(function () {
+    //     var searchNameValue = $(this).val();
+    //     var customerType = $('#customerTypeSelect').val();
+    //     $.ajax({
+    //         url: siteUrl + '/logic/searchCustomersByName.php',
+    //         type: 'POST',
+    //         data: { customerName: searchNameValue, customerType: customerType },
+    //         success: function (data) {
+    //             console.log(data);
+    //             // words = [];
+    //             // $('#searchedNameByName').html(data['fullName']);
+    //             words = words.concat(data);
+    //             console.log(words + "hello");
 
-            },
-            error: function (data) {
-                // $('#owner_name').val("not found in record");
-                console.log(data);
-            }
-        });
-    });
+    //         },
+    //         error: function (data) {
+    //             // $('#owner_name').val("not found in record");
+    //             console.log(data);
+    //         }
+    //     });
+    // });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -269,5 +269,25 @@ $(document).ready(function () {
         options: {
             responsive: true
         }
+    });
+    //autocomplete
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("backend-search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
     });
 });

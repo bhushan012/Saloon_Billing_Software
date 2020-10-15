@@ -11,7 +11,7 @@ if (isset($_GET['success'])) {
     <div class="col-md-8">
         <form id="BillingForm" action="../submitData.php">
             <h1 class="display-5">Billing</h1>
-           
+
             <div class="form-row mt-3 after-add-more">
                 <div class="form-group col-md-4">
                     <label class="h6">Service Category:</label>
@@ -64,7 +64,10 @@ if (isset($_GET['success'])) {
                 <div class="col-md-12 d-none" id="customerSearchName">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="search-formName"> </div>
+                            <div class="search-box">
+                                <input type="text" autocomplete="off" placeholder="Search customer..." />
+                                <div class="result"></div>
+                            </div>
                         </div>
                         <div class="col-md-6">Customer Name: <span id="searchedNameByName"></span></div>
                     </div>
