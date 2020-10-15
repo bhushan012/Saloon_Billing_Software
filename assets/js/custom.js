@@ -281,6 +281,7 @@ $(document).ready(function () {
             //     // Display the returned data in browser
             //     resultDropdown.html(data);
             // });
+            console.log("Ajax called");
             $.ajax({
                         url: siteUrl + '/logic/searchCustomersByName.php',
                         type: 'POST',
