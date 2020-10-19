@@ -205,6 +205,29 @@ $(document).ready(function () {
     //         }
     //     });
     // });
+    //autocomplete
+    //$('.search-box input[type="text"]').keypress(function(){
+        $('#searchCustomer').on('keypress',function(){
+            /* Get input value on change */
+            console.log("keypress");
+            var inputVal = $(this).val();
+            var resultDropdown = $(this).siblings(".result");
+            var customerType = $('#customerTypeSelect').val();
+            if(inputVal.length){
+                $.get(siteUrl + '/logic/searchCustomersByName.php', {customerName: inputVal, customerType: customerType}).done(function(data){
+                    // Display the returned data in browser
+                    resultDropdown.html(data);
+                });
+            } else{
+                resultDropdown.empty();
+            }
+        });
+        
+        // Set search input value on click of result item
+        $(document).on("click", ".result p", function(){
+            $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+            $(this).parent(".result").empty();
+        });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -270,27 +293,5 @@ $(document).ready(function () {
             responsive: true
         }
     });
-    //autocomplete
-    //$('.search-box input[type="text"]').keypress(function(){
-    $('#searchCustomer').on('keypress',function(){
-        /* Get input value on change */
-        console.log("keypress");
-        var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".result");
-        var customerType = $('#customerTypeSelect').val();
-        if(inputVal.length){
-            $.get(siteUrl + '/logic/searchCustomersByName.php', {customerName: inputVal, customerType: customerType}).done(function(data){
-                // Display the returned data in browser
-                resultDropdown.html(data);
-            });
-        } else{
-            resultDropdown.empty();
-        }
-    });
     
-    // Set search input value on click of result item
-    $(document).on("click", ".result p", function(){
-        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-        $(this).parent(".result").empty();
-    });
 });
