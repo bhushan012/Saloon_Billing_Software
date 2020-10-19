@@ -65,7 +65,7 @@ if (isset($_GET['success'])) {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="search-box">
-                                <input id="searchCustomer" type="text" autocomplete="off" placeholder="Search customer..." />
+                                <input id="searchCustomer" type="text" autocomplete="on" placeholder="Search customer..." />
                                 <div class="result"></div>
                             </div>
                         </div>

@@ -271,7 +271,8 @@ $(document).ready(function () {
         }
     });
     //autocomplete
-    $('.search-box input[type="text"]').keypress(function(){
+    //$('.search-box input[type="text"]').keypress(function(){
+    $('#searchCustomer').on('keypress',function(){
         /* Get input value on change */
         console.log("keypress");
         var inputVal = $(this).val();
