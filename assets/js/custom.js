@@ -228,6 +228,9 @@ $(document).ready(function () {
             $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
             $(this).parent(".result").empty();
         });
+        $("#saveBill").on("click" , function(){
+            console.log(serviceList + "services taken");
+        });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',

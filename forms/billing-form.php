@@ -169,6 +169,7 @@ if (isset($_GET['success'])) {
                 </div>
             </div>
             <div class="text-center"><button class="mt-2 btn btn-success">PRINT BILL</button></div>
+            <div class="text-center" id="saveBill"><button class="mt-2 btn btn-success">SAVE BILL</button></div>
         </div>
     </div>
 </div>
