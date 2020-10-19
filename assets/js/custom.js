@@ -169,12 +169,12 @@ $(document).ready(function () {
         // ...
         { value: 'Zimbabwe', data: 'ZZ' }
     ];
-    $('#search-formName .autocomplete-input, #search-formContact').autocomplete({
-        lookup: countries,
+    // $('#search-formName .autocomplete-input, #search-formContact').autocomplete({
+        //lookup: countries,
         // hints: words,
-        height: 40,
-        width: 305,
-        showButton: false
+        // height: 40,
+        // width: 305,
+        // showButton: false
         // hints: words array for displaying hints
         // placeholder: search input placeholder (default: 'Search')
         // width: input text width
@@ -183,7 +183,7 @@ $(document).ready(function () {
         // buttonText: button text (default: 'Search')
         // onSubmit: function handler called on input submit
         // onBlur: function handler called on input losing focus
-    });
+    //});
     // $("#search-formName .autocomplete-input").keyup(function () {
     //     var searchNameValue = $(this).val();
     //     var customerType = $('#customerTypeSelect').val();
