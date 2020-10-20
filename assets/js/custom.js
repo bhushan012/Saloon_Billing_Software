@@ -133,7 +133,7 @@ $(document).ready(function () {
             }
         });
     });
-    var serviceIdList ;
+    var serviceIdList = [];
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();
         serviceIdList.push(serviceId);
