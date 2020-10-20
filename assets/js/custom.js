@@ -133,7 +133,7 @@ $(document).ready(function () {
             }
         });
     });
-    $("#billingAddService").click(function () {
+    $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();
         console.log(serviceId);
         var price = $("#" + serviceId).attr("price");
