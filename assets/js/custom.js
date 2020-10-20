@@ -137,7 +137,7 @@ $(document).ready(function () {
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();
         serviceIdList.push(serviceId);
-        console.log(serviceId);
+        console.log(serviceId+ "service id");
         var price = $("#" + serviceId).attr("price");
         var serviceName = $("#" + serviceId).text();
         console.log("Price: " + price + "Service Name:" + serviceName);
