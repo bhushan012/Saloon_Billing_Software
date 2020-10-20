@@ -133,8 +133,10 @@ $(document).ready(function () {
             }
         });
     });
+    var serviceIdList ;
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();
+        serviceIdList.push(serviceId);
         console.log(serviceId);
         var price = $("#" + serviceId).attr("price");
         var serviceName = $("#" + serviceId).text();
@@ -229,7 +231,7 @@ $(document).ready(function () {
             $(this).parent(".result").empty();
         });
         $("#saveBill").on("click" , function(){
-            console.log(serviceList + "services taken");
+            console.log(serviceIdList + "services taken");
         });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
