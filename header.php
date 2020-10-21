@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="<?=$homeUrl;?>/assets/img/mdb-favicon.ico"/>
     <title>Billing</title>
     <link rel="stylesheet" href="<?=$homeUrl;?>/assets/bootstrap-4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=$homeUrl;?>/assets/less/style.css">
