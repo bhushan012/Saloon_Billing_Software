@@ -238,7 +238,8 @@ $(document).ready(function () {
         var customerType = $('#customerTypeSelect').val();
         var customerId = $('#customerId').val();
         var randomCustomerName = $('#searchedNameRandom').val();
-        console.log(billDiscount+billTotal+billAmountPayable+customerType+customerId+randomCustomerName);
+        var staffId = $('#staffSelect').val();
+        console.log(billDiscount+billTotal+billAmountPayable+customerType+customerId+randomCustomerName+staffId);
     });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
