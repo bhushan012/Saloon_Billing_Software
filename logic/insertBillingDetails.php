@@ -9,7 +9,7 @@ $customerId = htmlentities($_POST['customerId'],ENT_QUOTES,'utf-8', TRUE);
 $randomCustomerName = htmlentities($_POST['randomCustomerName'],ENT_QUOTES,'utf-8', TRUE);
 $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds = htmlentities($_POST['sevicesTaken'],ENT_QUOTES,'utf-8', TRUE);
-print_r($servicesIds);
+print_r($servicesIds['1']);
 //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds);
 //echo $result;
 ?>
