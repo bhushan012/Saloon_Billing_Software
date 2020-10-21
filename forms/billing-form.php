@@ -132,7 +132,7 @@ if (isset($_GET['success'])) {
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">%</span>
                         </div>
-                        <input type="text" id="discountPercent" class="form-control" placeholder="Percentage" aria-label="Username" aria-describedby="addon-wrapping">
+                        <input type="text" id="discountPercent" value ="0" class="form-control" placeholder="Percentage" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
                 <div class="col-md-4 dicountCol" style="display:none;">
