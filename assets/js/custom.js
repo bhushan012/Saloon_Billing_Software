@@ -214,7 +214,7 @@ $(document).ready(function () {
         $('#searchedNameRandom').html('');
         $('#searchedNameRandom').html(inputVal);
     });
-    $("#searchRandom").on('keypress', function(){
+    $("#searchRandom").on('keyup', function(){
         var inputVal = $(this).val();
         $('#searchedNameRandom').html('');
         $('#searchedNameRandom').html(inputVal);
