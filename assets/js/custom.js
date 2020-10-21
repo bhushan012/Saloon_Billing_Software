@@ -255,6 +255,7 @@ $(document).ready(function () {
                 console.log(data);
                // $('#successMessage').html('');
                 $('#successMessage').attr("class","d-block");
+                $('#successMessage valid-feedback').attr("class","d-block");
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
