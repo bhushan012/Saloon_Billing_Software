@@ -241,6 +241,13 @@ $(document).ready(function () {
             resultDropdown.empty();
         }
     });
+    $('#searchCustomerR').on('keypress', function () {
+        /* Get input value on change */
+        console.log("keypress");
+        var inputVal = $(this).val();
+        $('#searchedNameRandom').html('');
+        $('#searchedNameRandom').html(inputVal);
+    });
     
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {

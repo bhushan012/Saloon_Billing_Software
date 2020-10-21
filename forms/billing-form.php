@@ -85,12 +85,12 @@ if (isset($_GET['success'])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 d-none" id="customerSearchRandom">
+                <div class="col-md-12 d-none"  id="searchCustomerR" id="customerSearchRandom">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="search-box">
                                 <input class="form-control p-3" type="text" autocomplete="on" placeholder="Customer Name" />
-                                <button type="button" class="btn btn-success"><i class="fa fa-add"></i></button>
+                            
                             </div>
                         </div>
                         <div class="col-md-6">Customer Name: <span id="searchedNameRandom"></span>
