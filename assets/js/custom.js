@@ -253,8 +253,8 @@ $(document).ready(function () {
             data: { billDiscount: billDiscount,  billTotal: billTotal,  billAmountPayable: billAmountPayable,  customerType: customerType,  customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList},
             success: function (data) {
                 console.log(data);
-                $('#priceDisplay').html('');
-                $('#priceDisplay').html(data);
+               // $('#successMessage').html('');
+                $('#successMessage').attr("class","d-block");
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
