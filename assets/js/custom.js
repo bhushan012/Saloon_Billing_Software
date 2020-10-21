@@ -234,7 +234,7 @@ $(document).ready(function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
         var billTotal = $('#total').text();
-        var billAmountPayable = $('#subTotal').val();
+        var billAmountPayable = $('#subTotal').text();
         var customerType = $('#customerTypeSelect').val();
         var customerId = $('#customerId').val();
         var randomCustomerName = $('#searchedNameRandom').val();
