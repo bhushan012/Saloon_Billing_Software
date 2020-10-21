@@ -223,7 +223,7 @@ $(document).ready(function () {
         $('.searchedCustomerResult').html($(this).text());
         var id = $(this).attr("id");
         console.log("customer id: "+$(this).attr("id"));
-        $('#customerId').val(id);
+        $('#customerId').val("hi");
     });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
