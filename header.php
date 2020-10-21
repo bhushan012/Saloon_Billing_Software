@@ -5,16 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="<?=$homeUrl;?>/assets/img/mdb-favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="<?= $homeUrl; ?>/assets/img/mdb-favicon.ico" />
     <title>Billing</title>
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/bootstrap-4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/less/style.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/css/dashboard.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/dataTables/css/addons/datatables.min.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/autoComplete/autocomplete.min.css">
-    <link rel="stylesheet" href="<?=$homeUrl;?>/assets/css/mdb.min.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/bootstrap-4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/less/style.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/css/dashboard.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/dataTables/css/addons/datatables.min.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/autoComplete/autocomplete.min.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/css/mdb.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -33,15 +33,15 @@
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
-                         <li class="nav-item">
-                            <a class="nav-link" href="<?=$formUrl;?>/dashboard.php">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $formUrl; ?>/dashboard.php">
                                 <i class="fa fa-circle-o-notch " style="
     width: 16px;
     height: 16px;
 "></i>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
-                        </li> 
+                        </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fa fa-plus"></i>
@@ -56,7 +56,7 @@
                         </li> -->
                         <li class="nav-item">
                             <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            <!-- <a class="nav-link" href=""> -->
+                                <!-- <a class="nav-link" href=""> -->
                                 <i class="fa fa-users" style="
     width: 16px;
     height: 16px;
@@ -66,11 +66,11 @@
                             <div class="collapse" id="collapseExample">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/customer-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/customer-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
                                     </li>
-                                
+
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/customer.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/customer.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                 </ul>
                             </div>
@@ -86,10 +86,10 @@
                             <div class="collapse" id="collapseService">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/services-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/services-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/services.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/services.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                 </ul>
                             </div>
@@ -103,17 +103,17 @@
                             <div class="collapse" id="collapseInventory">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/product-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/product-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
                                     </li>
                                 </ul>
                             </div>
-                            
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="cursor:pointer;" data-toggle="collapse" data-target="#collapseStaff" aria-expanded="false" aria-controls="collapseService">
@@ -123,25 +123,34 @@
                             <div class="collapse" id="collapseStaff">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$viewDataUrl;?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?=$formUrl;?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
                                     </li>
                                 </ul>
                             </div>
-                            
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?=$formUrl;?>/billing-form.php">
-                               <i class="fa fa-usd" style="
+                            <a class="nav-link" href="<?= $formUrl; ?>/billing-form.php">
+                                <i class="fa fa-usd" style="
     width: 16px;
     height: 16px;
 "></i>
                                 Billing
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $viewDataUrl; ?>/bills.php">
+                                <i class="fa fa-eye" style="
+    width: 16px;
+    height: 16px;
+"></i>
+                                View Billing
                             </a>
                         </li>
                         <!-- <li class="nav-item">
@@ -232,4 +241,4 @@
                 </div>
             </nav>
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <!-- https://getbootstrap.com/docs/4.1/examples/dashboard/# refer this url -->
+                <!-- https://getbootstrap.com/docs/4.1/examples/dashboard/# refer this url -->

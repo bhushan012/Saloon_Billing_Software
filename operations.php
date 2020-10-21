@@ -262,4 +262,14 @@ class Operations {
             return false;
         }
     }
+    function getBillDetail(){
+        $sql = "SELECT billing.billNo , billing.billDate , billing.billTotal , billing.billDiscount , billing.billAmountPayable , customers.fullName , staffTable.staffName FROM `billing` INNER JOIN customers ON billing.customerId = customers.customer_Id INNER JOIN staffTable ON billing.staffId = staffTable.staffID";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
 }
