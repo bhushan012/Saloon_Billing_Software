@@ -121,7 +121,7 @@ $(document).ready(function () {
         $.ajax({
             url: siteUrl + '/logic/inventoryTable.php',
             type: 'POST',
-            data: { month: month , prodID: prodID },
+            data: { month: month, prodID: prodID },
             success: function (data) {
                 console.log(data);
                 $('#inventoryData').html('');
@@ -136,7 +136,7 @@ $(document).ready(function () {
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();
         serviceIdList.push(serviceId);
-        console.log(serviceId+ "service id");
+        console.log(serviceId + "service id");
         var price = $("#" + serviceId).attr("price");
         var serviceName = $("#" + serviceId).text();
         console.log("Price: " + price + "Service Name:" + serviceName);
@@ -171,19 +171,19 @@ $(document).ready(function () {
         { value: 'Zimbabwe', data: 'ZZ' }
     ];
     // $('#search-formName .autocomplete-input, #search-formContact').autocomplete({
-        //lookup: countries,
-        // hints: words,
-        // height: 40,
-        // width: 305,
-        // showButton: false
-        // hints: words array for displaying hints
-        // placeholder: search input placeholder (default: 'Search')
-        // width: input text width
-        // height: input text height
-        // showButton: display search button (default: true)
-        // buttonText: button text (default: 'Search')
-        // onSubmit: function handler called on input submit
-        // onBlur: function handler called on input losing focus
+    //lookup: countries,
+    // hints: words,
+    // height: 40,
+    // width: 305,
+    // showButton: false
+    // hints: words array for displaying hints
+    // placeholder: search input placeholder (default: 'Search')
+    // width: input text width
+    // height: input text height
+    // showButton: display search button (default: true)
+    // buttonText: button text (default: 'Search')
+    // onSubmit: function handler called on input submit
+    // onBlur: function handler called on input losing focus
     //});
     // $("#search-formName .autocomplete-input").keyup(function () {
     //     var searchNameValue = $(this).val();
@@ -208,45 +208,51 @@ $(document).ready(function () {
     // });
     //autocomplete
     //$('.search-box input[type="text"]').keypress(function(){
-        $('#searchCustomer').on('keypress',function(){
-            /* Get input value on change */
-            console.log("keypress");
-            var inputVal = $(this).val();
-            var resultDropdown = $(this).siblings(".result");
-            var customerType = $('#customerTypeSelect').val();
-            if(inputVal.length){
-                $.get(siteUrl + '/logic/searchCustomersByName.php', {customerName: inputVal, customerType: customerType}).done(function(data){
-                    // Display the returned data in browser
-                    resultDropdown.html(data);
-                });
-            } else{
-                resultDropdown.empty();
-            }
-        });
-        $('#searchCustomerC').on('keypress',function(){
-            /* Get input value on change */
-            console.log("keypress");
-            var inputVal = $(this).val();
-            var resultDropdown = $(this).siblings(".result");
-            var customerType = $('#customerTypeSelect').val();
-            if(inputVal.length){
-                $.get(siteUrl + '/logic/searchCustomersByContact.php', {customerContact: inputVal, customerType: customerType}).done(function(data){
-                    // Display the returned data in browser
-                    resultDropdown.html(data);
-                });
-            } else{
-                resultDropdown.empty();
-            }
-        });
-        
-        // Set search input value on click of result item
-        $(document).on("click", ".result p", function(){
-            $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-            $(this).parent(".result").empty();
-        });
-        $("#saveBill").on("click" , function(){
-            console.log(serviceIdList + "services taken");
-        });
+    $('#searchCustomer').on('keypress', function () {
+        /* Get input value on change */
+        console.log("keypress");
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        var customerType = $('#customerTypeSelect').val();
+        if (inputVal.length) {
+            $.get(siteUrl + '/logic/searchCustomersByName.php', { customerName: inputVal, customerType: customerType }).done(function (data) {
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else {
+            resultDropdown.empty();
+        }
+    });
+    $('#searchCustomerC').on('keypress', function () {
+        /* Get input value on change */
+        console.log("keypress");
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        var customerType = $('#customerTypeSelect').val();
+        if (inputVal.length) {
+            $.get(siteUrl + '/logic/searchCustomersByContact.php', { customerContact: inputVal, customerType: customerType }).done(function (data) {
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else {
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function () {
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+    $("#saveBill").on("click", function () {
+        console.log(serviceIdList + "services taken");
+        var billDiscount = $('#discount').val();
+        var billTotal = $('#total').val();
+        var billAmountPayable = $('#subTotal').val();
+        var customerType = $('#customerTypeSelect').val();
+        var customerId = $('#customerId').val();
+        var randomCustomerName = $('#').val();
+    });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -312,5 +318,5 @@ $(document).ready(function () {
             responsive: true
         }
     });
-    
+
 });
