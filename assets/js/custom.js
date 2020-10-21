@@ -250,7 +250,7 @@ $(document).ready(function () {
         $.ajax({
             url: siteUrl + '/logic/insertBillingDetails.php',
             type: 'POST',
-            data: { billDiscount: billDiscount,  billTotal: billTotal,  billAmountPayable: billAmountPayable,  customerType: customerType,  customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, sevicesTaken: serviceIdList},
+            data: { billDiscount: billDiscount,  billTotal: billTotal,  billAmountPayable: billAmountPayable,  customerType: customerType,  customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList},
             success: function (data) {
                 console.log(data);
                 $('#priceDisplay').html('');
