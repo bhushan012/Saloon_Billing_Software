@@ -221,6 +221,7 @@ $(document).ready(function () {
         $(this).parent(".result").empty();
         $('.searchedCustomerResult').html('');
         $('.searchedCustomerResult').html($(this).text());
+        $('#customerId').val($(this).attr("id"));
     });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
