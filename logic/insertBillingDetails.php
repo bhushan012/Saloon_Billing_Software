@@ -8,6 +8,8 @@ $customerType = htmlentities($_POST['customerType'],ENT_QUOTES,'utf-8', TRUE);
 $customerId = htmlentities($_POST['customerId'],ENT_QUOTES,'utf-8', TRUE);
 $randomCustomerName = htmlentities($_POST['randomCustomerName'],ENT_QUOTES,'utf-8', TRUE);
 $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
-$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId);
-echo $result;
+$servicesIds = htmlentities($_POST['sevicesTaken'],ENT_QUOTES,'utf-8', TRUE);
+print($servicesIds);
+//$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds);
+//echo $result;
 ?>

@@ -242,7 +242,7 @@ class Operations {
         }
     }
     //INSERT BILL DETAILS
-    function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId){
+    function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds){
         $date = date('Y-m-d');
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
        $sql = "INSERT INTO `billing`( `billDate`, `billDiscountSelected`, `billDiscount`, `billTotal`, `billAmountPayable`, `customerType`, `customerId`, `staffId`, `randomCustomerName`) 
