@@ -159,6 +159,13 @@ $(document).ready(function () {
         var calculateTotal = parseInt(price) + parseInt(total);
         $('#total').empty().append(calculateTotal);
         $('#subTotal').empty().append(calculateTotal);
+        //discount
+        var totalAmt = parseInt($('#total').text());
+        var discount = parseInt($('#discountPercent').val());
+        var amtDiscounted = percentage(totalAmt, discount);
+        $('#discount').empty().append(amtDiscounted);
+        console.log(totalAmt + "totalAmt Price");
+        $('#subTotal').empty().append(totalAmt - amtDiscounted);
     });
 
     $("body").on("click", ".removeService", function () {
@@ -176,11 +183,6 @@ $(document).ready(function () {
         $(this).parents(".removeServiceRow").remove();
         $('.' + rowId).remove();
     });
-    var countries = [
-        { value: 'Andorra', data: 'AD' },
-        // ...
-        { value: 'Zimbabwe', data: 'ZZ' }
-    ];
 
     $('#searchCustomer').on('keypress', function () {
         /* Get input value on change */
