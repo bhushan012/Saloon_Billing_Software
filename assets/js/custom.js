@@ -254,6 +254,7 @@ $(document).ready(function () {
     $(document).on("click", ".result p", function () {
         $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
         $(this).parent(".result").empty();
+        $('.searchedCustomerResult').val($(this).text());
     });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");

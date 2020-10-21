@@ -69,7 +69,7 @@ if (isset($_GET['success'])) {
                                 <div class="result"></div>
                             </div>
                         </div>
-                        <div class="col-md-6">Customer Name: <span id="searchedNameByName"></span></div>
+                        <div class="col-md-6">Customer Name: <span class="searchedCustomerResult"></span></div>
                     </div>
                 </div>
                 <input type="hidden" name="customerId" value="">
@@ -81,7 +81,7 @@ if (isset($_GET['success'])) {
                                 <div class="result"></div>
                             </div>
                         </div>
-                        <div class="col-md-6">Customer Name: <span id="searchedNameByContact"></span>
+                        <div class="col-md-6">Customer Name: <span class="searchedCustomerResult"></span>
                         </div>
                     </div>
                 </div>
