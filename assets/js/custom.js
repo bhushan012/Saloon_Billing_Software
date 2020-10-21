@@ -73,7 +73,6 @@ $(document).ready(function () {
         if (searchBy == "1") {
             $('#customerSearchName').attr("class", "col-md-12 d-block");
             $('#customerSearchContact').attr("class", "col-md-12 d-none");
-
         } else {
             $('#customerSearchName').attr("class", "col-md-12 d-none");
             $('#customerSearchContact').attr("class", "col-md-12 d-block");
@@ -217,6 +216,21 @@ $(document).ready(function () {
             var customerType = $('#customerTypeSelect').val();
             if(inputVal.length){
                 $.get(siteUrl + '/logic/searchCustomersByName.php', {customerName: inputVal, customerType: customerType}).done(function(data){
+                    // Display the returned data in browser
+                    resultDropdown.html(data);
+                });
+            } else{
+                resultDropdown.empty();
+            }
+        });
+        $('#searchCustomerC').on('keypress',function(){
+            /* Get input value on change */
+            console.log("keypress");
+            var inputVal = $(this).val();
+            var resultDropdown = $(this).siblings(".result");
+            var customerType = $('#customerTypeSelect').val();
+            if(inputVal.length){
+                $.get(siteUrl + '/logic/searchCustomersByContact.php', {customerContact: inputVal, customerType: customerType}).done(function(data){
                     // Display the returned data in browser
                     resultDropdown.html(data);
                 });

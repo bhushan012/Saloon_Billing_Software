@@ -75,7 +75,10 @@ if (isset($_GET['success'])) {
                 <div class="col-md-12 d-none" id="customerSearchContact">
                     <div class="row mt-3">
                         <div class="col-md-6">
-                            <div id="search-formContact"> </div>
+                            <div class="search-box">
+                                <input id="searchCustomerC" type="text" autocomplete="on" placeholder="Search customer..." />
+                                <div class="result"></div>
+                            </div>
                         </div>
                         <div class="col-md-6">Customer Name: <span id="searchedNameByContact"></span>
                         </div>

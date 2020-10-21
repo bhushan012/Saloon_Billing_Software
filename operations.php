@@ -115,7 +115,17 @@ class Operations {
         }
     }
     Function getCustomerByName($customerName,$customerType){
-        $sql = "SELECT * FROM customers where `fullName` LIKE '%".$customerName."%' AND `membership` = ".$customerType."";
+        $sql = "SELECT fullName,customer_id FROM customers where `fullName` LIKE '%".$customerName."%' AND `membership` = ".$customerType."";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    Function getCustomerByContact($customerContact,$customerType){
+        $sql = "SELECT fullName,customer_id FROM customers where `contactNumber` LIKE '%".$customerContact."%' AND `membership` = ".$customerType."";
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {

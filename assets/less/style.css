@@ -22,6 +22,7 @@ i {
   box-sizing: border-box;
 }
 .search-box .result {
+  background-color: #ffffff;
   width: 100%;
   box-sizing: border-box;
   position: absolute;
