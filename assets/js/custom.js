@@ -232,8 +232,8 @@ $(document).ready(function () {
     });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
-        var billDiscount = $('#discount').val();
-        var billTotal = $('#total').val();
+        var billDiscount = $('#discount').text();
+        var billTotal = $('#total').text();
         var billAmountPayable = $('#subTotal').val();
         var customerType = $('#customerTypeSelect').val();
         var customerId = $('#customerId').val();
