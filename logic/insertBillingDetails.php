@@ -10,10 +10,10 @@ $randomCustomerName = htmlentities($_POST['randomCustomerName'],ENT_QUOTES,'utf-
 $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds[] = $_POST['servicesTaken'];
 $serviceid;
+$i=0;
 foreach ($servicesIds as $value) {
     
-    $res = explode("Id", $value);
-    $serviceid[$i] = $res['1'];
+    $serviceid[$i] = str_replace("serviceId","",$value);
     $i++;
 
 }
