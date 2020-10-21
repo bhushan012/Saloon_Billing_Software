@@ -221,9 +221,9 @@ $(document).ready(function () {
         $(this).parent(".result").empty();
         $('.searchedCustomerResult').html('');
         $('.searchedCustomerResult').html($(this).text());
-        var id = $(this).attr("id");
-        console.log("customer id: "+id);
-        $('#twinkle').val(id);
+        var id =  $(this).attr("id");
+        $("#twinkle").val(id);
+        console.log("-------------after val---------");
     });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
