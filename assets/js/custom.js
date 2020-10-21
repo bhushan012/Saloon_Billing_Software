@@ -158,6 +158,7 @@ $(document).ready(function () {
         var total = $('#total').text();
         var calculateTotal = parseInt(price) + parseInt(total);
         $('#total').empty().append(calculateTotal);
+        $('#subTotal').empty().append(calculateTotal);
     });
 
     $("body").on("click", ".removeService", function () {
