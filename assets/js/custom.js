@@ -68,6 +68,8 @@ $(document).ready(function () {
             console.log("random");
             $('#searchByRow').attr("class", "col-md-4 d-none");
             $('#customerSearchRandom').attr("class", "col-md-12 d-block");
+            $('#customerSearchName').attr("class", "col-md-12 d-none");
+            $('#customerSearchContact').attr("class", "col-md-12 d-none");
             // $('#customerSearchRandom').removeClass("d-none");
             // $('#customerSearchRandom').addClass("col-md-12 d-block");
         }
