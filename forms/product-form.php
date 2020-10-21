@@ -8,7 +8,7 @@ if(isset($_GET['success'])){
 }
 ?>
 <form id="customerForm" method="POST" action="../submitData.php">
-    <h1 class="display-5">Add Products</h1>
+    <h1 class="display-5 mt-3">Add Products</h1>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
             <label for="firstName">Product Name</label>

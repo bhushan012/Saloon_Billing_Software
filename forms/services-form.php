@@ -8,7 +8,7 @@ if(isset($_GET['success'])){
 }
 ?>
 <form id="customerForm" method="POST" action="../submitData.php">
-    <h1 class="display-5">Service Form</h1>
+    <h1 class="display-5 mt-3">Service Form</h1>
     <div class="mt-3">
         <label>Service Category:</label>
         <select class="form-control" id="serviceCategory" name="serviceCategory" required>

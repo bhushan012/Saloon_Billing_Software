@@ -8,7 +8,7 @@ if(isset($_GET['success'])){
 }
 ?>
 <form id="customerForm" method="POST" action="../submitData.php">
-    <h1 class="display-5">Inventory </h1>
+    <h1 class="display-5 mt-3">Inventory </h1>
     <div class="mt-3">
         <label>Select Product:</label>
         <select class="form-control" id="productSelect" name="productSelect" required>

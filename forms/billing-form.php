@@ -10,7 +10,7 @@ if (isset($_GET['success'])) {
 <div class="row">
     <div class="col-md-8">
         <form id="BillingForm" action="../submitData.php">
-            <h1 class="display-5">Billing</h1>
+            <h1 class="display-5 mt-3">Billing</h1>
 
             <div class="form-row mt-3 after-add-more">
                 <div class="form-group col-md-4">
