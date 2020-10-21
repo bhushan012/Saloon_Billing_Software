@@ -222,7 +222,7 @@ $(document).ready(function () {
         $('.searchedCustomerResult').html('');
         $('.searchedCustomerResult').html($(this).text());
         var id = $(this).attr("id");
-        console.log("customer id: "+$(this).attr("id"));
+        console.log("customer id: "+id);
         $('#twinkle').val(id);
     });
     $("#saveBill").on("click", function () {
