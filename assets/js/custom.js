@@ -240,7 +240,7 @@ $(document).ready(function () {
         var randomCustomerName = $('#searchedNameRandom').val();
         var staffId = $('#staffSelect').val();
         console.log("hmm");
-        console.log(billDiscount+billTotal+billAmountPayable+customerType+customerId+randomCustomerName+staffId);
+        console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
     });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
