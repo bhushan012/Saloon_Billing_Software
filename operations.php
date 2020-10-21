@@ -250,6 +250,11 @@ class Operations {
        global $conn;
        if($conn->query($sql) === TRUE){
           $billId = $conn->insert_id;
+          foreach ($servicesIds as $value) {
+              $subsql = "INSERT INTO `bill_services`(`billNo`, `serviceId`) VALUES ('".$billId."','".$value."')";
+              $result = $conn->query($subsql);
+          }
+          return true;
         }
         else {
             $log = "Error: " . $sql . "<br>" . $conn->error;

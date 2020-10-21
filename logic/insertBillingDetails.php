@@ -17,7 +17,7 @@ foreach ($servicesIds as $value) {
     $i++;
 
 }
-print_r($serviceid);
-//$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds);
-//echo $result;
+//print_r($serviceid);
+$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
+echo $result;
 ?>
