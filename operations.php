@@ -241,6 +241,7 @@ class Operations {
             return "";
         }
     }
+    //INSERT BILL DETAILS
     function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId){
         $date = date('Y-m-d');
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
@@ -248,7 +249,7 @@ class Operations {
        VALUES ('".$date."','".$billDiscountSelected."','".$billDiscount."','".$billTotal."','".$billAmountPayable."','".$customerType."','".$customerId."','".$staffId."','".$randomCustomerName."')";
        global $conn;
        if($conn->query($sql) === TRUE){
-            return true;
+          $billId = $conn->insert_id;
         }
         else {
             $log = "Error: " . $sql . "<br>" . $conn->error;

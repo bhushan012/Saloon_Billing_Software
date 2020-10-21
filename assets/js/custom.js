@@ -78,9 +78,12 @@ $(document).ready(function () {
             $('#customerSearchName').attr("class", "col-md-12 d-block");
             $('#customerSearchContact').attr("class", "col-md-12 d-none");
         }
-         else {
+        else if(searchBy == "2"){
             $('#customerSearchName').attr("class", "col-md-12 d-none");
             $('#customerSearchContact').attr("class", "col-md-12 d-block");
+        }else{
+            $('#customerSearchName').attr("class", "col-md-12 d-none");
+            $('#customerSearchContact').attr("class", "col-md-12 d-none");
         }
     });
     $("#serviceCategoryBilling").on('change', function (e) {
