@@ -173,44 +173,7 @@ $(document).ready(function () {
         // ...
         { value: 'Zimbabwe', data: 'ZZ' }
     ];
-    // $('#search-formName .autocomplete-input, #search-formContact').autocomplete({
-    //lookup: countries,
-    // hints: words,
-    // height: 40,
-    // width: 305,
-    // showButton: false
-    // hints: words array for displaying hints
-    // placeholder: search input placeholder (default: 'Search')
-    // width: input text width
-    // height: input text height
-    // showButton: display search button (default: true)
-    // buttonText: button text (default: 'Search')
-    // onSubmit: function handler called on input submit
-    // onBlur: function handler called on input losing focus
-    //});
-    // $("#search-formName .autocomplete-input").keyup(function () {
-    //     var searchNameValue = $(this).val();
-    //     var customerType = $('#customerTypeSelect').val();
-    //     $.ajax({
-    //         url: siteUrl + '/logic/searchCustomersByName.php',
-    //         type: 'POST',
-    //         data: { customerName: searchNameValue, customerType: customerType },
-    //         success: function (data) {
-    //             console.log(data);
-    //             // words = [];
-    //             // $('#searchedNameByName').html(data['fullName']);
-    //             words = words.concat(data);
-    //             console.log(words + "hello");
 
-    //         },
-    //         error: function (data) {
-    //             // $('#owner_name').val("not found in record");
-    //             console.log(data);
-    //         }
-    //     });
-    // });
-    //autocomplete
-    //$('.search-box input[type="text"]').keypress(function(){
     $('#searchCustomer').on('keypress', function () {
         /* Get input value on change */
         console.log("keypress");
