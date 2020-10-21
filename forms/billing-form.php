@@ -72,7 +72,7 @@ if (isset($_GET['success'])) {
                         <div class="col-md-6">Customer Name: <span class="searchedCustomerResult"></span></div>
                     </div>
                 </div>
-                <input type="text" name="twinkle">
+                <input type="text" id="twinkle">
                 <div class="col-md-12 d-none" id="customerSearchContact">
                     <div class="row">
                         <div class="col-md-6">
