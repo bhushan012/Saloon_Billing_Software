@@ -123,14 +123,14 @@
                             <div class="collapse" id="collapseStaff">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD NEW PRODUCTS</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD STAFF</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
 
