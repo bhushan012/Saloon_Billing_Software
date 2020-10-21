@@ -67,7 +67,9 @@ $(document).ready(function () {
         } else {
             console.log("random");
             $('#searchByRow').attr("class", "col-md-4 d-none");
-            $('#customerSearchRandom').attr("class", "col-md-12 d-block");
+           // $('#customerSearchRandom').attr("class", "col-md-12 d-block");
+            $('#customerSearchRandom').removeClass("d-none");
+            $('#customerSearchRandom').addClass("col-md-12 d-block");
         }
     });
     $("#searchBySelect").on('change', function (e) {
