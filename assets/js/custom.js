@@ -221,6 +221,7 @@ $(document).ready(function () {
             $.get(siteUrl + '/logic/searchCustomersByName.php', { customerName: inputVal, customerType: customerType }).done(function (data) {
                 // Display the returned data in browser
                 resultDropdown.html(data);
+                console.log(data);
             });
         } else {
             resultDropdown.empty();
@@ -261,7 +262,8 @@ $(document).ready(function () {
         var billAmountPayable = $('#subTotal').val();
         var customerType = $('#customerTypeSelect').val();
         var customerId = $('#customerId').val();
-        var randomCustomerName = $('#').val();
+        var randomCustomerName = $('#searchedNameRandom').val();
+        console.log(billDiscount+billTotal+billAmountPayable+customerType+customerId+randomCustomerName);
     });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
