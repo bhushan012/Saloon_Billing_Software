@@ -85,7 +85,7 @@ if (isset($_GET['success'])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 d-none"  id="searchCustomerR" id="customerSearchRandom">
+                <div class="col-md-12 d-none"  id="customerSearchRandom">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="search-box">
