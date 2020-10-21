@@ -73,9 +73,17 @@ $(document).ready(function () {
         if (searchBy == "1") {
             $('#customerSearchName').attr("class", "col-md-12 d-block");
             $('#customerSearchContact').attr("class", "col-md-12 d-none");
-        } else {
+            $('#customerSearchRandom').attr("class", "col-md-12 d-none");
+        }
+        else if (searchBy == "2") {
+            $('#customerSearchName').attr("class", "col-md-12 d-none");
+            $('#customerSearchContact').attr("class", "col-md-12 d-none");
+            $('#customerSearchRandom').attr("class", "col-md-12 d-block");
+        }
+         else {
             $('#customerSearchName').attr("class", "col-md-12 d-none");
             $('#customerSearchContact').attr("class", "col-md-12 d-block");
+            $('#customerSearchRandom').attr("class", "col-md-12 d-none");
         }
     });
     $("#serviceCategoryBilling").on('change', function (e) {
