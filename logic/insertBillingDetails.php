@@ -9,7 +9,15 @@ $customerId = htmlentities($_POST['customerId'],ENT_QUOTES,'utf-8', TRUE);
 $randomCustomerName = htmlentities($_POST['randomCustomerName'],ENT_QUOTES,'utf-8', TRUE);
 $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds[] = $_POST['servicesTaken'];
-print_r($servicesIds);
+$serviceid;
+foreach ($servicesIds as $value) {
+    
+    $res = explode("Id", $value);
+    $serviceid[$i] = $res['1'];
+    $i++;
+
+}
+print_r($serviceid);
 //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds);
 //echo $result;
 ?>
