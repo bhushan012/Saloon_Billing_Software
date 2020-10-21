@@ -241,4 +241,19 @@ class Operations {
             return "";
         }
     }
+    function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId){
+        $date = date('Y-m-d');
+        $billDiscountSelected = $billDiscount>0 ? '1' : '0';
+       $sql = "INSERT INTO `billing`( `billDate`, `billDiscountSelected`, `billDiscount`, `billTotal`, `billAmountPayable`, `customerType`, `customerId`, `staffId`, `randomCustomerName`) 
+       VALUES ('".$date."','".$billDiscountSelected."','".$billDiscount."','".$billTotal."','".$billAmountPayable."','".$customerType."','".$customerId."','".$staffId."','".$randomCustomerName."')";
+       global $conn;
+       if($conn->query($sql) === TRUE){
+            return true;
+        }
+        else {
+            $log = "Error: " . $sql . "<br>" . $conn->error;
+            file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+            return false;
+        }
+    }
 }

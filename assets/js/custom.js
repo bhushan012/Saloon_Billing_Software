@@ -239,8 +239,22 @@ $(document).ready(function () {
         var customerId = $('#customerId').val();
         var randomCustomerName = $('#searchedNameRandom').val();
         var staffId = $('#staffSelect').val();
+
         console.log("hmm");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
+        $.ajax({
+            url: siteUrl + '/logic/insertBillingDetails.php',
+            type: 'POST',
+            data: { billDiscount: billDiscount,  billTotal: billTotal,  billAmountPayable: billAmountPayable,  customerType: customerType,  customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId,},
+            success: function (data) {
+                console.log(data);
+                $('#priceDisplay').html('');
+                $('#priceDisplay').html(data);
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
     });
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
