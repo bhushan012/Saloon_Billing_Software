@@ -89,7 +89,7 @@ if (isset($_GET['success'])) {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="search-box">
-                                <input class="form-control p-3" type="text" autocomplete="on" placeholder="Customer Name" />
+                                <input class="form-control p-3" id="searchRandom" type="text" autocomplete="on" placeholder="Customer Name" />
                             </div>
                         </div>
                         <div class="col-md-6">Customer Name: <span id="searchedNameRandom"></span>

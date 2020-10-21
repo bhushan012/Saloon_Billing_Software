@@ -214,6 +214,11 @@ $(document).ready(function () {
         $('#searchedNameRandom').html('');
         $('#searchedNameRandom').html(inputVal);
     });
+    $("#searchRandom").on('keypress', function(){
+        var inputVal = $(this).val();
+        $('#searchedNameRandom').html('');
+        $('#searchedNameRandom').html(inputVal);
+    });
     
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
