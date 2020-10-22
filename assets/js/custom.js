@@ -142,6 +142,26 @@ $(document).ready(function () {
             }
         });
     });
+    //GET STAFF SERVICE HISTORY
+    $("#selectMonth1 , #staffList").on('change', function (e) {
+        var month = $('#selectMonth1').val();
+        var staffID = $('#staffList').val();
+        console.log("month" + month);
+        console.log("staff" + staffID);
+        $.ajax({
+            url: siteUrl + '/logic/staffServiceHistory.php',
+            type: 'POST',
+            data: { month: month, staffID: staffID },
+            success: function (data) {
+                console.log(data);
+                $('#inventoryData').html('');
+                $('#inventoryData').html(data);
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
+    });
     var serviceIdList = [];
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();

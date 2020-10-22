@@ -200,7 +200,7 @@ class Operations {
             $query = " inventory.entrydate BETWEEN '".$first_day."' AND '".$last_day."'";
         }
         if(!empty($prodID)){
-            $prodQuery = " inventory.productID = '".$prodID."'";
+            $query = " inventory.productID = '".$prodID."'";
         }
         if(!empty($month) && !empty($prodID)){
             $query = " inventory.entrydate BETWEEN '".$first_day."' AND '".$last_day."' AND inventory.productID = '".$prodID."'";
@@ -216,7 +216,30 @@ class Operations {
             return "";
         }
     }
-
+    //GET STAFF SERVICE HISTORY
+    function staffHistory($month,$staffId){
+        if(!empty($month)){
+            $first_day = date('Y-'.$month.'-01'); 
+            $last_day  = date('Y-'.$month.'-t');
+            $query = " billing.billDate BETWEEN '".$first_day."' AND '".$last_day."'";
+        }
+        if(!empty($staffId)){
+            $query = " billing.staffId = '".$staffId."'";
+        }
+        if(!empty($month) && !empty($staffId)){
+            $query = " billing.billDate BETWEEN '".$first_day."' AND '".$last_day."' AND billing.staffId = '".$staffId."'";
+        }
+        
+        $sql = "SELECT billing.billNo, billing.billDate, staffTable.staffName, billing.billTotal  FROM `billing` INNER JOIN staffTable on billing.staffId = staffTable.staffID WHERE  ".$query;
+        
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
     //ADD STAFF MEMBERS
     function addStaffMembers($name,$designation,$phno){
        $date = date('Y-m-d');
