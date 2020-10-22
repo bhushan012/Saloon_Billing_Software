@@ -12,7 +12,7 @@ for ($i = 1; $i < 13; $i++) {
     $timestamp = mktime(0, 0, 0, $i, 1);
     $months[date('n', $timestamp)] = date('F', $timestamp);
 } ?>
-        <select class="form-control" id="selectMonth" name="productSelect" required>
+        <select class="form-control" id="selectMonth1" name="productSelect" required>
             <option value="">Select Month</option>
             <?php
             foreach ($months as $key => $value) {
@@ -27,12 +27,12 @@ for ($i = 1; $i < 13; $i++) {
     </div>
     <div class="mt-3">
         <label>Select Product:</label>
-        <select class="form-control" id="prodList" name="productSelect" required>
-            <option value="">Products</option>
+        <select class="form-control" id="staffList" name="productSelect" required>
+            <option value="">Staff Members</option>
             <?php
-            $result = $operationInstance->getAllProducts();
+            $result = $operationInstance->fetchStaffMembers();
             while ($row = $result->fetch_assoc()) {
-                echo "<option value=" . $row['productID'] . ">" . $row['productName'] . "</option>";
+                echo "<option value=" . $row['staffID'] . ">" . $row['staffName'] . "</option>";
             }
             ?>
         </select>
