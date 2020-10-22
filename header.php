@@ -125,12 +125,12 @@
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD STAFF</a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
+                                     <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/staffHistory.php"><i class="fa fa-eye p-1"></i>STAFF</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
-                                    </li> -->
+                                    </li>  -->
                                 </ul>
                             </div>
 
