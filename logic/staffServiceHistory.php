@@ -82,7 +82,7 @@ else{?>
 </table>
 <div class="mt-3 row">
     <div class="col-md-4">
-       <h3>TOTAL COMMISSION PAYABLE: </h3>
+       <h4>TOTAL COMMISSION PAYABLE: </h4>
     </div>
 
     <div class="col-md-4">
