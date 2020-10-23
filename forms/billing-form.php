@@ -119,7 +119,7 @@ if (isset($_GET['success'])) {
             </div>
             <div class="dropdown-divider"></div>
             <div class="row">
-                <div class="col-md-4 text-center mt-1">
+                <div class="col-md-4 text-center mt-3">
                     <div class="form-check mt-2">
                         <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">

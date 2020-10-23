@@ -1,6 +1,10 @@
 $(document).ready(function () {
     var siteUrl = "http://parlourbilling.weblozee.com";
-
+    // MODEL OPEN
+    $("#myBtn").click(function(){
+        $('#myModal').modal('show');
+   });
+    // END MODEL
     $('#datepicker').datepicker({
         autoclose: true,
         endDate: "today",
