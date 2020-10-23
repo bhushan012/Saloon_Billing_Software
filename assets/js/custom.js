@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var siteUrl = "http://parlourbilling.weblozee.com";
     // MODEL OPEN
-    $('#staticBackdrop').modal('show');
+    // $('#staticBackdrop').modal('show');
         
    
     // END MODEL
