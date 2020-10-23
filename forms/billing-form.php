@@ -119,7 +119,7 @@ if (isset($_GET['success'])) {
             </div>
             <div class="dropdown-divider"></div>
             <div class="row">
-                <div class="col-md-4 text-center">
+                <div class="col-md-4 text-center mt-1">
                     <div class="form-check mt-2">
                         <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
@@ -127,7 +127,7 @@ if (isset($_GET['success'])) {
                         </label>
                     </div>
                 </div>
-                <div class="col-md-4 dicountCol" style="display:none;">
+                <div class="col-md-4 dicountCol mt-3" style="display:none;">
                     <div class="input-group flex-nowrap">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">%</span>
@@ -135,7 +135,7 @@ if (isset($_GET['success'])) {
                         <input type="text" id="discountPercent" value ="0" class="form-control" placeholder="Percentage" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
-                <div class="col-md-4 dicountCol" style="display:none;">
+                <div class="col-md-4 dicountCol mt-1" style="display:none;">
                     <div class="input-group-btn ">
                         <button class="btn btn-success" id="discountBtn" type="button"><i class="fa fa-check-square-o"></i><span class="h6"> Discount</span></button>
                     </div>
