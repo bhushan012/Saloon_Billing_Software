@@ -285,8 +285,24 @@ class Operations {
             return false;
         }
     }
+    //FETCH BILL DETAILS
     function getBillDetail(){
         $sql = "SELECT billing.billNo , billing.billDate , billing.billTotal , billing.billDiscount , billing.billAmountPayable , customers.fullName , staffTable.staffName FROM `billing` INNER JOIN customers ON billing.customerId = customers.customer_Id INNER JOIN staffTable ON billing.staffId = staffTable.staffID";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    //FETCH CLIENT HISTORY
+    function getClientHistory($staffID){
+        $sql = "SELECT customers.medicationDetails , customers.allergy, 
+        customers.membership , customers.fullName, customers.contactNumber, 
+        customers.address, billing.billNo, billing.billDate, billing.billAmountPayable, 
+        staffTable.staffName FROM `customers` INNER JOIN billing ON billing.customerId = customers.customer_Id 
+        INNER JOIN staffTable on billing.staffId = staffTable.staffID WHERE customers.customer_Id = '".$staffID."'";
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {

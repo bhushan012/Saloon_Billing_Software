@@ -162,6 +162,27 @@ $(document).ready(function () {
             }
         });
     });
+    //GET CUSTOMER HISTORY
+    $("#customerList").on('change', function (e) {
+        //var month = $('#selectMonth1').val();
+        var custID = $('#customerList').val();
+        //console.log("month" + month);
+        console.log("staff" + custID);
+        $.ajax({
+            url: siteUrl + '/logic/customerHistory.php',
+            type: 'POST',
+            data: { custID: custID },
+            success: function (data) {
+                console.log(data);
+                $('#inventoryData').html('');
+                $('#inventoryData').html(data);
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
+    });
+
     var serviceIdList = [];
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceCategory").val();
