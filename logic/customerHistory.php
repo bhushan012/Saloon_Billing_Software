@@ -87,6 +87,9 @@ else{?>
     </tfoot>
 </table>
 <div class="mt-3 row">
+    <div class="col-md-12">
+        <h4><?php echo $name;?>'s Details:</h4>
+    </div>
     <div class="col-md-6">
         <h6>Name: </h6>
     </div>
