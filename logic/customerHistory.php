@@ -127,7 +127,7 @@ else{?>
     <h6>Total Amount: </h6>
     </div>
     <div class="col-md-6">
-    <p><?php echo $totalExpense;?></p>
+    <p>Rs. <?php echo $totalExpense;?></p>
     </div>
 </div>
 <?php
