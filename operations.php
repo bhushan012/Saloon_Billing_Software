@@ -311,4 +311,45 @@ class Operations {
             return "";
         }
     }
+    //FETCH DASHBOARD DETAILS
+    function getTotalSales(){
+        $totalSales = "SELECT sum(billAmountPayable) as total FROM billing WHERE 1";
+        global $conn;
+        $result = $conn->query($totalSales);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    function getTotalCustomers(){
+        $totalCust = "SELECT COUNT(*) as customers FROM customers WHERE 1";
+        global $conn;
+        $result = $conn->query($totalCust);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    function totalServices(){
+        $totalCust = "SELECT COUNT(*) as services FROM service_details WHERE 1";
+        global $conn;
+        $result = $conn->query($totalCust);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    function totalDiscount(){
+        $totalCust = "SELECT SUM(billDiscount) as discount FROM billing WHERE 1";
+        global $conn;
+        $result = $conn->query($totalCust);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
 }
