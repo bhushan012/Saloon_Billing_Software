@@ -188,7 +188,7 @@ if (isset($_GET['success'])) {
                     <p class="mb-0" id="subTotal">0</p>
                 </div>
             </div>
-            <div class="text-center"><button class="mt-2 btn btn-success">PRINT BILL</button></div>
+            <!-- <div class="text-center"><button class="mt-2 btn btn-success">PRINT BILL</button></div> -->
             <div class="text-center" id="saveBill"><button class="mt-2 btn btn-success">SAVE BILL</button></div>
         </div>
     </div>
