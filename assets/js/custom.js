@@ -1,7 +1,6 @@
 $(document).ready(function () {
     var siteUrl = "http://parlourbilling.weblozee.com";
-    // MODEL OPEN
-    // $('#staticBackdrop').modal('show');
+   
         
    
     // END MODEL
@@ -304,6 +303,8 @@ $(document).ready(function () {
                // $('#successMessage').html('');
                 $('#successMessage').attr("class","d-block");
                 $('#successMessage valid-feedback').attr("class","d-block");
+                // MODEL OPEN
+                $('#staticBackdrop').modal('show');
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
