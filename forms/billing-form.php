@@ -112,6 +112,21 @@ if (isset($_GET['success'])) {
                     </select>
                 </div>
             </div>
+            <div class="dropdown-divider"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="h6">Staff:</label>
+                    <select class="form-control" id="staffSelect" name="staffDetail" required>
+                        <option value="">Staff Names</option>
+                        <?php
+                        $result = $operationInstance->fetchStaffMembers();
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value=" . $row['staffID'] . ">" . $row['staffName'] . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
             <div class="row" id="successMessage" class="d-none">
                         <div class="col-md-12">
                         <div class="valid-feedback">Details Stored Successfully!</div>
