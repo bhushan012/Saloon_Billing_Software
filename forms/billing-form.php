@@ -115,13 +115,13 @@ if (isset($_GET['success'])) {
             <div class="dropdown-divider"></div>
             <div class="row">
                 <div class="col-md-12">
-                    <label class="h6">Staff:</label>
-                    <select class="form-control" id="staffSelect" name="staffDetail" required>
+                    <label class="h6">Add Product:</label>
+                    <select class="form-control" id="addProduct" name="product" required>
                         <option value="">Staff Names</option>
                         <?php
-                        $result = $operationInstance->fetchStaffMembers();
+                        $result = $operationInstance->getAllProducts();
                         while ($row = $result->fetch_assoc()) {
-                            echo "<option value=" . $row['staffID'] . ">" . $row['staffName'] . "</option>";
+                            echo "<option value=" . $row['productID'] . ">" . $row['productName'] . "</option>";
                         }
                         ?>
                     </select>
