@@ -116,7 +116,7 @@ if (isset($_GET['success'])) {
             <div class="row">
                 <div class="col-md-12">
                     <label class="h6">Add Product:</label>
-                    <select class="form-control" id="addProduct" name="product" required>
+                    <select class="form-control" id="prodList" name="product" required>
                         <option value="">Staff Names</option>
                         <?php
                         $result = $operationInstance->getAllProducts();
@@ -125,6 +125,11 @@ if (isset($_GET['success'])) {
                         }
                         ?>
                     </select>
+                    <div class="form-group col-md-4 text-center mb-2" style="place-self: flex-end;">
+                    <div class="input-group-btn">
+                        <button class="btn btn-success" id="addProductToBill" type="button"><i class="fa fa-plus"></i><span class="h6"> Add Service</span></button>
+                    </div>
+                </div>
                 </div>
             </div>
             <div class="row" id="successMessage" class="d-none">
@@ -181,6 +186,13 @@ if (isset($_GET['success'])) {
             </div>
             <div class="col-md-4 text-center">
                 <div id="costList"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div id="productBillList">
+
+                </div>
             </div>
         </div>
         <div style="margin-top: 71%;"></div>

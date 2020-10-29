@@ -271,7 +271,12 @@ $(document).ready(function () {
         $('#searchedNameRandom').html('');
         $('#searchedNameRandom').html(inputVal);
     });
-    
+    //ADD PRODUCT TO BILL
+
+    $("#addProductToBill").on("click", function(){
+       var prodID = $("#prodList").val();
+       $("#productBillList").append("<div><p>"+prodID+"</p></div>");
+    });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
         $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
