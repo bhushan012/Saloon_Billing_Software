@@ -115,9 +115,8 @@ if (isset($_GET['success'])) {
             <div class="dropdown-divider"></div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="h6">Add Product:</label>
                     <select class="form-control" id="prodList" name="product" required>
-                        <option value="">Products</option>
+                        <option value="">Select Products</option>
                         <?php
                         $result = $operationInstance->getAllProducts();
                         while ($row = $result->fetch_assoc()) {
@@ -128,8 +127,7 @@ if (isset($_GET['success'])) {
                     
                 </div>
                 <div class="col-md-4">
-                <label class="h6">Add Quantity:</label>
-                    <div class="search-box">
+                    <div class="">
                         <input class="form-control p-3" id="addQty" type="text" placeholder="Quantity" />
                     </div>
                 </div>
