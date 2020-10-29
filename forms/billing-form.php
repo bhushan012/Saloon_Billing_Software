@@ -128,12 +128,13 @@ if (isset($_GET['success'])) {
                     
                 </div>
                 <div class="col-md-3">
+                <label class="h6">Add Quantity:</label>
                     <div class="search-box">
                         <input class="form-control p-3" id="addQty" type="text" placeholder="Quantity" />
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="form-group col-md-4 text-center mb-2" style="place-self: flex-end;">
+                    <div class="form-group text-center mb-2" style="place-self: flex-end;">
                         <div class="input-group-btn">
                             <button class="btn btn-success" id="addProductToBill" type="button"><i class="fa fa-plus"></i><span class="h6"> Add Service</span></button>
                         </div>
