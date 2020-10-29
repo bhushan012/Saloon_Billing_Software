@@ -274,7 +274,7 @@ $(document).ready(function () {
     //ADD PRODUCT TO BILL
 
     $("#addProductToBill").on("click", function(){
-       var prodName = $("#productSelect").data("name");
+       var prodName = $("#productSelect").attr("data-name");
        $("#productBillList").append("<div><p>"+prodName+"</p></div>");
     });
     // Set search input value on click of result item
