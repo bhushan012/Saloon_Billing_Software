@@ -285,6 +285,14 @@ $(document).ready(function () {
        console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
        $("#total").empty().append(totalToShow);
        $("#productBillList").append("<div><p>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
+      // $('#subTotal').empty().append(totalToShow);
+       //discount
+       var totalAmt = parseInt($('#total').text());
+       var discount = parseInt($('#discountPercent').val());
+       var amtDiscounted = percentage(totalAmt, discount);
+       $('#discount').empty().append(amtDiscounted);
+       console.log(totalAmt + "totalAmt Price");
+       $('#subTotal').empty().append(totalAmt - amtDiscounted);
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
