@@ -106,7 +106,7 @@ if (isset($_GET['success'])) {
                         <?php
                         $result = $operationInstance->fetchStaffMembers();
                         while ($row = $result->fetch_assoc()) {
-                            echo "<option value=" . $row['staffID'] . ">" . $row['staffName'] . "</option>";
+                            echo "<option  value=" . $row['staffID'] . ">" . $row['staffName'] . "</option>";
                         }
                         ?>
                     </select>
@@ -120,7 +120,7 @@ if (isset($_GET['success'])) {
                         <?php
                         $result = $operationInstance->getAllProducts();
                         while ($row = $result->fetch_assoc()) {
-                            echo "<option value=" . $row['productID'] . " prodname='" .$row['productName']. "'>" . $row['productName'] . "</option>";
+                            echo "<option id='product".$row['productID']."' value=" . $row['productID'] . " prodname='" .$row['productName']. "'>" . $row['productName'] . "</option>";
                         }
                         ?>
                     </select>
