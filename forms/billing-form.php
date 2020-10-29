@@ -114,7 +114,7 @@ if (isset($_GET['success'])) {
             </div>
             <div class="dropdown-divider"></div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label class="h6">Add Product:</label>
                     <select class="form-control" id="prodList" name="product" required>
                         <option value="">Products</option>
@@ -127,16 +127,16 @@ if (isset($_GET['success'])) {
                     </select>
                     
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                 <label class="h6">Add Quantity:</label>
                     <div class="search-box">
                         <input class="form-control p-3" id="addQty" type="text" placeholder="Quantity" />
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="form-group text-center mb-2" style="place-self: flex-end;">
+                <div class="col-md-4">
+                    <div class="form-group text-center mb-2">
                         <div class="input-group-btn">
-                            <button class="btn btn-success" id="addProductToBill" type="button"><i class="fa fa-plus"></i><span class="h6"> Add Service</span></button>
+                            <button class="btn btn-success" id="addProductToBill" type="button"><i class="fa fa-plus"></i><span class="h6"> Add</span></button>
                         </div>
                     </div>
                 </div>
