@@ -124,7 +124,9 @@ if (isset($_GET['success'])) {
                         }
                         ?>
                     </select>
-                    <input class="form-control p-3" id="priceDisplay" type="text" placeholder="Price" />
+                    <div id="priceDisplay">
+
+                    </div>
                     
                 </div>
                 <div class="col-md-4">
