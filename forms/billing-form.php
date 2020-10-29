@@ -120,7 +120,7 @@ if (isset($_GET['success'])) {
                         <?php
                         $result = $operationInstance->getAllProducts();
                         while ($row = $result->fetch_assoc()) {
-                            echo "<option value=" . $row['productID'] . " data-name=".$row['productName'].">" . $row['productName'] . "</option>";
+                            echo "<option value=" . $row['productID'] . " prodname=".$row['productName'].">" . $row['productName'] . "</option>";
                         }
                         ?>
                     </select>
