@@ -278,8 +278,10 @@ $(document).ready(function () {
        var prodName = $("#product"+id).attr("prodname")
        var qty = $("#addQty").val()
        var price = $("#latestPrice").val()
-       
-       $("#productBillList").append("<div><p>"+prodName+"  X "+qty+"  Rs. "+price+"</p></div>");
+       var totalCost = $("#total").val();
+       var totalToShow = (qty*price) + totalCost;
+       $("#total").val(totalToShow);
+       $("#productBillList").append("<div><p>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
