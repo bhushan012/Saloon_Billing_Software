@@ -279,7 +279,7 @@ $(document).ready(function () {
        var qty = $("#addQty").val()
        var price = $("#latestPrice").val()
        var totalCost = $("#total").text();
-       var totalToShow = qty*price + totalCost;
+       var totalToShow = qty*price + parseInt(totalCost);
        console.log(totalToShow+ "total");
        $("#total").empty().append(totalToShow);
        $("#productBillList").append("<div><p>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");

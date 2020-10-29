@@ -198,6 +198,14 @@ if (isset($_GET['success'])) {
                 <div id="costList"></div>
             </div>
         </div>
+        <div class="servicesWithPrice row text-center border-primary border-primary border border-right-0 border-top-0 border-left-0 pb-2">
+            <div class="col-md-8">
+                <div>Products</div>
+            </div>
+            <div class="col-md-4">
+                <div>Cost</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-8">
                 <div id="productBillList">
