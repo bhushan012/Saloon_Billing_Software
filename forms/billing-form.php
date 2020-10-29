@@ -115,7 +115,7 @@ if (isset($_GET['success'])) {
             <div class="dropdown-divider"></div>
             <div class="row">
                 <div class="col-md-4">
-                    <select class="form-control" id="prodList" name="product" required>
+                    <select class="form-control" id="productSelect" name="product" required>
                         <option value="">Select Products</option>
                         <?php
                         $result = $operationInstance->getAllProducts();
@@ -124,6 +124,7 @@ if (isset($_GET['success'])) {
                         }
                         ?>
                     </select>
+                    <input class="form-control p-3" id="priceDisplay" type="text" placeholder="Price" />
                     
                 </div>
                 <div class="col-md-4">
