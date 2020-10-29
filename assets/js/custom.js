@@ -276,7 +276,10 @@ $(document).ready(function () {
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var prodName = $("#product"+id).attr("prodname")
-       $("#productBillList").append("<div><p>"+prodName+"</p></div>");
+       var qty = $("#addQty").val()
+       var price = $("#latestPrice").val()
+       
+       $("#productBillList").append("<div><p>"+prodName+"  X "+qty+"  Rs. "+price+"</p></div>");
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
