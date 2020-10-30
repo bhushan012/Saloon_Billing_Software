@@ -18,7 +18,6 @@ foreach ($servicesIds as $value) {
     $i++;
 
 }
-$prodList;
 foreach ($productList as $key => $value) {
     print_r($key);
     echo "==>>";
