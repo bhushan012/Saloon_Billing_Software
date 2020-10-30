@@ -19,15 +19,15 @@ $i=0;
 //     $i++;
 
 // }
-$productList['prod1'] = 1;
-$productList['prod2'] = 2;
-foreach ($productList as $key => $value) {
-    print_r($key);
-    echo "=>";
-    print_r($value);
+// $productList['prod1'] = 1;
+// $productList['prod2'] = 2;
+// foreach ($productList as $key => $value) {
+//     print_r($key);
+//     echo "=>";
+//     print_r($value);
 
-}
-//var_dump($productList);
+// }
+var_dump($productList);
  //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
  //echo $result;
 ?>
