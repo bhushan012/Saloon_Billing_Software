@@ -272,7 +272,8 @@ $(document).ready(function () {
         $('#searchedNameRandom').html(inputVal);
     });
     //ADD PRODUCT TO BILL
-    var productList =[];
+    var productList = {};
+    var finalList = [];
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var prodName = $("#product"+id).attr("prodname")
@@ -290,7 +291,8 @@ $(document).ready(function () {
            id : id,
            qty : qty
        }
-       console.log(productList);
+       finalList.push(productList);
+       console.log(finalList);
 
        //discount
        var totalAmt = parseInt($('#total').text());
