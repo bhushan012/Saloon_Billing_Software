@@ -23,7 +23,7 @@ $productList['prod1'] = 1;
 $productList['prod2'] = 2;
 foreach ($productList as $key => $value) {
     print_r($key);
-    echo "==>>";
+    echo "=>";
     print_r($value);
 
 }
