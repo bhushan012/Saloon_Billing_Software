@@ -24,7 +24,7 @@ $prodList;
 //     $prodList[$keyval] = $value;
 
 // }
-print_r($productList);
+var_dump($productList);
  //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
  //echo $result;
 ?>

@@ -331,7 +331,7 @@ $(document).ready(function () {
                   randomCustomerName: randomCustomerName, 
                   staffId: staffId, 
                   servicesTaken: serviceIdList, 
-                  prodList: productList
+                  prodList: productList,
                 },
             success: function (data) {
                 console.log(data);
