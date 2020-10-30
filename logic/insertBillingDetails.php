@@ -11,6 +11,7 @@ $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds= $_POST['servicesTaken'];
 
 $productList = $_POST['prodList'];
+$sendList;
 $serviceid;
 $i=0;
 // foreach ($servicesIds as $value) {
@@ -22,14 +23,11 @@ $i=0;
 // $productList['prod1'] = 1;
 // $productList['prod2'] = 2;
 foreach ($productList as $key) {
-    foreach ($key as $sub => $value) {
-        print_r($sub);
-        echo "=>";
-        print_r($value);
-    }
+   $sendList["prod".$key['id']] = $key['qty'];
 
 }
-//var_dump($productList);
+
+print_r($sendList);
  //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
  //echo $result;
 ?>
