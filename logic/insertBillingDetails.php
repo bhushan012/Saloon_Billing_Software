@@ -9,6 +9,7 @@ $customerId = htmlentities($_POST['customerId'],ENT_QUOTES,'utf-8', TRUE);
 $randomCustomerName = htmlentities($_POST['randomCustomerName'],ENT_QUOTES,'utf-8', TRUE);
 $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds= $_POST['servicesTaken'];
+
 $productList = $_POST['prodList'];
 $serviceid;
 $i=0;
@@ -18,6 +19,8 @@ $i=0;
 //     $i++;
 
 // }
+$productList['prod1'] = 1;
+$productList['prod2'] = 2;
 foreach ($productList as $key => $value) {
     print_r($key);
     echo "==>>";
