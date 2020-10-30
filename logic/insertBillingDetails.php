@@ -18,12 +18,13 @@ foreach ($servicesIds as $value) {
     $i++;
 
 }
-// foreach ($productList as $key => $value) {
-//     print_r($key); echo "key";
-//     print_r($value); echo "value";
+$prodList;
+foreach ($productList as $key => $value) {
+    $keyval = str_replace("prod","",$key);
+    $prodList[$keyval] = $value;
 
-// }
-//print_r($serviceid);
- $result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
- echo $result;
+}
+print_r($prodList);
+ //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
+ //echo $result;
 ?>
