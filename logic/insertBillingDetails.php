@@ -12,12 +12,12 @@ $servicesIds= $_POST['servicesTaken'];
 $productList = $_POST['prodList'];
 $serviceid;
 $i=0;
-foreach ($servicesIds as $value) {
+// foreach ($servicesIds as $value) {
     
-    $serviceid[$i] = str_replace("serviceId","",$value);
-    $i++;
+//     $serviceid[$i] = str_replace("serviceId","",$value);
+//     $i++;
 
-}
+// }
 foreach ($productList as $key => $value) {
     print_r($key);
     echo "==>>";
