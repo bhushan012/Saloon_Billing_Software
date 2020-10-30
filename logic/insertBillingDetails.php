@@ -19,12 +19,12 @@ foreach ($servicesIds as $value) {
 
 }
 $prodList;
-foreach ($productList as $key => $value) {
-    $keyval = str_replace("prod","",$key);
-    $prodList[$keyval] = $value;
+// foreach ($productList as $key => $value) {
+//     $keyval = str_replace("prod","",$key);
+//     $prodList[$keyval] = $value;
 
-}
-print_r($prodList);
+// }
+print_r($productList);
  //$result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid);
  //echo $result;
 ?>
