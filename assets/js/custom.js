@@ -286,7 +286,7 @@ $(document).ready(function () {
        $("#total").empty().append(totalToShow);
        $("#productBillList").append("<div><p>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
       // $('#subTotal').empty().append(totalToShow);
-       productList['prod'+id] = parseInt(qty);
+       productList[id] = parseInt(qty);
        console.log(productList);
 
        //discount
