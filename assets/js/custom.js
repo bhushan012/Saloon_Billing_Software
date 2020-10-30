@@ -272,7 +272,7 @@ $(document).ready(function () {
         $('#searchedNameRandom').html(inputVal);
     });
     //ADD PRODUCT TO BILL
-
+    var productList = [];
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var prodName = $("#product"+id).attr("prodname")
@@ -286,6 +286,9 @@ $(document).ready(function () {
        $("#total").empty().append(totalToShow);
        $("#productBillList").append("<div><p>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
       // $('#subTotal').empty().append(totalToShow);
+       productList[id] = qty;
+       console.log(productList);
+
        //discount
        var totalAmt = parseInt($('#total').text());
        var discount = parseInt($('#discountPercent').val());
