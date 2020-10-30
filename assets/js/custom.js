@@ -272,7 +272,7 @@ $(document).ready(function () {
         $('#searchedNameRandom').html(inputVal);
     });
     //ADD PRODUCT TO BILL
-    var productList = [][];
+    var productList ;
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var prodName = $("#product"+id).attr("prodname")
