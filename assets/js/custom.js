@@ -322,17 +322,7 @@ $(document).ready(function () {
         $.ajax({
             url: siteUrl + '/logic/insertBillingDetails.php',
             type: 'POST',
-            data: { 
-                  billDiscount: billDiscount, 
-                  billTotal: billTotal, 
-                  billAmountPayable: billAmountPayable,  
-                  customerType: customerType,  
-                  customerId: customerId, 
-                  randomCustomerName: randomCustomerName, 
-                  staffId: staffId, 
-                  servicesTaken: serviceIdList, 
-                  prodList: productList,
-                },
+            data: {  billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: productList},
             success: function (data) {
                 console.log(data);
                // $('#successMessage').html('');
