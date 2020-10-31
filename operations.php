@@ -154,6 +154,11 @@ class Operations {
             return false;
         }
     }
+    //FETCH PRODUCT QTY
+    // function fetchProductQty($prodID){
+        
+
+    // }
     //INVENTORY
     function addInventory($prodID,$price,$qty){
         $date = date('Y-m-d');
@@ -161,7 +166,19 @@ class Operations {
         $totalamount = $qty*$price;
         $subSql = "INSERT INTO `inventory` (`productID`, `cost`, `qty`, `entrydate`, `totalamount`) VALUES ('".$prodID."','".$price."', '".$qty."','".$date."','".$totalamount."')";
         if($conn->query($subSql) === TRUE){
-            return true;
+            $query = "SELECT totalqty FROM `productList` WHERE productID = '".$prodID."'";
+            $result = $conn->query($query);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $totalqty = $row['totalqty'];
+                }
+            }
+            $totalqty = $totalqty + $qty;
+            $setQuery = "UPDATE `productList` SET `totalqty`= '".$totalqty."' WHERE productID = '".$prodID."'";
+            if($conn->query($setQuery) === TRUE){
+                return true;
+            }
+            
         }
         else {
             $log = "Error: " . $subSql . "<br>" . $conn->error;
