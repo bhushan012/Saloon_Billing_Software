@@ -265,7 +265,7 @@ class Operations {
         }
     }
     //INSERT BILL DETAILS
-    function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds){
+    function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
        $sql = "INSERT INTO `billing`( `billDate`, `billDiscountSelected`, `billDiscount`, `billTotal`, `billAmountPayable`, `customerType`, `customerId`, `staffId`, `randomCustomerName`) 
@@ -276,6 +276,11 @@ class Operations {
           foreach ($servicesIds as $value) {
               $subsql = "INSERT INTO `bill_services`(`billNo`, `serviceId`) VALUES ('".$billId."','".$value."')";
               $result = $conn->query($subsql);
+          }
+          foreach ($productList as $key => $value) {
+              $pID = str_replace("prod","",$key);
+              $addProd = "INSERT INTO `productBilling`(`billID`, `productID`, `qty`) VALUES ('".$billId."','".$pID."','".$value."')";
+              $result = $conn->query($addProd);
           }
           return true;
         }
