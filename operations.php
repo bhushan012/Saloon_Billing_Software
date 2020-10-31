@@ -154,11 +154,7 @@ class Operations {
             return false;
         }
     }
-    //FETCH PRODUCT QTY
-    // function fetchProductQty($prodID){
-        
-
-    // }
+    
     //INVENTORY
     function addInventory($prodID,$price,$qty){
         $date = date('Y-m-d');
@@ -281,6 +277,24 @@ class Operations {
             return "";
         }
     }
+    //FUNCTION UPDATE SOLD COUNT INVENTORY
+    function updateSoldCount($prodID , $count){
+        global $conn;
+        $query = "SELECT totalqty , sold FROM `productList` WHERE productID = '".$prodID."'";
+            $result = $conn->query($query);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $totalqty = $row['totalqty'];
+                    $sold = $row['sold'];
+                }
+            }
+            $sold = $sold + $count;
+            $setQuery = "UPDATE `productList` SET `sold`= '".$sold."' WHERE productID = '".$prodID."'";
+            if($conn->query($setQuery) === TRUE){
+                return true;
+            }
+
+    }
     //INSERT BILL DETAILS
     function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
@@ -298,6 +312,17 @@ class Operations {
               $pID = str_replace("prod","",$key);
               $addProd = "INSERT INTO `productBilling`(`billID`, `productID`, `qty`) VALUES ('".$billId."','".$pID."','".$value."')";
               $result = $conn->query($addProd);
+              $query = "SELECT totalqty , sold FROM `productList` WHERE productID = '".$pID."'";
+            $result = $conn->query($query);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                   // $totalqty = $row['totalqty'];
+                    $sold = $row['sold'];
+                }
+            }
+            $sold = $sold + $value;
+            $setQuery = "UPDATE `productList` SET `sold`= '".$sold."' WHERE productID = '".$pID."'";
+            $conn->query($setQuery);
           }
           return true;
         }
@@ -374,4 +399,5 @@ class Operations {
             return "";
         }
     }
+    
 }
