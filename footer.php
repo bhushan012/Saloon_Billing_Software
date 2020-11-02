@@ -77,7 +77,7 @@ $(document).ready(function(){
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Jan", "Feb", "Mar", "April", "May", "June", "Jul", "Aug", "Sept", "Nov", "Dec"],
+            labels: ["Jan", "Feb", "Mar", "April", "May", "June", "Jul", "Aug", "Sept","Oct", "Nov", "Dec"],
             datasets: [{
                 label: 'Sales per month',
                 data: [<?php foreach($data as $key => $value){ echo "'"; echo $value; echo "'";echo ",";} ?>],
