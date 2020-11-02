@@ -17,7 +17,10 @@ include "urlMapping.php";
         $data = array();
         $z=0;
         foreach ($months as $key => $value) {
-            $data[$z] = $key;
+            $result = $operationInstance->fetchMonthlySales($key);
+            while ($row = $result->fetch_assoc()) {
+                $data[$z]=  $row['total'];
+            }
             $z++;
         }
 
@@ -27,7 +30,7 @@ include "urlMapping.php";
             $services[$i] = $row['serviceName'];
             $i++;
         }
-        print_r($services);
+        //print_r($services);
 
 
 ?>

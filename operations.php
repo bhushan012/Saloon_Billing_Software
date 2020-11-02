@@ -399,5 +399,17 @@ class Operations {
             return "";
         }
     }
+    function fetchMonthlySales($month){
+        $first_day = date('Y-'.$month.'-01'); 
+        $last_day  = date('Y-'.$month.'-t');
+        $query = "SELECT SUM(billAmountPayable) as total FROM `billing` WHERE billDate BETWEEN '".$first_day."' AND '".$last_day."'";
+        global $conn;
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
     
 }
