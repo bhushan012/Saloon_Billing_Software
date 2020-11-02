@@ -3,7 +3,20 @@ include "operations.php";
 $operationInstance = new Operations();
 
 ?>
+<?php
+        $months = array();
+        for ($i = 1; $i < 13; $i++) {
+            $timestamp = mktime(0, 0, 0, $i, 1);
+            $months[date('n', $timestamp)] = date('F', $timestamp);
+        }
+        $data = array();
+        $z=0;
+        foreach ($months as $key) {
+            $data[$z] = $key;
+        }
 
+
+?>
 </main>
 </div>
 </div>
@@ -39,20 +52,7 @@ $operationInstance = new Operations();
 
 
 </footer>
-<?php
-        $months = array();
-        for ($i = 1; $i < 13; $i++) {
-            $timestamp = mktime(0, 0, 0, $i, 1);
-            $months[date('n', $timestamp)] = date('F', $timestamp);
-        }
-        $data = array();
-        $z=0;
-        foreach ($months as $key) {
-            $data[$z] = $key;
-        }
 
-
-?>
 <script type="text/javascript">
 $(document).ready(function(){
    // console.log(<?php //foreach($data as $value){ echo $value; echo ",";} ?>)
