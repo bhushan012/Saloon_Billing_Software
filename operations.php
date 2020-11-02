@@ -84,7 +84,7 @@ class Operations {
         }
     }
     Function getAllServices(){
-        $sql = "SELECT sd.serviceName,sd.cost,sc.categoryName FROM service_details as sd INNER JOIN saloon_category as sc ON sd.serviceCategoryId = sc.categoryId";
+        $sql = "SELECT sd.serviceId,sd.serviceName,sd.cost,sc.categoryName FROM service_details as sd INNER JOIN saloon_category as sc ON sd.serviceCategoryId = sc.categoryId";
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
@@ -403,6 +403,19 @@ class Operations {
         $first_day = date('Y-'.$month.'-01'); 
         $last_day  = date('Y-'.$month.'-t');
         $query = "SELECT SUM(billAmountPayable) as total FROM `billing` WHERE billDate BETWEEN '".$first_day."' AND '".$last_day."'";
+        global $conn;
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    function perServiceSale($serviceID){
+        $month = date('m');
+        $first_day = date('Y-'.$month.'-01'); 
+        $last_day  = date('Y-'.$month.'-t');
+        $query = "SELECT COUNT(bill_services.serviceId) as totalCount FROM `billing` INNER JOIN bill_services ON billing.billNo = bill_services.billNo WHERE bill_services.serviceId = '".$serviceID."' AND billing.billDate BETWEEN '".$first_day."' AND '".$last_day."'";
         global $conn;
         $result = $conn->query($query);
         if ($result->num_rows > 0) {

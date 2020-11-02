@@ -7,14 +7,14 @@ include "urlMapping.php";
 ?>
 <?php
         $result = $operationInstance->getProductPrice(1);
-
+        $perServiceCount = array();
         $months = array();
+        $data = array();
         for ($i = 1; $i < 13; $i++) {
             $timestamp = mktime(0, 0, 0, $i, 1);
             $months[date('n', $timestamp)] = date('F', $timestamp);
         }
 
-        $data = array();
         $z=0;
         foreach ($months as $key => $value) {
             $result = $operationInstance->fetchMonthlySales($key);
@@ -26,8 +26,14 @@ include "urlMapping.php";
 
         $result = $operationInstance->getAllServices();
         $i= 0 ;
+        
         while ($row = $result->fetch_assoc()) {
             $services[$i] = $row['serviceName'];
+            $id = $row['serviceId'];
+            $result = $operationInstance->perServiceSale($id);
+            while ($row = $result->fetch_assoc()) {
+                $perServiceCount[$i]=  $row['totalCount'];
+            }
             $i++;
         }
         //print_r($services);
@@ -129,7 +135,7 @@ $(document).ready(function(){
         data: {
             labels: [<?php foreach($services as $key => $value){ echo "'"; echo $value; echo "'";echo ",";} ?>],
             datasets: [{
-                data: [300, 50, 100, 40, 120],
+                data: [<?php foreach($perServiceCount as $key => $value){ echo "'"; echo $value; echo "'";echo ",";} ?>],
                 backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
                 hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
             }]
