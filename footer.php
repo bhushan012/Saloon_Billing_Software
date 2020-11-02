@@ -1,7 +1,8 @@
 <?php 
-include "urlMapping.php"; 
+
  include "operations.php";
  $operationInstance = new Operations();
+ include "urlMapping.php"; 
 
 ?>
 <?php
