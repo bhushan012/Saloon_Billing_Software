@@ -11,9 +11,10 @@
             $timestamp = mktime(0, 0, 0, $i, 1);
             $months[date('n', $timestamp)] = date('F', $timestamp);
         }
+        
         $data = array();
         $z=0;
-        foreach ($months as $key) {
+        foreach ($months as $key => $value) {
             $data[$z] = $key;
             $z++;
         }
