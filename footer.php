@@ -1,21 +1,21 @@
 <?php 
 
- include "operations.php";
- $operationInstance = new Operations();
+// include "operations.php";
+// $operationInstance = new Operations();
  include "urlMapping.php"; 
 
 ?>
 <?php
-        // $months = array();
-        // for ($i = 1; $i < 13; $i++) {
-        //     $timestamp = mktime(0, 0, 0, $i, 1);
-        //     $months[date('n', $timestamp)] = date('F', $timestamp);
-        // }
-        // $data = array();
-        // $z=0;
-        // foreach ($months as $key) {
-        //     $data[$z] = $key;
-        // }
+        $months = array();
+        for ($i = 1; $i < 13; $i++) {
+            $timestamp = mktime(0, 0, 0, $i, 1);
+            $months[date('n', $timestamp)] = date('F', $timestamp);
+        }
+        $data = array();
+        $z=0;
+        foreach ($months as $key) {
+            $data[$z] = $key;
+        }
 
 
 ?>
