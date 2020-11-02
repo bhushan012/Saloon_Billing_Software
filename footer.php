@@ -30,13 +30,13 @@ include "urlMapping.php";
         while ($row = $result->fetch_assoc()) {
             $services[$i] = $row['serviceName'];
             $id = $row['serviceId'];
-            $result = $operationInstance->perServiceSale($id);
-            while ($row = $result->fetch_assoc()) {
-                $perServiceCount[$i]=  $row['totalCount'];
+            $result1 = $operationInstance->perServiceSale($id);
+            while ($row1 = $result1->fetch_assoc()) {
+                $perServiceCount[$i]=  $row1['totalCount'];
             }
             $i++;
         }
-        //print_r($services);
+        print_r($services);
 
 
 ?>
