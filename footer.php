@@ -25,6 +25,7 @@ include "urlMapping.php";
         $i= 0 ;
         while ($row = $result->fetch_assoc()) {
             $services[$i] = $row['serviceName'];
+            $i++;
         }
         print_r($services);
 
