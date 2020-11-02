@@ -15,6 +15,7 @@
         $z=0;
         foreach ($months as $key) {
             $data[$z] = $key;
+            $z++;
         }
 
         print_r($data);
