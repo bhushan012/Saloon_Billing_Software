@@ -17,6 +17,8 @@
             $data[$z] = $key;
         }
 
+        print_r($data);
+
 
 ?>
 </main>
