@@ -55,6 +55,7 @@ $operationInstance = new Operations();
 ?>
 <script type="text/javascript">
 $(document).ready(function(){
+    console.log(<?php foreach($data as $value){ echo $value; echo ",";} ?>)
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -62,7 +63,7 @@ $(document).ready(function(){
             labels: ["Jan", "Feb", "Mar", "April", "May", "June", "Jul", "Aug", "Sept", "Nov", "Dec"],
             datasets: [{
                 label: 'Sales per month',
-                data: [<?php foreach($data as $key=> $value){ echo $value; echo ",";} ?>],
+                data: [],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
