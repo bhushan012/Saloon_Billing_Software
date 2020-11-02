@@ -1,4 +1,8 @@
-<?php include "urlMapping.php"; ?>
+<?php include "urlMapping.php"; 
+include "operations.php";
+$operationInstance = new Operations();
+
+?>
 
 </main>
 </div>
@@ -35,7 +39,20 @@
 
 
 </footer>
+<?php
+        $months = array();
+        for ($i = 1; $i < 13; $i++) {
+            $timestamp = mktime(0, 0, 0, $i, 1);
+            $months[date('n', $timestamp)] = date('F', $timestamp);
+        }
+        $data = array();
+        $z=0;
+        foreach ($months as $key) {
+            $data[$z] = $key;
+        }
 
+
+?>
 <script type="text/javascript">
 $(document).ready(function(){
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -45,7 +62,7 @@ $(document).ready(function(){
             labels: ["Jan", "Feb", "Mar", "April", "May", "June", "Jul", "Aug", "Sept", "Nov", "Dec"],
             datasets: [{
                 label: 'Sales per month',
-                data: [5000, 10000, 20000, 40000, 5000, 20000, 30000, 50000, 90000, 30000, 50000, 80000],
+                data: [<?php foreach($data as $key=> $value){ echo $value; echo ",";} ?>],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
