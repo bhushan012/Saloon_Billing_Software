@@ -1,13 +1,13 @@
 <?php 
 
 include "urlMapping.php";
-include "operations.php";
-$operationInstance = new Operations(); 
+//include "operations.php";
+//$operationInstance = new Operations(); 
 
 ?>
 <?php
         $result = $operationInstance->getProductPrice(1);
-        
+
         $months = array();
         for ($i = 1; $i < 13; $i++) {
             $timestamp = mktime(0, 0, 0, $i, 1);
