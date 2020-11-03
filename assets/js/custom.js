@@ -344,7 +344,7 @@ $(document).ready(function () {
 
    $( ".openServiceModal").on("click", function () {
      var billID = $(this).data('billid');
-     $("#myModalLabel2").html( myBookId );
+     $("#myModalLabel2").html( billID );
      // As pointed out in comments, 
      // it is unnecessary to have to manually call the modal.
      // $('#addBookDialog').modal('show');
