@@ -15,7 +15,6 @@ $i=0;
             </th>
             <th class="th-sm">Price
             </th>
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -27,8 +26,6 @@ $i=0;
                     <td><?= $row['cost']; ?></td>
                 </tr>
             <?php } ?>
-    
-      ?>
     </tbody>
     
 </table>

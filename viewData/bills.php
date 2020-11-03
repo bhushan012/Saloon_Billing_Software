@@ -2,7 +2,7 @@
 include "../header.php";
 include "../operations.php";
 ?>
-<table id="customersData" class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
+<table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th class="th-sm">Bill No
