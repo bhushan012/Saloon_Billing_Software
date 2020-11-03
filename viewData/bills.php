@@ -30,15 +30,15 @@ include "../operations.php";
         while ($row = $result->fetch_assoc()) {
         ?>
             <tr>
-                <td><?= $row['billNo']; ?></td>
+                <td> #TTT <?= $row['billNo']; ?></td>
                 <td><?= $row['fullName']; ?></td>
                 <td><?= $row['staffName']; ?></td>
                 <td><?= $row['billDate']; ?></td>
                 <td><?= $row['billTotal']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>
                 <td><?= $row['billAmountPayable'];?></td>
-                <td><button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
-			Right Sidebar Modal
+                <td><button type="button" class="btn btn-demo openServiceModal" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
+			        View Details
 		</button></td>
             </tr>
         <?php } ?>
@@ -65,13 +65,14 @@ include "../operations.php";
     </tfoot>
 </table>
 <!-- Modal -->
-<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+<div class="modal right fade warning" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 
 				<div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel2">Bill ID: </h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
+					
 				</div>
 
 				<div class="modal-body">
