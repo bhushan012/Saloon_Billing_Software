@@ -344,7 +344,8 @@ $(document).ready(function () {
 
    $( ".openServiceModal").on("click", function () {
      var billID = $(this).data('billid');
-     $("#myModalLabel2").html( billID );
+     var name = $(this).data('fullName');
+     $("#myModalLabel2").html(name);
      $.ajax({
         url: siteUrl + '/logic/viewCustomerDetailsList.php',
         type: 'POST',

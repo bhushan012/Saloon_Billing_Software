@@ -20,6 +20,12 @@ $i=0;
     <tbody>
     <?php
           while ($row = $result->fetch_assoc()) {
+              $date = $row['billDate'];
+            //   $name = $row[''];
+            //   $name = $row[''];
+            //   $name = $row[''];
+            //   $name = $row[''];
+            //   $name = $row[''];
             ?>
                 <tr>
                     <td><?= $row['serviceName']; ?></td>

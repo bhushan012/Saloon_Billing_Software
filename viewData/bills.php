@@ -37,7 +37,7 @@ include "../operations.php";
                 <td><?= $row['billTotal']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>
                 <td><?= $row['billAmountPayable'];?></td>
-                <td><button type="button" class="btn btn-demo openServiceModal" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
+                <td><button type="button" class="btn btn-demo openServiceModal" data-name = "<?php echo $row['fullName']; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
 			        View Details
 		</button></td>
             </tr>
@@ -76,6 +76,7 @@ include "../operations.php";
 				</div>
 
 				<div class="modal-body">
+                    <h4 class="">Services Taken</h4>
 					<div id="showServiceData">
 
                     </div>
