@@ -424,5 +424,16 @@ class Operations {
             return "";
         }
     }
+    //function to get details by bill ID
+    function billDetailsByID ($billid){
+        $query = "SELECT * FROM billing INNER JOIN bill_services on billing.billNo = bill_services.billNo INNER JOIN service_details ON bill_services.serviceId = service_details.serviceId INNER JOIN customers ON billing.customerId = customers.customer_Id WHERE billing.billNo = '".$billid."'";
+        global $conn;
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
     
 }

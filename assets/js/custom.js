@@ -345,9 +345,19 @@ $(document).ready(function () {
    $( ".openServiceModal").on("click", function () {
      var billID = $(this).data('billid');
      $("#myModalLabel2").html( billID );
-     // As pointed out in comments, 
-     // it is unnecessary to have to manually call the modal.
-     // $('#addBookDialog').modal('show');
+     $.ajax({
+        url: siteUrl + '/logic/viewCustomerDetailsList.php',
+        type: 'POST',
+        data: {  billID : billID},
+        success: function (data) {
+            console.log(data);
+            $("#showServiceData").html("");
+            $("#showServiceData").html(data);
+        },
+        error: function (data) {
+            console.log('failed ajax with error: ' + data);
+        }
+    });
 });
 
 });
