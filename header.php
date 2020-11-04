@@ -18,36 +18,37 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
+
+<body id="bodyLoad" style="overflow-x: hidden;">
 <div class="loading" id="loading">
-      
-      <div class="finger finger-1">
+
+    <div class="finger finger-1">
         <div class="finger-item">
-          <span></span><i></i>
+            <span></span><i></i>
         </div>
-      </div>
-                  <div class="finger finger-2">
+    </div>
+    <div class="finger finger-2">
         <div class="finger-item">
-          <span></span><i></i>
+            <span></span><i></i>
         </div>
-      </div>
-                  <div class="finger finger-3">
+    </div>
+    <div class="finger finger-3">
         <div class="finger-item">
-          <span></span><i></i>
+            <span></span><i></i>
         </div>
-      </div>
-                  <div class="finger finger-4">
+    </div>
+    <div class="finger finger-4">
         <div class="finger-item">
-          <span></span><i></i>
+            <span></span><i></i>
         </div>
-      </div>
-                  <div class="last-finger">
+    </div>
+    <div class="last-finger">
         <div class="last-finger-item"><i></i></div>
-      </div>
-          <div class="company">
-            <h6>WEBLOZEE <span class="creations">Creation</span></h6>
-          </div>
-            </div>
-<body id="bodyLoad" class="d-none" style="overflow-x: hidden;">
+    </div>
+    <div class="company">
+         <h6>WEBLOZEE <span class="creations">Creation</span></h6>
+    </div>
+</div>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">WEBLOZEE</a>
     <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
