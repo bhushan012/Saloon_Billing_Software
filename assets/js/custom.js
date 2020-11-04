@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#loading").fadeOut(20000, function() {
+    $("#loading").fadeOut(5000, function() {
         $("#one").removeClass("d-none");        
         $("#one").addClass("d-block"); 
         $("#two").removeClass("d-none");        
