@@ -97,6 +97,9 @@ i {
   height: 75px;
   *zoom: 1;
 }
+.finger {
+  background: #4492f4;
+}
 .loading:before,
 .loading:after {
   display: table;
@@ -1257,5 +1260,4 @@ i {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #4492f4;
 }
