@@ -342,7 +342,7 @@ $(document).ready(function () {
         });
     });
 
-   $( ".openServiceModal , .clientServiceHistory").on("click", function () {
+   $(document).on("click",".openServiceModal , .clientServiceHistory", function () {
      var billID = $(this).data('billid');
      var name = $(this).data('name');
      $("#myModalLabel2").html(name);
