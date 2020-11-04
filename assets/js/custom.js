@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#loading").fadeOut(2000, function() {
+    $("#loading").fadeOut(20000, function() {
         $("#bodyLoad").fadeIn(1000);        
     });
     var siteUrl = "http://parlourbilling.weblozee.com";
