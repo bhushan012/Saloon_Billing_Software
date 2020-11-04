@@ -34,6 +34,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $i++;
         $totalExpense = $totalExpense + $row['totalamount'];
+        $productTotalStock = $row['totalqty'];
+        $productTotalSold =  $row['sold'];
+        $productCurrentStock =  $productTotalStock - $productTotalSold;
         ?>
           <tr>
               <td><?php echo $i;?></td>
@@ -84,16 +87,37 @@ else{?>
 </table>
 <div class="mt-3 row">
     <div class="col-md-4">
-       <h3>TOTAL EXPENSE: </h3>
+       <h5>TOTAL EXPENSE: </h5>
     </div>
 
     <div class="col-md-4">
 
     </div>
     <div class="col-md-4">
-       <h3>Rs. <?echo $totalExpense;?></h3>
+       <h5>Rs. <?echo $totalExpense;?></h5>
     </div>
 </div>
+<?php
+if(!empty($prodID)){
+    ?>
+        <div class="mt-3 row">
+            <div class="col-md-12">
+            <div class="wrapper">
+                    <p>
+                        Total Stock Till Date: <?php echo $productTotalStock; ?>
+                    </p>
+                    <p>
+                        Total Stock Sold: <?php echo $productTotalSold; ?>
+                    </p>
+                    <p>
+                        Current Stock: <?php echo $productCurrentStock; ?>
+                    </p>
+            </div>
+            </div>
+        </div>
+    <?php
+}
+?>
 <?php
 //echo $result;
 ?>
