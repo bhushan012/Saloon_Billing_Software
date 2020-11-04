@@ -28,6 +28,35 @@
 </nav>
 
 <body style="overflow-x: hidden;">
+<div class="loading" id="loading">
+      
+      <div class="finger finger-1">
+        <div class="finger-item">
+          <span></span><i></i>
+        </div>
+      </div>
+                  <div class="finger finger-2">
+        <div class="finger-item">
+          <span></span><i></i>
+        </div>
+      </div>
+                  <div class="finger finger-3">
+        <div class="finger-item">
+          <span></span><i></i>
+        </div>
+      </div>
+                  <div class="finger finger-4">
+        <div class="finger-item">
+          <span></span><i></i>
+        </div>
+      </div>
+                  <div class="last-finger">
+        <div class="last-finger-item"><i></i></div>
+      </div>
+          <div class="company">
+            <h6>WEBLOZEE <span class="creations">Creation</span></h6>
+          </div>
+            </div>
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
