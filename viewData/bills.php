@@ -2,6 +2,7 @@
 include "../header.php";
 include "../operations.php";
 ?>
+<h1 class="display-5 mt-3">Customer Bills</h1>
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -19,7 +20,7 @@ include "../operations.php";
             </th>
             <th class="th-sm">Amount Paid
             </th>
-            <th class="th-sm">Services</th>
+            <th class="th-sm">Details</th>
         </tr>
     </thead>
     <tbody>
@@ -38,7 +39,7 @@ include "../operations.php";
                 <td><?= $row['billDiscount']; ?></td>
                 <td><?= $row['billAmountPayable'];?></td>
                 <td><button type="button" class="btn btn-demo openServiceModal" data-name = "<?php echo $row['fullName']; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
-			        View Details
+			        View 
 		</button></td>
             </tr>
         <?php } ?>
@@ -60,7 +61,7 @@ include "../operations.php";
             </th>
             <th>Amount Paid
             </th>
-            <th>Services</th>
+            <th>Details</th>
         </tr>
     </tfoot>
 </table>
