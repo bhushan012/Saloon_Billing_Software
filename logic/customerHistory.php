@@ -46,7 +46,9 @@ if ($result->num_rows > 0) {
               <td><?php echo $row['staffName'];?></td>
               <td><?php echo $row['billAmountPayable'];?></td>
               <td><?php echo $row['billDate'];?></td>
-              <td></td>
+              <td><button type="button" class="btn btn-demo clientServiceHistory" data-name = "<?php echo $row['fullName']; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal3">
+			        View 
+		</button></td>
           </tr>
 
          

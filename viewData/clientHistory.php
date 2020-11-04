@@ -21,5 +21,25 @@ $operationInstance = new Operations();
 </div>
 
 
-</table>
+<!-- Modal -->
+<div class="modal right fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header bg-warning text-white">
+                    <h4 class="modal-title" id="myModalLabel2">Bill ID: </h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					
+				</div>
+
+				<div class="modal-body ">
+                    
+					<div id="showServiceData">
+
+                    </div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
 <?php include "../footer.php"; ?>
