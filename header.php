@@ -26,8 +26,6 @@
         </li>
     </ul>
 </nav>
-
-<body style="overflow-x: hidden;">
 <div class="loading" id="loading">
       
       <div class="finger finger-1">
@@ -57,6 +55,8 @@
             <h6>WEBLOZEE <span class="creations">Creation</span></h6>
           </div>
             </div>
+<body id="bodyLoad" style="overflow-x: hidden;">
+
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
