@@ -75,8 +75,8 @@ include "../operations.php";
 					
 				</div>
 
-				<div class="modal-body">
-                    <h4 class="">Services Taken</h4>
+				<div class="modal-body ">
+                    
 					<div id="showServiceData">
 
                     </div>
