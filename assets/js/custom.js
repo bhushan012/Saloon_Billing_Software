@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#loading").fadeOut(20000, function() {
-        $("#bodyLoad").fadeIn(500000);        
+        $("#one").removeClass("d-none");        
+        $("#one").addClass("d-block");        
     });
     var siteUrl = "http://parlourbilling.weblozee.com";
    
