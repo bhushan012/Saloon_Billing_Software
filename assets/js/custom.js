@@ -1,10 +1,12 @@
 $(document).ready(function () {
     $("#loading").fadeOut(10000, function() {
-        $("body").css("background: #4492f4")
-        $("#one").removeClass("d-none");        
+       // $("body").css("background: #4492f4")
+       $("#bodyLoad").removeClass("blue");  
+       $("#one").removeClass("d-none");        
+               
         //$("#one").addClass("d-block"); 
         $("#two").removeClass("d-none");        
-        $("body").css("background: transparent")        
+        $("body").css("background-color: transparent")        
     });
     var siteUrl = "http://parlourbilling.weblozee.com";
    

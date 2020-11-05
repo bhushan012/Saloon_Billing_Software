@@ -19,7 +19,7 @@
 </head>
 
 
-<body id="bodyLoad" style="overflow-x: hidden;">
+<body id="bodyLoad" class="blue" style="overflow-x: hidden;">
 <div class="loading" id="loading">
 
     <div class="finger finger-1">

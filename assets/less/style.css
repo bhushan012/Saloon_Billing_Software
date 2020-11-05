@@ -87,6 +87,9 @@ i {
   font-weight: 300;
   src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
 }
+.blue {
+  background: #4492f4;
+}
 .loading {
   position: absolute;
   left: 50%;
@@ -96,7 +99,6 @@ i {
   width: 180px;
   height: 75px;
   *zoom: 1;
-  background: #4492f4;
 }
 .loading:before,
 .loading:after {
