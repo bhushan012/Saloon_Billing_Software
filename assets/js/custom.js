@@ -297,7 +297,7 @@ $(document).ready(function () {
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
        finalList.filter(function (param) { 
-        if (param.productIdentifier == productIdentifier) {
+        if (param.productIdentifier == productId) {
             console.log("FOUND PRODUCT IN ARRAY");
         }else{
             console.log("NOT FOUND");
