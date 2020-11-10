@@ -308,7 +308,8 @@ $(document).ready(function () {
       // $('#subTotal').empty().append(totalToShow);
        productList = {
            id : id,
-           qty : qty
+           qty : qty,
+           productIdentifier : productId
        }
        finalList.push(productList);
        console.log(finalList);
@@ -320,6 +321,14 @@ $(document).ready(function () {
        console.log(totalAmt + "totalAmt Price");
        $('#subTotal').empty().append(totalAmt - amtDiscounted);
     });
+    function RemoveNode(productIdentifier) {
+        return finalList.filter(function(emp) {
+            if (emp.productIdentifier == id) {
+                return false;
+            }
+            return true;
+        });
+    }
     $("body").on("click", ".removeProduct", function () {
         var rowId = $(this).parents(".removeProductRow").attr("id");
         var productPrice = $("#"+rowId+"Price").val();
@@ -333,6 +342,8 @@ $(document).ready(function () {
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         $(this).parents(".removeProductRow").remove();
+        var newData = RemoveNode(rowId);
+        console.log(newData);
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
