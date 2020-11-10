@@ -5,9 +5,11 @@ $(document).ready(function () {
        $("#one").removeClass("d-none");        
           
         //$("#one").addClass("d-block"); 
+        $('#loading').hide(); 
         $("#two").removeClass("d-none");        
-        $("body").css("background-color: transparent")        
-    },5000);
+        $("body").css("background-color: transparent")  
+             
+    },3000);
     var siteUrl = "http://parlourbilling.weblozee.com";
    
         
