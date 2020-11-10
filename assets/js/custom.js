@@ -219,6 +219,7 @@ $(document).ready(function () {
         $('#discount').empty().append(amtDiscounted);
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
+        console.log(serviceIdList);
     });
 
     $("body").on("click", ".removeService", function () {
@@ -240,6 +241,7 @@ $(document).ready(function () {
           if(i != -1) {
                 serviceIdList.splice(i, 1);
           }
+
     });
 
     $('#searchCustomer').on('keypress', function () {
