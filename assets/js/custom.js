@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $("#loading").show(5000, function() {
        // $("body").css("background: #4492f4")
-       $("#bodyLoad").removeClass("blue");  
-       $("#one").removeClass("d-none");        
+    //    $("#bodyLoad").removeClass("blue");  
+    //    $("#one").removeClass("d-none");        
        $(this).hide(5000);   
         //$("#one").addClass("d-block"); 
         // $("#two").removeClass("d-none");        
