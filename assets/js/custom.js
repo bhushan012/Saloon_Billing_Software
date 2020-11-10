@@ -296,8 +296,10 @@ $(document).ready(function () {
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
-       finalList.filter(function (param) { 
-        if (param.productIdentifier == productId) {
+       var checkInArray = finalList.includes(productId);
+       console.log(checkInArray+" checkInArray");
+    //    finalList.filter(function (param) { 
+        if (checkInArray == true) {
             alert("Product Already Exists.");
         }else{
             console.log("NOT FOUND");
@@ -326,7 +328,7 @@ $(document).ready(function () {
             console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
         }
-        });
+        // });
        
     });
     function RemoveNode(productIdentifier) {
