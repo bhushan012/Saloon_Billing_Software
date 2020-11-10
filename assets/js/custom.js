@@ -323,7 +323,7 @@ $(document).ready(function () {
     });
     function RemoveNode(productIdentifier) {
         return finalList.filter(function(emp) {
-            if (emp.productIdentifier == id) {
+            if (emp.productIdentifier == productIdentifier) {
                 return false;
             }
             return true;
