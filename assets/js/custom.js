@@ -3,10 +3,10 @@ $(document).ready(function () {
        // $("body").css("background: #4492f4")
        $("#bodyLoad").removeClass("blue");  
        $("#one").removeClass("d-none");        
-               
+       $(this).hide(5000);   
         //$("#one").addClass("d-block"); 
-        $("#two").removeClass("d-none");        
-        $("body").css("background-color: transparent")        
+        // $("#two").removeClass("d-none");        
+        // $("body").css("background-color: transparent")        
     });
     var siteUrl = "http://parlourbilling.weblozee.com";
    
