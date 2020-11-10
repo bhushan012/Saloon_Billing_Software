@@ -1,16 +1,12 @@
 $(document).ready(function () {
-    $("#loading").show(5000, function() {
+    $("#loading").hide(5000, function() {
        // $("body").css("background: #4492f4")
-    //    $("#bodyLoad").removeClass("blue");  
-    //    $("#one").removeClass("d-none");        
-       $(this).hide(function(){
-            $("#one").addClass("d-block"); 
-            $("#two").removeClass("d-none");        
-            $("body").css("background-color: transparent")       
-       });   
+       $("#bodyLoad").removeClass("blue");  
+       $("#one").removeClass("d-none");        
+          
         //$("#one").addClass("d-block"); 
-        // $("#two").removeClass("d-none");        
-        // $("body").css("background-color: transparent")        
+        $("#two").removeClass("d-none");        
+        $("body").css("background-color: transparent")        
     });
     var siteUrl = "http://parlourbilling.weblozee.com";
    
