@@ -12,8 +12,6 @@ $(document).ready(function () {
     },3000);
     var siteUrl = "http://parlourbilling.weblozee.com";
    
-        
-   
     // END MODEL
     $('#datepicker').datepicker({
         autoclose: true,
@@ -237,6 +235,11 @@ $(document).ready(function () {
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         $(this).parents(".removeServiceRow").remove();
         $('.' + rowId).remove();
+          // Find and remove item from an array
+          var i = serviceIdList.indexOf(rowId);
+          if(i != -1) {
+                serviceIdList.splice(i, 1);
+          }
     });
 
     $('#searchCustomer').on('keypress', function () {
