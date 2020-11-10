@@ -206,7 +206,7 @@ $(document).ready(function () {
         var randomNumber = Math.floor((Math.random() * 100) + 1);
         var serviceIdentifier = serviceId +"+"+ randomNumber+'List';
         var serviceList = "<div class='mb-3 mt-1 removeServiceRow' id='" + serviceIdentifier +"'><span class='removeService mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span><span>" + serviceName + "</span></div>";
-        var costList = "<div class='mb-3 mt-1 " + serviceIdentifier + "List'>" + price + "</div>";
+        var costList = "<div class='mb-3 mt-1 " + serviceIdentifier + "'>" + price + "</div>";
         serviceIdList.push(serviceIdentifier);
         $('#serviceList').append(serviceList);
         $('#costList').append(costList);
