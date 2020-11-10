@@ -299,7 +299,7 @@ $(document).ready(function () {
        var i= 0;
        var checkInArray = finalList.forEach(function(){
            i++;
-        console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i].productIdentifier);
+        console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i]);
        });
        console.log(checkInArray+" checkInArray");
     //    finalList.filter(function (param) { 
