@@ -304,7 +304,7 @@ $(document).ready(function () {
        var totalToShow = costqty + parseInt(totalCost);
        console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
        $("#total").empty().append(totalToShow);
-       $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+price+"'><p class='priceRow'>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
+       $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><span class='removeService mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
       // $('#subTotal').empty().append(totalToShow);
        productList = {
            id : id,
