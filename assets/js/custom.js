@@ -296,8 +296,10 @@ $(document).ready(function () {
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
+       var i= 0;
        var checkInArray = finalList.forEach(function(){
-        console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++");
+           i++;
+        console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i);
        });
        console.log(checkInArray+" checkInArray");
     //    finalList.filter(function (param) { 
