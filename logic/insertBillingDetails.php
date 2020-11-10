@@ -15,8 +15,8 @@ $sendList;
 $serviceid;
 $i=0;
 foreach ($servicesIds as $value) {
-    
-    $serviceid[$i] = str_replace("serviceId","",$value);
+    $serviceArray = explode("-",$value);
+    $serviceid[$i] = str_replace("serviceId","",$serviceArray[0]);
     $i++;
 
 }

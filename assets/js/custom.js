@@ -238,7 +238,6 @@ $(document).ready(function () {
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         $(this).parents(".removeServiceRow").remove();
         $('.' + rowId).remove();
-        console.log(rowId);
           // Find and remove item from an array
           var i = serviceIdList.indexOf(rowId);
           if(i != -1) {

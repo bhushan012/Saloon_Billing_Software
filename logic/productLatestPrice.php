@@ -10,5 +10,5 @@ if ($result->num_rows > 0) {
     }
 }
 ?>
-<label for="firstName">Price</label>
+<label class ="h6" for="firstName">Price:</label>
 <input type="text" name="prodPrice" class="form-control" id="latestPrice" value = "<?php echo $price;?>" required>
