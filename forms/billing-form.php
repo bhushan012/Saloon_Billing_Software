@@ -115,6 +115,7 @@ if (isset($_GET['success'])) {
             <div class="dropdown-divider"></div>
             <div class="row">
                 <div class="col-md-4">
+                <label class="h6">Product:</label>
                     <select class="form-control mb-2" id="productSelect" name="product" required>
                         <option value="">Select Products</option>
                         <?php

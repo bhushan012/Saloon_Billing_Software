@@ -296,6 +296,13 @@ $(document).ready(function () {
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
+       finalList.filter(function (param) { 
+        if (emp.productIdentifier == productIdentifier) {
+            console.log("FOUND PRODUCT IN ARRAY");
+        }else{
+            console.log("NOT FOUND");
+        }
+        });
        var prodName = $("#product"+id).attr("prodname")
        var qty = $("#addQty").val()
        var price = $("#latestPrice").val()
@@ -342,8 +349,7 @@ $(document).ready(function () {
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         $(this).parents(".removeProductRow").remove();
-        var newData = RemoveNode(rowId);
-        console.log(newData);
+        finalList = RemoveNode(rowId);
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
