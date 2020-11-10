@@ -295,16 +295,16 @@ $(document).ready(function () {
     var finalList = [];
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
+       var productId = "productId-" + id;
        var prodName = $("#product"+id).attr("prodname")
        var qty = $("#addQty").val()
        var price = $("#latestPrice").val()
        var totalCost = $("#total").text();
-
        var costqty = parseInt(qty)*parseInt(price);
        var totalToShow = costqty + parseInt(totalCost);
        console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
        $("#total").empty().append(totalToShow);
-       $("#productBillList").append("<div><p>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
+       $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+price+"'><p class='priceRow'>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
       // $('#subTotal').empty().append(totalToShow);
        productList = {
            id : id,
@@ -312,7 +312,6 @@ $(document).ready(function () {
        }
        finalList.push(productList);
        console.log(finalList);
-
        //discount
        var totalAmt = parseInt($('#total').text());
        var discount = parseInt($('#discountPercent').val());
@@ -320,6 +319,20 @@ $(document).ready(function () {
        $('#discount').empty().append(amtDiscounted);
        console.log(totalAmt + "totalAmt Price");
        $('#subTotal').empty().append(totalAmt - amtDiscounted);
+    });
+    $("body").on("click", ".priceRow", function () {
+        var rowId = $(this).parents(".removeProductRow").attr("id");
+        var productPrice = $("#"+rowId+"Price").val();
+        var total = $('#total').text();
+        var calculateTotal = parseInt(total) - parseInt(productPrice);
+        $('#total').empty().append(calculateTotal);
+        var totalAmt = parseInt($('#total').text());
+        var discount = parseInt($('#discountPercent').val());
+        var amtDiscounted = percentage(totalAmt, discount);
+        $('#discount').empty().append(amtDiscounted);
+        console.log(totalAmt + "totalAmt Price");
+        $('#subTotal').empty().append(totalAmt - amtDiscounted);
+        $(this).parents(".removeProductRow").remove();
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
