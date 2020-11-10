@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#loading").setTimeout(function() {
+    setTimeout(function() {
        // $("body").css("background: #4492f4")
        $("#bodyLoad").removeClass("blue");  
        $("#one").removeClass("d-none");        
