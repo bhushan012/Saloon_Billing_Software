@@ -298,35 +298,36 @@ $(document).ready(function () {
        var productId = "productId-" + id;
        finalList.filter(function (param) { 
         if (param.productIdentifier == productId) {
-            console.log("FOUND PRODUCT IN ARRAY");
+            alert("Product Already Exists.");
         }else{
             console.log("NOT FOUND");
+            var prodName = $("#product"+id).attr("prodname")
+            var qty = $("#addQty").val()
+            var price = $("#latestPrice").val()
+            var totalCost = $("#total").text();
+            var costqty = parseInt(qty)*parseInt(price);
+            var totalToShow = costqty + parseInt(totalCost);
+            console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
+            $("#total").empty().append(totalToShow);
+            $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'><span class='removeProduct mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
+            // $('#subTotal').empty().append(totalToShow);
+            productList = {
+                id : id,
+                qty : qty,
+                productIdentifier : productId
+            }
+            finalList.push(productList);
+            console.log(finalList);
+            //discount
+            var totalAmt = parseInt($('#total').text());
+            var discount = parseInt($('#discountPercent').val());
+            var amtDiscounted = percentage(totalAmt, discount);
+            $('#discount').empty().append(amtDiscounted);
+            console.log(totalAmt + "totalAmt Price");
+            $('#subTotal').empty().append(totalAmt - amtDiscounted);
         }
         });
-       var prodName = $("#product"+id).attr("prodname")
-       var qty = $("#addQty").val()
-       var price = $("#latestPrice").val()
-       var totalCost = $("#total").text();
-       var costqty = parseInt(qty)*parseInt(price);
-       var totalToShow = costqty + parseInt(totalCost);
-       console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
-       $("#total").empty().append(totalToShow);
-       $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'><span class='removeProduct mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
-      // $('#subTotal').empty().append(totalToShow);
-       productList = {
-           id : id,
-           qty : qty,
-           productIdentifier : productId
-       }
-       finalList.push(productList);
-       console.log(finalList);
-       //discount
-       var totalAmt = parseInt($('#total').text());
-       var discount = parseInt($('#discountPercent').val());
-       var amtDiscounted = percentage(totalAmt, discount);
-       $('#discount').empty().append(amtDiscounted);
-       console.log(totalAmt + "totalAmt Price");
-       $('#subTotal').empty().append(totalAmt - amtDiscounted);
+       
     });
     function RemoveNode(productIdentifier) {
         return finalList.filter(function(emp) {
