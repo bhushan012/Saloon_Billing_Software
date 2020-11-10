@@ -297,7 +297,7 @@ $(document).ready(function () {
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
        finalList.filter(function (param) { 
-        if (emp.productIdentifier == productIdentifier) {
+        if (param.productIdentifier == productIdentifier) {
             console.log("FOUND PRODUCT IN ARRAY");
         }else{
             console.log("NOT FOUND");
@@ -350,6 +350,7 @@ $(document).ready(function () {
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         $(this).parents(".removeProductRow").remove();
         finalList = RemoveNode(rowId);
+        // console.log(newData);
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
