@@ -296,7 +296,9 @@ $(document).ready(function () {
     $("#addProductToBill").on("click", function(){
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
-       var checkInArray = finalList.includes(productId,0);
+       var checkInArray = finalList.forEach(function(){
+        console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++");
+       });
        console.log(checkInArray+" checkInArray");
     //    finalList.filter(function (param) { 
         if (checkInArray == true) {
