@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#loading").fadeOut(10000, function() {
+    $("#loading").fadeOut(5000, function() {
        // $("body").css("background: #4492f4")
        $("#bodyLoad").removeClass("blue");  
        $("#one").removeClass("d-none");        
