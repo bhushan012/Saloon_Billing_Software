@@ -302,9 +302,11 @@ $(document).ready(function () {
         var productCheck = finalList[i].productIdentifier;
         if(productCheck == productId){
             alert("Product already exists.");
-            // e.preventDefault();
+            e.preventDefault();
         }
-            console.log("NOT FOUND");
+        i++;
+       });
+       console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
             var qty = $("#addQty").val()
             var price = $("#latestPrice").val()
@@ -329,9 +331,6 @@ $(document).ready(function () {
             $('#discount').empty().append(amtDiscounted);
             console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
-        
-        i++;
-       });
     //    finalList.filter(function (param) { 
         // });
        
