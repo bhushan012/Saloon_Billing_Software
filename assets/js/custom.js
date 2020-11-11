@@ -302,7 +302,7 @@ $(document).ready(function () {
         var productCheck = finalList[i].productIdentifier;
         if(productCheck == productId){
             alert("Product already exists.");
-            e.preventDefault();
+            // e.preventDefault();
         }
             console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
