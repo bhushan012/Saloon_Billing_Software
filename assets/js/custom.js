@@ -297,15 +297,11 @@ $(document).ready(function () {
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
        var i= 0;
-       var checkInArray = finalList.forEach(function(){
-         
-        console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i].productIdentifier);
-        i++;
-       });
-       console.log(checkInArray+" checkInArray");
-    //    finalList.filter(function (param) { 
-        if (checkInArray == true) {
-            alert("Product Already Exists.");
+        finalList.forEach(function(){
+        // console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i].productIdentifier);
+        var productCheck = finalList[i].productIdentifier;
+        if(productCheck == productId){
+            alert("Product already exists.")
         }else{
             console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
@@ -333,6 +329,9 @@ $(document).ready(function () {
             console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
         }
+        i++;
+       });
+    //    finalList.filter(function (param) { 
         // });
        
     });
