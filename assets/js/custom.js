@@ -382,22 +382,29 @@ $(document).ready(function () {
 
         console.log("hmm");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
-        $.ajax({
-            url: siteUrl + '/logic/insertBillingDetails.php',
-            type: 'POST',
-            data: {  billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: finalList},
-            success: function (data) {
-                console.log(data);
-               // $('#successMessage').html('');
-                $('#successMessage').attr("class","d-block");
-                $('#successMessage valid-feedback').attr("class","d-block");
-                // MODEL OPEN
-                $('#staticBackdrop').modal('show');
-            },
-            error: function (data) {
-                console.log('failed ajax with error: ' + data);
-            }
-        });
+         if(!empty(randomCustomerName)){
+            $.ajax({
+                url: siteUrl + '/logic/insertBillingDetails.php',
+                type: 'POST',
+                data: {  billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: finalList},
+                success: function (data) {
+                    console.log(data);
+                   // $('#successMessage').html('');
+                    $('#successMessage').attr("class","d-block");
+                    $('#successMessage valid-feedback').attr("class","d-block");
+                    // MODEL OPEN
+                    $('#staticBackdrop').modal('show');
+                },
+                error: function (data) {
+                    console.log('failed ajax with error: ' + data);
+                }
+            });
+
+         }
+         else{
+             alert("enter customer name");
+         }
+        
     });
 
    $(document).on("click",".openServiceModal , .clientServiceHistory", function () {
