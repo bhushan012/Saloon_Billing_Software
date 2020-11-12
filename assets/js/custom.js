@@ -128,6 +128,7 @@ $(document).ready(function () {
                 console.log(data);
                 $('#priceDisplay').html('');
                 $('#priceDisplay').html(data);
+                $("#addQty").val("1");
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
