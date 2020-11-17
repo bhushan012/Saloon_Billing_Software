@@ -74,10 +74,6 @@ include "urlMapping.php";
 
                 </div>
                 
-                <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-info waves-effect waves-light text-white" ><a href="<?= $viewDataUrl; ?>/bills.php"><i class="fa fa-check "></i></a></button>
-                </div>
             </div>
         </div>
   </div>
