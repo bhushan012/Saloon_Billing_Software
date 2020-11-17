@@ -407,7 +407,16 @@ $(document).ready(function () {
          }
          else{
             // alert("enter customer name");
-             $("#smallAlert").html("The Name is missing");
+            $("#smallAlert").html("");
+             if(randomCustomerName == ''){
+                $("#smallAlert").html("<p>The Customer Name Is Missing</p>");
+             }
+             if(customerId == ''){
+                $("#smallAlert").html("<p>The Customer Name Is Missing</p>");
+             }
+             if(billTotal == ''){
+                $("#smallAlert").html("<p>Looks Your Is Not Calculated</p>");
+             }
              // MODEL OPEN
              $('#alertValidationModal').modal('show');
          }

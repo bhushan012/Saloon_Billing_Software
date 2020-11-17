@@ -70,7 +70,7 @@ include "urlMapping.php";
                 <div class="modal-header bg-danger text-white">
                     <h5 class="modal-title" id="staticBackdropLabel">See Whats Missing!</h5>
                 </div>
-                <div id="smallAlert">
+                <div id="smallAlert" class="p-4">
 
                 </div>
                 
