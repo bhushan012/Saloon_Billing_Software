@@ -383,7 +383,7 @@ $(document).ready(function () {
 
         console.log(randomCustomerName+ "name");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
-         if(randomCustomerName != null){
+         if(randomCustomerName != ''){
             $.ajax({
                 url: siteUrl + '/logic/insertBillingDetails.php',
                 type: 'POST',
