@@ -377,10 +377,11 @@ $(document).ready(function () {
         var billAmountPayable = $('#subTotal').text();
         var customerType = $('#customerTypeSelect').val();
         var customerId = $('#customerId').val();
-        var randomCustomerName = $('#searchedNameRandom').val();
+        var randomCustomerName = '';
+        randomCustomerName = $('#searchedNameRandom').val();
         var staffId = $('#staffSelect').val();
 
-        console.log("hmm");
+        console.log(randomCustomerName+ "name");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
          if(randomCustomerName != null){
             $.ajax({
