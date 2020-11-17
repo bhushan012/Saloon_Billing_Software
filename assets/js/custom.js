@@ -409,13 +409,13 @@ $(document).ready(function () {
             // alert("enter customer name");
             $("#smallAlert").html("");
              if(randomCustomerName == '' || customerId == ''){
-                $("#smallAlert").html("<p>The Customer Name Is Missing</p>");
+                $("#smallAlert").append("<p>The Customer Name Is Missing</p>");
              }
              if(staffId == ''){
-                $("#smallAlert").html("<p>The Staff Name Is Missing</p>");
+                $("#smallAlert").append("<p>The Staff Name Is Missing</p>");
              }
              if(billTotal == '0'){
-                $("#smallAlert").html("<p>Looks Your Total Is Not Calculated</p>");
+                $("#smallAlert").append("<p>Looks Your Total Is Not Calculated</p>");
              }
              // MODEL OPEN
              $('#alertValidationModal').modal('show');
