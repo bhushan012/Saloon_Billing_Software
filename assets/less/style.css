@@ -1272,3 +1272,6 @@ body {
   background-color: #000000;
   opacity: 0.2;
 }
+.company_header ul {
+  line-height: 3;
+}
