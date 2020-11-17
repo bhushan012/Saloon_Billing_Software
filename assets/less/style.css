@@ -1261,3 +1261,10 @@ i {
 body {
   font-family: 'Open Sans', sans-serif;
 }
+.company_header {
+  background-color: #FECE00;
+}
+.company_header .opacity {
+  background-color: #000000;
+  opacity: 0.2;
+}
