@@ -373,17 +373,19 @@ $(document).ready(function () {
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
-        var billTotal = $('#total').text();
+        var billTotal = '';
+         billTotal = $('#total').text();
         var billAmountPayable = $('#subTotal').text();
         var customerType = $('#customerTypeSelect').val();
         var customerId = $('#customerId').val();
         var randomCustomerName = '';
         randomCustomerName = $('#searchedNameRandom').val();
-        var staffId = $('#staffSelect').val();
+        var staffId = '';
+         staffId = $('#staffSelect').val();
 
         console.log(randomCustomerName+ "name");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
-         if(randomCustomerName != ''){
+         if(randomCustomerName != '' && staffId != ''  && billTotal != '' ){
             $.ajax({
                 url: siteUrl + '/logic/insertBillingDetails.php',
                 type: 'POST',
