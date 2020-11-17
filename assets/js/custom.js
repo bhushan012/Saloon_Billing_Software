@@ -408,14 +408,14 @@ $(document).ready(function () {
          else{
             // alert("enter customer name");
             $("#smallAlert").html("");
-             if(randomCustomerName == ''){
+             if(randomCustomerName == '' || customerId == ''){
                 $("#smallAlert").html("<p>The Customer Name Is Missing</p>");
              }
-             if(customerId == ''){
-                $("#smallAlert").html("<p>The Customer Name Is Missing</p>");
+             if(staffId == ''){
+                $("#smallAlert").html("<p>The Staff Name Is Missing</p>");
              }
              if(billTotal == ''){
-                $("#smallAlert").html("<p>Looks Your Is Not Calculated</p>");
+                $("#smallAlert").html("<p>Looks Your Total Is Not Calculated</p>");
              }
              // MODEL OPEN
              $('#alertValidationModal').modal('show');
