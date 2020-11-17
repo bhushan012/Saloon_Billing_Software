@@ -65,11 +65,21 @@ include "urlMapping.php";
 <!---Small Modal-->
     <div id="alertValidationModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-        <div id="smallAlert">
+  <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="staticBackdropLabel">See Whats Missing!</h5>
+                </div>
+                <div id="smallAlert">
 
+                </div>
+                
+                <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-info waves-effect waves-light text-white" ><a href="<?= $viewDataUrl; ?>/bills.php"><i class="fa fa-check "></i></a></button>
+                </div>
+            </div>
         </div>
-    </div>
   </div>
 </div>
 <!---Small Modal-->
