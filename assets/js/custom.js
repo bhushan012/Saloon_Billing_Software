@@ -386,7 +386,7 @@ $(document).ready(function () {
 
         console.log(randomCustomerName+ "name");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
-         if((randomCustomerName != '' || customerId != '') && staffId != ''  && billTotal != '' ){
+         if((randomCustomerName != '' || customerId != '') && staffId != ''  && billTotal != '0' ){
             $.ajax({
                 url: siteUrl + '/logic/insertBillingDetails.php',
                 type: 'POST',
@@ -414,7 +414,7 @@ $(document).ready(function () {
              if(staffId == ''){
                 $("#smallAlert").html("<p>The Staff Name Is Missing</p>");
              }
-             if(billTotal == ''){
+             if(billTotal == '0'){
                 $("#smallAlert").html("<p>Looks Your Total Is Not Calculated</p>");
              }
              // MODEL OPEN
