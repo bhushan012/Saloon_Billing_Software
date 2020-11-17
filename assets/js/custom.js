@@ -406,7 +406,10 @@ $(document).ready(function () {
 
          }
          else{
-             alert("enter customer name");
+            // alert("enter customer name");
+             $("#smallAlert").html("The Name is missing");
+             // MODEL OPEN
+             $('#alertValidationModal').modal('show');
          }
         
     });
