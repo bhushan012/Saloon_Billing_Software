@@ -415,7 +415,7 @@ $(document).ready(function () {
                 $("#smallAlert").append("<p>The Staff Name Is Missing</p>");
              }
              if(billTotal == '0'){
-                $("#smallAlert").append("<p>Looks Your Total Is Not Calculated</p>");
+                $("#smallAlert").append("<p>Looks Your Total Is Not Calculated! Please add services or products</p>");
              }
              // MODEL OPEN
              $('#alertValidationModal').modal('show');
