@@ -40,7 +40,7 @@ if(isset($_GET['success'])){
                 echo '<div class="invalid-feedback">Something went wrong. Try again.</div>';
             }
         ?>
-     <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productFormSubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">+ ADD NEW PRODUCT</button>
+     <!-- <button class="mt-2 btn btn-primary"  type="submit">+ ADD NEW PRODUCT</button> -->
 </form>
 
 <?php include "../footer.php"; ?>
