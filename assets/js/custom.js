@@ -56,6 +56,7 @@ $(document).ready(function () {
     }
 
     $("#discountBtn").on('click', function (e) {
+        console.log("in discount");
         var totalAmt = parseInt($('#total').text());
         var discount = parseInt($('#discountPercent').val());
         if(discount>99){
