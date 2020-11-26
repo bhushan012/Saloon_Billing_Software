@@ -5,7 +5,7 @@ if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
 }
 ?>
-<form id="customerForm" method="POST" action="../submitData.php"> 
+<form method="POST" action="../submitData.php"> 
     <h1 class="display-5 mt-3">Customer Form</h1>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
