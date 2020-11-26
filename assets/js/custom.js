@@ -58,18 +58,25 @@ $(document).ready(function () {
     $("#discountBtn").on('click', function (e) {
         var totalAmt = parseInt($('#total').text());
         var discount = parseInt($('#discountPercent').val());
-        var amtDiscounted = percentage(totalAmt, discount);
-        $('#discount').empty().append(amtDiscounted);
-        console.log(totalAmt + "totalAmt Price");
-        $('#subTotal').empty().append(totalAmt - amtDiscounted);
-    });
-    $("#discountPercent").on("keydown",function(){
-        console.log("1");
-        var valueCheck = $(this).val();
-        if(valueCheck > 90){
-            alert("hello");
+        if(discount>99){
+            alert("Incorrect Discount Added");
+            $('#discountPercent').val("");
+
+        }else{
+            var amtDiscounted = percentage(totalAmt, discount);
+            $('#discount').empty().append(amtDiscounted);
+            console.log(totalAmt + "totalAmt Price");
+            $('#subTotal').empty().append(totalAmt - amtDiscounted);
         }
+        
     });
+    // $("#discountPercent").on("keydown",function(){
+    //     console.log("1");
+    //     var valueCheck = $(this).val();
+    //     if(valueCheck > 90){
+    //         alert("hello");
+    //     }
+    // });
     $("#defaultCheck1").on('click', function (e) {
         if ($('#defaultCheck1').is(':checked')) {
             $('.dicountCol').css('display', 'block');
