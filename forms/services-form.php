@@ -28,7 +28,7 @@ if(isset($_GET['success'])){
         </div>
         <div class="form-group col-md-6">
             <label for="lastName">Service Cost</label>
-            <input type="number" name="serviceCost" class="form-control" id="serviceCost" required>
+            <input type="number" min="0" name="serviceCost" class="form-control" id="serviceCost" required>
         </div>
     </div>
     <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="servicesFormSubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">Submit form</button>
