@@ -63,7 +63,7 @@ $(document).ready(function () {
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
     });
-    $("#discountPercent").on("change",function(){
+    $("#discountPercent").on("keypress",function(){
         console.log("1");
         var valueCheck = $(this).val();
         if(valueCheck > 99){
