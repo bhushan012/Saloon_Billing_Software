@@ -138,7 +138,7 @@ class Operations {
     function addNewProduct($productName,$productCost,$qty)
     {
         $date = date('Y-m-d');
-        $sql = "INSERT INTO `productList` (`productName`, `date`) VALUES ('".$productName."', '".$date."')";
+        $sql = "INSERT INTO `productList` (`productName`, `date`,`totalqty`) VALUES ('".$productName."', '".$date."', '".$qty."')";
         global $conn;
         if ($conn->query($sql) === TRUE) {
             $prodID = $conn->insert_id;
