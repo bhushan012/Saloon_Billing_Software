@@ -64,6 +64,7 @@ $(document).ready(function () {
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
     });
     $("#discountPercent").on("change",function(){
+        console.log("1");
         var valueCheck = $(this).val();
         if(valueCheck > 99){
             alert("hello");
