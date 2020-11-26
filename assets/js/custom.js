@@ -66,7 +66,7 @@ $(document).ready(function () {
     $("#discountPercent").on("keydown",function(){
         console.log("1");
         var valueCheck = $(this).val();
-        if(valueCheck > 99){
+        if(valueCheck > 90){
             alert("hello");
         }
     });
