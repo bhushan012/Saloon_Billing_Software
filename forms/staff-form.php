@@ -20,7 +20,7 @@ if(isset($_GET['success'])){
         </div>
         <div class="form-group col-md-6">
             <label for="phno">Phone Number</label>
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phno" class="form-control" id="serviceCost" required>
+            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" name="phno" class="form-control" id="serviceCost" required>
         </div>
     </div>
     <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="staffFormSubmit" value="staffFormSubmit" id="servicesFormSubmit" type="submit">ADD STAFF</button>
