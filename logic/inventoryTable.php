@@ -100,19 +100,22 @@ else{?>
 <?php
 if(!empty($prodID)){
     ?>
-        <div class="mt-3 row">
-            <div class="col-md-12">
-            <div class="wrapper">
-                    <p>
+        <div class="mt-3 row divider">
+            <div class="col-md-4">
+                    <p class="h5">
                         Total Stock Till Date: <?php echo $productTotalStock; ?>
                     </p>
-                    <p>
-                        Total Stock Sold: <?php echo $productTotalSold; ?>
+            </div>
+            <div class="col-md-4">
+            <p class="h5">
+                        Total Stock Sold Till Date: <?php echo $productTotalSold; ?>
                     </p>
-                    <p>
+                   
+            </div>
+            <div class="col-md-4">
+            <p class="h5">
                         Current Stock: <?php echo $productCurrentStock; ?>
                     </p>
-            </div>
             </div>
         </div>
     <?php
