@@ -218,7 +218,7 @@ class Operations {
         if(!empty($month) && !empty($prodID)){
             $query = " inventory.entrydate BETWEEN '".$first_day."' AND '".$last_day."' AND inventory.productID = '".$prodID."'";
         }
-        $sql = "SELECT * FROM inventory WHERE ".$query;  
+        $sql = "SELECT * FROM inventory INNER JOIN productList ON inventory.productID = productList.productID WHERE ".$query;  
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
