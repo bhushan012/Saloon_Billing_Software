@@ -401,7 +401,7 @@ $(document).ready(function () {
 
         console.log(randomCustomerName+ "name");
         console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
-         if((randomCustomerName != '' || customerId != '') && staffId != ''  && billTotal != '0' ){
+        // if((randomCustomerName != '' || customerId != '') && staffId != ''  && billTotal != '0'){
             $.ajax({
                 url: siteUrl + '/logic/insertBillingDetails.php',
                 type: 'POST',
@@ -419,22 +419,22 @@ $(document).ready(function () {
                 }
             });
 
-         }
-         else{
-            // alert("enter customer name");
-            $("#smallAlert").html("");
-             if(randomCustomerName == '' || customerId == ''){
-                $("#smallAlert").append("<p>The Customer Name Is Missing</p>");
-             }
-             if(staffId == ''){
-                $("#smallAlert").append("<p>The Staff Name Is Missing</p>");
-             }
-             if(billTotal == '0'){
-                $("#smallAlert").append("<p>Looks Your Total Is Not Calculated! Please add services or products</p>");
-             }
-             // MODEL OPEN
-             $('#alertValidationModal').modal('show');
-         }
+        //  }
+        //  else{
+        //     // alert("enter customer name");
+        //     $("#smallAlert").html("");
+        //      if(randomCustomerName == '' || customerId == ''){
+        //         $("#smallAlert").append("<p>The Customer Name Is Missing</p>");
+        //      }
+        //      if(staffId == ''){
+        //         $("#smallAlert").append("<p>The Staff Name Is Missing</p>");
+        //      }
+        //      if(billTotal == '0'){
+        //         $("#smallAlert").append("<p>Looks Your Total Is Not Calculated! Please add services or products</p>");
+        //      }
+        //      // MODEL OPEN
+        //      $('#alertValidationModal').modal('show');
+        //  }
         
     });
 

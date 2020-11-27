@@ -37,8 +37,6 @@ include "urlMapping.php";
             $i++;
         }
         //print_r($services);
-
-
 ?>
 </main>
 </div>
