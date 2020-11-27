@@ -8,7 +8,7 @@ $operationInstance = new Operations();
         <label>Select Month:</label>
         <?php
         $months = array();
-for ($i = 1; $i < 12; $i++) {
+for ($i = 1; $i <= 12; $i++) {
     $timestamp = mktime(0, 0, 0, $i, 1);
     $months[date('n', $timestamp)] = date('F', $timestamp);
 } ?>
