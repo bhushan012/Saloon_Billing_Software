@@ -239,6 +239,4 @@ if (isset($_GET['success'])) {
         </div>
     </div>
 </div>
-
-
 <?php include "../footer.php"; ?>

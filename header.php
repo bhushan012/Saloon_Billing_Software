@@ -1,7 +1,6 @@
 <?php include "urlMapping.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,7 +98,7 @@
                             <div class="collapse" id="collapseExample">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/customer-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/customerAdd-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
                                     </li>
 
                                     <li class="nav-item">
