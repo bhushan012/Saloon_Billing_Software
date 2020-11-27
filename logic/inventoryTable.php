@@ -34,9 +34,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $i++;
         $totalExpense = $totalExpense + $row['totalamount'];
-        $productTotalStock = $row['totalqty'];
-        $productTotalSold =  $row['sold'];
-        $productCurrentStock =  $productTotalStock - $productTotalSold;
+        // $productTotalStock = $row['totalqty'];
+        // $productTotalSold =  $row['sold'];
+        // $productCurrentStock =  $productTotalStock - $productTotalSold;
         ?>
           <tr>
               <td><?php echo $i;?></td>
@@ -98,9 +98,15 @@ else{?>
     </div>
 </div>
 <?php
-if(!empty($prodID)){
-    ?>
-    </hr>
+ $result =  $operationInstance->productGetStock($prodID);
+ if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $productTotalStock = $row['totalqty'];
+        $productTotalSold =  $row['sold'];
+        $productCurrentStock =  $productTotalStock - $productTotalSold;
+    }
+ }
+?>
         <div class="mt-3 row">
             <div class="col-md-4">
                     <p class="h5">
@@ -120,7 +126,7 @@ if(!empty($prodID)){
             </div>
         </div>
     <?php
-}
+
 ?>
 <?php
 //echo $result;
