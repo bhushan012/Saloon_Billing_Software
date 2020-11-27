@@ -1,6 +1,7 @@
 <?php 
 include '../header.php';
 include '../operations.php';
+$operationInstance = new Operations(); 
 $successResponse = "3";
 if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
