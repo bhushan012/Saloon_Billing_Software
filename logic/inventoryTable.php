@@ -100,7 +100,8 @@ else{?>
 <?php
 if(!empty($prodID)){
     ?>
-        <div class="mt-3 row divider">
+    </hr>
+        <div class="mt-3 row">
             <div class="col-md-4">
                     <p class="h5">
                         Total Stock Till Date: <?php echo $productTotalStock; ?>
