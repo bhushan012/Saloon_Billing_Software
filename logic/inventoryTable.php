@@ -104,8 +104,7 @@ else{?>
         $productTotalStock = $row['totalqty'];
         $productTotalSold =  $row['sold'];
         $productCurrentStock =  $productTotalStock - $productTotalSold;
-    }
- }
+  
 ?>
         <div class="mt-3 row">
             <div class="col-md-4">
@@ -126,7 +125,8 @@ else{?>
             </div>
         </div>
     <?php
-
+  }
+}
 ?>
 <?php
 //echo $result;
