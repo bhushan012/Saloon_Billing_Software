@@ -85,7 +85,7 @@ else{?>
         </tr>
     </tfoot>
 </table>
-<div class="mt-3 row">
+<div class="mt-3 row" style="border-bottom: 2px dotted #bbb">
     <div class="col-md-4">
        <h5>TOTAL EXPENSE: </h5>
     </div>
