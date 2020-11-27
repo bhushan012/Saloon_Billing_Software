@@ -1,6 +1,6 @@
 <?php 
-require "../header.php";
-require "../operations.php";
+include '../header.php';
+include '../operations.php';
 $successResponse = "3";
 if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
@@ -74,4 +74,4 @@ if(isset($_GET['success'])){
             
     </div>
 </form>
-<?php require "../footer.php"; ?>
+<?php include "../footer.php"; ?>

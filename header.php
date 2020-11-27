@@ -1,6 +1,7 @@
 <?php include "urlMapping.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,44 +20,44 @@
 
 
 <body id="bodyLoad" class="blue" style="overflow-x: hidden;">
-<div class="loading" id="loading">
+    <div class="loading" id="loading">
 
-    <div class="finger finger-1">
-        <div class="finger-item">
-            <span></span><i></i>
+        <div class="finger finger-1">
+            <div class="finger-item">
+                <span></span><i></i>
+            </div>
+        </div>
+        <div class="finger finger-2">
+            <div class="finger-item">
+                <span></span><i></i>
+            </div>
+        </div>
+        <div class="finger finger-3">
+            <div class="finger-item">
+                <span></span><i></i>
+            </div>
+        </div>
+        <div class="finger finger-4">
+            <div class="finger-item">
+                <span></span><i></i>
+            </div>
+        </div>
+        <div class="last-finger">
+            <div class="last-finger-item"><i></i></div>
+        </div>
+        <div class="company">
+            <h6>WEBLOZEE <span class="creations">Creation</span></h6>
         </div>
     </div>
-    <div class="finger finger-2">
-        <div class="finger-item">
-            <span></span><i></i>
-        </div>
-    </div>
-    <div class="finger finger-3">
-        <div class="finger-item">
-            <span></span><i></i>
-        </div>
-    </div>
-    <div class="finger finger-4">
-        <div class="finger-item">
-            <span></span><i></i>
-        </div>
-    </div>
-    <div class="last-finger">
-        <div class="last-finger-item"><i></i></div>
-    </div>
-    <div class="company">
-         <h6>WEBLOZEE <span class="creations">Creation</span></h6>
-    </div>
-</div>
-<nav id="one" class="d-none  navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">WEBLOZEE</a>
-    <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
-        </li>
-    </ul>
-</nav>
+    <nav id="one" class="d-none  navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">WEBLOZEE</a>
+        <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+            </li>
+        </ul>
+    </nav>
     <div id="two" class="container-fluid d-none">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -157,7 +158,7 @@
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD STAFF</a>
                                     </li>
-                                     <li class="nav-item">
+                                    <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/staffHistory.php"><i class="fa fa-eye p-1"></i>STAFF</a>
                                     </li>
                                     <!-- <li class="nav-item">
