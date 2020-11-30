@@ -29,11 +29,18 @@ include "../operations.php";
         $operationInstance = new Operations();
         $result = $operationInstance->getBillDetail();
         while ($row = $result->fetch_assoc()) {
+            $custID = $row['customerId'];
+            $custNameRes = $operationInstance->fetchCustomerName($custID);
+            while ($sub1 = $custNameRes->fetch_assoc()){
+                $customerName = $sub1['fullName'];
+
+            }
+            $name = $customerName = "" ? $customerName : $row['randomCustomerName'];
         ?>
             <tr>
                 <td> #TTT <?= $row['billNo']; ?></td>
-                <td><?= $row['fullName']; ?></td>
-                <td><?= $row['staffName']; ?></td>
+                <td><?= $name; ?></td>
+                <td><?= $row['staffId']; ?></td>
                 <td><?= $row['billDate']; ?></td>
                 <td><?= $row['billTotal']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>

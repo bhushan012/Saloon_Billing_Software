@@ -343,7 +343,21 @@ class Operations {
     }
     //FETCH BILL DETAILS
     function getBillDetail(){
-        $sql = "SELECT billing.billNo , billing.billDate , billing.billTotal , billing.billDiscount , billing.billAmountPayable , customers.fullName , staffTable.staffName FROM `billing` INNER JOIN customers ON billing.customerId = customers.customer_Id INNER JOIN staffTable ON billing.staffId = staffTable.staffID ORDER BY billing.billNo DESC";
+       // $sql = "SELECT billing.billNo , billing.billDate , billing.billTotal , billing.billDiscount , billing.billAmountPayable , customers.fullName , staffTable.staffName FROM `billing` INNER JOIN customers ON billing.customerId = customers.customer_Id INNER JOIN staffTable ON billing.staffId = staffTable.staffID ORDER BY billing.billNo DESC";
+       $sql = "SELECT billNo, billDate, billTotal,billDiscount,billAmountPayable, randomCustomerName , customerId, staffId
+       FROM billing 
+       ORDER BY billNo DESC"; 
+       global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
+    //customer name by id
+    function fetchCustomerName ($custID){
+        $sql = "SELECT fullName FROM customers WHERE customer_Id = '".$custID."'";
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
@@ -351,6 +365,7 @@ class Operations {
         }else{
             return "";
         }
+
     }
     //FETCH CLIENT HISTORY
     function getClientHistory($staffID){
