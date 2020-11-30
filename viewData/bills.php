@@ -29,13 +29,14 @@ include "../operations.php";
         $operationInstance = new Operations();
         $result = $operationInstance->getBillDetail();
         while ($row = $result->fetch_assoc()) {
-            $custID = $row['customerId'];
-            $custNameRes = $operationInstance->fetchCustomerName($custID);
-            while ($sub1 = $custNameRes->fetch_assoc()){
-                $customerName = $sub1['fullName'];
+            $name = "";
+            // $custID = $row['customerId'];
+            // $custNameRes = $operationInstance->fetchCustomerName($custID);
+            // while ($sub1 = $custNameRes->fetch_assoc()){
+            //     $customerName = $sub1['fullName'];
 
-            }
-            $name = $customerName = "" ? $customerName : $row['randomCustomerName'];
+            // }
+            // $name = $customerName = "" ? $customerName : $row['randomCustomerName'];
         ?>
             <tr>
                 <td> #TTT <?= $row['billNo']; ?></td>
