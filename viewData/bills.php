@@ -30,18 +30,18 @@ include "../operations.php";
         $result = $operationInstance->getBillDetail();
         while ($row = $result->fetch_assoc()) {
            // $name = "";
-            //  if ($row['randomCustomerName'] == ""){
-            //     $custID = $row['customerId'];
-            //     $custNameRes = $operationInstance->fetchCustomerName($custID);
-            //     while ($sub1 = $custNameRes->fetch_assoc()){
-            //        $customerName = $sub1['fullName'];
+             if (empty($row['randomCustomerName'])){
+                $custID = $row['customerId'];
+                $custNameRes = $operationInstance->fetchCustomerName($custID);
+                while ($sub1 = $custNameRes->fetch_assoc()){
+                   $customerName = $sub1['fullName'];
    
-            //    }
-            //    $name = $customerName;
-            //  }
-            //  else{
-                 $name = $row['customerId'];
-            // }
+               }
+               $name = $row['customerId'];
+             }
+             else{
+                 $name = $row['randomCustomerName'];
+             }
         ?>
             <tr>
                 <td> #TTT <?= $row['billNo']; ?></td>
