@@ -40,7 +40,7 @@ include "../operations.php";
             //    $name = $customerName;
             //  }
             //  else{
-                 $name = $row['randomCustomerName'];
+                 $name = $row['customerId'];
             // }
         ?>
             <tr>
