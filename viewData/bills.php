@@ -31,12 +31,12 @@ include "../operations.php";
         while ($row = $result->fetch_assoc()) {
            // $name = "";
              if (empty($row['randomCustomerName'])){
-                $custID = $row['customerId'];
-                $custNameRes = $operationInstance->fetchCustomerName($custID);
-                while ($sub1 = $custNameRes->fetch_assoc()){
-                   $customerName = $sub1['fullName'];
+            //     $custID = $row['customerId'];
+            //     $custNameRes = $operationInstance->fetchCustomerName($custID);
+            //     while ($sub1 = $custNameRes->fetch_assoc()){
+            //        $customerName = $sub1['fullName'];
    
-               }
+            //    }
                $name = $row['customerId'];
              }
              else{
