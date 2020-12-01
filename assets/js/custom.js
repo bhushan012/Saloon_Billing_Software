@@ -306,6 +306,27 @@ $(document).ready(function () {
         $('#searchedNameRandom').html('');
         $('#searchedNameRandom').html(inputVal);
     });
+    function checkStock(id , qty){
+        $.ajax({
+            url: siteUrl + '/logic/checkIfQtyAvailable.php',
+            type: 'POST',
+            data: {  prodID: id},
+            success: function (data) {
+                console.log(data + "available");
+                 stockAvailable = data; 
+               
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
+        if(qty > stockAvailable){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
     //ADD PRODUCT TO BILL
     var productList = {};
     var finalList = [];
@@ -325,19 +346,7 @@ $(document).ready(function () {
        });
        //check Availablity
        var stockAvailable;
-       $.ajax({
-        url: siteUrl + '/logic/checkIfQtyAvailable.php',
-        type: 'POST',
-        data: {  prodID: id},
-        success: function (data) {
-            console.log(data + "available");
-             stockAvailable = data; 
-           
-        },
-        error: function (data) {
-            console.log('failed ajax with error: ' + data);
-        }
-    });
+       
     
        console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
@@ -347,15 +356,10 @@ $(document).ready(function () {
             var costqty = parseInt(qty)*parseInt(price);
             var totalToShow = costqty + parseInt(totalCost);
             console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
-            if(stockAvailable <= qty){
-                alert("You Have only "+stockAvailable+ " piece in stock!!");
-                e.preventDefault();
-            }
-            if(stockAvailable >= qty ){
-                $("#total").empty().append(totalToShow);
-                $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'><span class='removeProduct mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
-            }
-           
+            checkVal = checkStock(id,qty);
+            console(checkVal + "return qty");
+            $("#total").empty().append(totalToShow);
+            $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'><span class='removeProduct mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
             // $('#subTotal').empty().append(totalToShow);
             productList = {
                 id : id,
