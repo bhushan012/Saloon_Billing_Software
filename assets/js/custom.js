@@ -324,10 +324,7 @@ $(document).ready(function () {
                 console.log(data + "available");
                  stockAvailable = data; 
                  if(qty > stockAvailable){
-                   alert("ohh yeah")
-                }
-                else{
-                   alert("ohh no!!")
+                   alert("You have only "+stockAvailable+" pieces in stock");
                 }
                
             },
