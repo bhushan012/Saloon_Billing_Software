@@ -48,7 +48,6 @@ include "../operations.php";
                 $staffName = $sub1['staffName'];
 
             }
-          }
 
         ?>
             <tr>
