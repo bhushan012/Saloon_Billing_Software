@@ -331,7 +331,7 @@ $(document).ready(function () {
     }
 
     //check Availablity
-    $("#addQty").keyup( function(){
+    $("#addQty").on('keypress', function(){
         console.log("hello");
     });
     //ADD PRODUCT TO BILL
