@@ -313,6 +313,17 @@ $(document).ready(function () {
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
        var i= 0;
+       
+        finalList.forEach(function(e){
+        // console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i].productIdentifier);
+        var productCheck = finalList[i].productIdentifier;
+        if(productCheck == productId){
+            alert("Product already exists.");
+            e.preventDefault();
+        }
+        i++;
+       });
+       //check Availablity
        $.ajax({
         url: siteUrl + '/logic/checkIfQtyAvailable.php',
         type: 'POST',
@@ -325,15 +336,6 @@ $(document).ready(function () {
             console.log('failed ajax with error: ' + data);
         }
     });
-        finalList.forEach(function(e){
-        // console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i].productIdentifier);
-        var productCheck = finalList[i].productIdentifier;
-        if(productCheck == productId){
-            alert("Product already exists.");
-            e.preventDefault();
-        }
-        i++;
-       });
        console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
             var qty = $("#addQty").val()
