@@ -314,18 +314,20 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data + "available");
                  stockAvailable = data; 
+                 if(qty > stockAvailable){
+                    ch =  false;
+                }
+                else{
+                    ch = true;
+                }
                
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
             }
         });
-        if(qty > stockAvailable){
-            return false;
-        }
-        else{
-            return true;
-        }
+        return ch;
+        
     }
     //ADD PRODUCT TO BILL
     var productList = {};
