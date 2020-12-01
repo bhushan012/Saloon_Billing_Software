@@ -51,7 +51,7 @@ include "../operations.php";
                 <td><?= $row['billTotal']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>
                 <td><?= $row['billAmountPayable'];?></td>
-                <td><button type="button" class="btn btn-demo openServiceModal" data-name = "<?php echo $row['fullName']; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
+                <td><button type="button" class="btn btn-demo openServiceModal" data-name = "<?php echo $name; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
 			        View 
 		</button></td>
             </tr>

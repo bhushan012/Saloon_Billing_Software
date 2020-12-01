@@ -441,6 +441,8 @@ $(document).ready(function () {
    $(document).on("click",".openServiceModal , .clientServiceHistory", function () {
      var billID = $(this).data('billid');
      var name = $(this).data('name');
+     console.log(name + "name");
+     console.log(billID + "bill id");
      $("#myModalLabel2").html(name);
      $.ajax({
         url: siteUrl + '/logic/viewCustomerDetailsList.php',
