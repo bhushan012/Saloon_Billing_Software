@@ -318,7 +318,7 @@ $(document).ready(function () {
         type: 'POST',
         data: {  prodID: id},
         success: function (data) {
-            console.log(data);
+            console.log(data + "available");
            
         },
         error: function (data) {
