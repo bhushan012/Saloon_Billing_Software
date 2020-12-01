@@ -314,7 +314,7 @@ $(document).ready(function () {
 
     //check Availablity
     $("#addQty").on('keypress', function(){
-        $qty = $("#addQty").val();
+        var qty = $("#addQty").val();
         var id = $("#productSelect").val();
         $.ajax({
             url: siteUrl + '/logic/checkIfQtyAvailable.php',
