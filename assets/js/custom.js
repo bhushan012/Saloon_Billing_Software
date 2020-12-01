@@ -324,13 +324,14 @@ $(document).ready(function () {
         i++;
        });
        //check Availablity
+       var stockAvailable;
        $.ajax({
         url: siteUrl + '/logic/checkIfQtyAvailable.php',
         type: 'POST',
         data: {  prodID: id},
         success: function (data) {
             console.log(data + "available");
-            var stockAvailable = data; 
+             stockAvailable = data; 
            
         },
         error: function (data) {
