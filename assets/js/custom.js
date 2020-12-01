@@ -330,12 +330,14 @@ $(document).ready(function () {
         data: {  prodID: id},
         success: function (data) {
             console.log(data + "available");
+            var stockAvailable = data; 
            
         },
         error: function (data) {
             console.log('failed ajax with error: ' + data);
         }
     });
+    
        console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
             var qty = $("#addQty").val()
@@ -344,6 +346,10 @@ $(document).ready(function () {
             var costqty = parseInt(qty)*parseInt(price);
             var totalToShow = costqty + parseInt(totalCost);
             console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
+            if(stockAvailable <= qty){
+                alert("You Have only "+stockAvailable+ " piece in stock!!");
+                e.preventDefault();
+            }
             $("#total").empty().append(totalToShow);
             $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'><span class='removeProduct mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
             // $('#subTotal').empty().append(totalToShow);
