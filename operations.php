@@ -369,7 +369,7 @@ class Operations {
     }
     //Fetch Staff Name
     function fetchStaffName($staffID){
-        $sql = "SELECT staffName FROM staffTable WHERE customer_Id = '".$staffID."'";
+        $sql = "SELECT staffName FROM staffTable WHERE staffID = '".$staffID."'";
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {

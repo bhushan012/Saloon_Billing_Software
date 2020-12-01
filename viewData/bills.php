@@ -43,9 +43,9 @@ include "../operations.php";
                  $name = $row['randomCustomerName'];
              }
              $staffID = $row['staffId'];
-             $custNameRes = $operationInstance->fetchStaffName($staffID);
-             while ($sub1 = $custNameRes->fetch_assoc()){
-                $staffName = $sub1['staffName'];
+             $custNameRes1 = $operationInstance->fetchStaffName($staffID);
+             while ($sub2 = $custNameRes1->fetch_assoc()){
+                $staffName = $sub2['staffName'];
 
             }
 
