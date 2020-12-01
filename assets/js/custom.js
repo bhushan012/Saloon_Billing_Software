@@ -313,6 +313,18 @@ $(document).ready(function () {
        var id = $("#productSelect").val();
        var productId = "productId-" + id;
        var i= 0;
+       $.ajax({
+        url: siteUrl + '/logic/checkIfQtyAvailable.php',
+        type: 'POST',
+        data: {  prodID: id},
+        success: function (data) {
+            console.log(data);
+           
+        },
+        error: function (data) {
+            console.log('failed ajax with error: ' + data);
+        }
+    });
         finalList.forEach(function(e){
         // console.log("fdfdfdfdfdfdfdfd+++++++++++++++++++++"+i+finalList[i].productIdentifier);
         var productCheck = finalList[i].productIdentifier;

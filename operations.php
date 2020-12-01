@@ -378,6 +378,18 @@ class Operations {
             return "";
         }
     }
+    //Fetch Product Quantity
+    function fetchAvailableQty($prodID){
+        $sql = "SELECT totalqty - sold as available FROM `productList` WHERE productID = '".$prodID."'";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+
+    }
     //FETCH CLIENT HISTORY
     function getClientHistory($staffID){
         $sql = "SELECT customers.medicationDetails , customers.allergy, 
