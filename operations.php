@@ -367,6 +367,17 @@ class Operations {
         }
 
     }
+    //Fetch Staff Name
+    function fetchStaffName($staffID){
+        $sql = "SELECT staffName FROM staffTable WHERE customer_Id = '".$staffID."'";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
     //FETCH CLIENT HISTORY
     function getClientHistory($staffID){
         $sql = "SELECT customers.medicationDetails , customers.allergy, 

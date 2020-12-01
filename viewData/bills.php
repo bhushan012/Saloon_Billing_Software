@@ -42,11 +42,19 @@ include "../operations.php";
              else{
                  $name = $row['randomCustomerName'];
              }
+             $staffID = $row['staffId'];
+             $custNameRes = $operationInstance->fetchStaffName($staffID);
+             while ($sub1 = $custNameRes->fetch_assoc()){
+                $staffName = $sub1['staffName'];
+
+            }
+          }
+
         ?>
             <tr>
                 <td> #TTT <?= $row['billNo']; ?></td>
                 <td><?= $name; ?></td>
-                <td><?= $row['staffId']; ?></td>
+                <td><?= $staffName; ?></td>
                 <td><?= $row['billDate']; ?></td>
                 <td><?= $row['billTotal']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>
