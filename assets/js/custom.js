@@ -316,6 +316,7 @@ $(document).ready(function () {
     $("#addQty").on('keypress', function(){
         var qty = $("#addQty").val();
         var id = $("#productSelect").val();
+        console.log(qty+"Quantity");
         $.ajax({
             url: siteUrl + '/logic/checkIfQtyAvailable.php',
             type: 'POST',
