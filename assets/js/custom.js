@@ -329,6 +329,11 @@ $(document).ready(function () {
         return ch;
         
     }
+
+    //check Availablity
+    $("#addQty").on('keyup', function(){
+        console.log("hello");
+    });
     //ADD PRODUCT TO BILL
     var productList = {};
     var finalList = [];
