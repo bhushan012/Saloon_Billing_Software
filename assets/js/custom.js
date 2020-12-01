@@ -307,6 +307,15 @@ $(document).ready(function () {
         $('#searchedNameRandom').html(inputVal);
     });
     function checkStock(id , qty){
+        
+        return ch;
+        
+    }
+
+    //check Availablity
+    $("#addQty").on('keypress', function(){
+        $qty = $("#addQty").val();
+        var id = $("#productSelect").val();
         $.ajax({
             url: siteUrl + '/logic/checkIfQtyAvailable.php',
             type: 'POST',
@@ -315,10 +324,10 @@ $(document).ready(function () {
                 console.log(data + "available");
                  stockAvailable = data; 
                  if(qty > stockAvailable){
-                    ch =  false;
+                   alert("ohh yeah")
                 }
                 else{
-                    ch = true;
+                   alert("ohh no!!")
                 }
                
             },
@@ -326,13 +335,6 @@ $(document).ready(function () {
                 console.log('failed ajax with error: ' + data);
             }
         });
-        return ch;
-        
-    }
-
-    //check Availablity
-    $("#addQty").on('keypress', function(){
-        console.log("hello");
     });
     //ADD PRODUCT TO BILL
     var productList = {};
