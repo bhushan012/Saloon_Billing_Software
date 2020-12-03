@@ -331,6 +331,7 @@ $(document).ready(function () {
         var qty = $("#addQty").val();
         var id = $("#productSelect").val();
         console.log(qty+"Quantity");
+        stockAvailable = parseInt(stockAvailableUnique);
         if(stockAvailableUnique <= qty){
             alert("error!!");
         }
