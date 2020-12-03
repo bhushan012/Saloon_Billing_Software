@@ -357,7 +357,13 @@ $(document).ready(function () {
         i++;
        });
        //check Availablity
-       var stockAvailable;
+       var qty = $("#addQty").val()
+       stockAvailableUnique = parseInt(stockAvailableUnique);
+        console.log(stockAvailableUnique);
+        if(stockAvailableUnique <= qty){
+            alert("You have only "+stockAvailableUnique+" items in stock! Kindly re-enter the quantity.");
+            e.preventDefault();
+        }
        
     
        console.log("NOT FOUND");
