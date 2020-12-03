@@ -53,6 +53,17 @@ class Operations {
             return false;
         }
     }
+    Function addMajorService($serviceName): bool{
+        $sql = "INSERT INTO `saloon_category`( `categoryName`) VALUES ('".$serviceName."')";
+        global $conn;
+        if ($conn->query($sql) === TRUE) {
+            return true;
+        } else {
+            $log = "Error: " . $sql . "<br>" . $conn->error;
+            file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+            return false;
+        }
+    }
     Function verifyContactNumber($contactNumber): bool{
         $sql = "SELECT * FROM `customers` WHERE `contactNumber` = '".$contactNumber."'";
         global $conn;

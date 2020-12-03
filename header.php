@@ -122,6 +122,9 @@
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/services-form.php"><i class="fa fa-plus p-1"></i>ADD</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/majorServiceAdd-form.php"><i class="fa fa-plus p-1"></i>ADD CATEGORY</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/services.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                 </ul>

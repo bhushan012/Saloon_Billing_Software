@@ -61,6 +61,19 @@ if(isset($_POST['productFormSubmit'])):
         header("Location: $actual_link");
     endif;
 endif;
+////////////////////////ADD MAJOR SERVICE
+if(isset($_POST['majorServiceForm'])):
+    $serviceName = htmlentities($_POST['serviceName'],ENT_QUOTES,'utf-8', TRUE);
+    $response = $operationInstance->addMajorService($serviceName);
+    if($response):
+        $actual_link = $formUrl."/product-form.php?success=1";
+        header("Location: $actual_link");
+    else:
+        echo "something went wrong.";
+        $actual_link = $formUrl."/product-form.php?success=0";
+        header("Location: $actual_link");
+    endif;
+endif;
 
 //////////ADD INVENTORY OF PRODUCTS
 if(isset($_POST['inventorySubmit'])):
