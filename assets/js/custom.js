@@ -320,11 +320,7 @@ $(document).ready(function () {
         $('#searchedNameRandom').html('');
         $('#searchedNameRandom').html(inputVal);
     });
-    function checkStock(id , qty){
-        
-        return ch;
-        
-    }
+    
 
     //check Availablity
     $("#addQty").on('keypress', function(){
@@ -374,8 +370,8 @@ $(document).ready(function () {
             var costqty = parseInt(qty)*parseInt(price);
             var totalToShow = costqty + parseInt(totalCost);
             console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
-            checkVal = checkStock(id,qty);
-            console(checkVal + "return qty");
+            
+           
             $("#total").empty().append(totalToShow);
             $("#productBillList").append("<div class='removeProductRow' id='"+productId+"'><input type='hidden' id='"+productId+"Price' value='"+costqty+"'><p class='priceRow'><span class='removeProduct mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span>"+prodName+"  X  "+qty+"  Rs. "+price+"</p></div>");
             // $('#subTotal').empty().append(totalToShow);
