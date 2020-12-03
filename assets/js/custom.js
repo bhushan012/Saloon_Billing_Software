@@ -149,6 +149,20 @@ $(document).ready(function () {
                 console.log('failed ajax with error: ' + data);
             }
         });
+        $.ajax({
+            url: siteUrl + '/logic/checkIfQtyAvailable.php',
+            type: 'POST',
+            data: {  prodID: productSelect},
+            success: function (data) {
+                console.log(data + "available");
+                 stockAvailableUnique = data; 
+                
+               
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
     });
     //GET PRODUCT EXPANSE TABLE AJAX
     $("#selectMonth , #prodList").on('change', function (e) {
@@ -317,22 +331,10 @@ $(document).ready(function () {
         var qty = $("#addQty").val();
         var id = $("#productSelect").val();
         console.log(qty+"Quantity");
-        $.ajax({
-            url: siteUrl + '/logic/checkIfQtyAvailable.php',
-            type: 'POST',
-            data: {  prodID: id},
-            success: function (data) {
-                console.log(data + "available");
-                 stockAvailable = data; 
-                 if(qty > stockAvailable){
-                   alert("You have only "+stockAvailable+" pieces in stock");
-                }
-               
-            },
-            error: function (data) {
-                console.log('failed ajax with error: ' + data);
-            }
-        });
+        if(stockAvailableUnique <= qty){
+            alert("error!!");
+        }
+        
     });
     //ADD PRODUCT TO BILL
     var productList = {};
