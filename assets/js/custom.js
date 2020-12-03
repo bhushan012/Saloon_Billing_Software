@@ -334,7 +334,8 @@ $(document).ready(function () {
         stockAvailableUnique = parseInt(stockAvailableUnique);
         console.log(stockAvailableUnique);
         if(stockAvailableUnique <= qty){
-            alert("error!!");
+            alert("You have only "+stockAvailableUnique+" items in stock! Kindly re-enter the quantity.");
+            $("#addQty").val(1);
         }
         
     });
