@@ -26,9 +26,9 @@ foreach ($productList as $key) {
    $sendList["prod".$key['id']] = $key['qty'];
 
 }
- if($creditAmnt == 0 && $amntpaid == 0){
-     $amntpaid = "Paid";
- }
+//  if($creditAmnt == 0 && $amntpaid == 0){
+//      $amntpaid = "Paid";
+//  }
  $result =  $operationInstance->inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
  echo $result;
 ?>
