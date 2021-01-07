@@ -175,7 +175,7 @@ if (isset($_GET['success'])) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3">
                     <label class="h6">Amount Paid:</label>
                     <div class="">
                         <input class="form-control p-3" id="amntPaid" type="text" placeholder="Amount Paid" />
