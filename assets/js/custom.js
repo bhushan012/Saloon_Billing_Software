@@ -335,6 +335,11 @@ $(document).ready(function () {
         }
         
     });
+    // Add Amount Paid
+    $("#addCredit").on("click", function(){
+        var amntPaid = $("#amntPaid").val();
+        console.log(amntPaid);
+    });
     //ADD PRODUCT TO BILL
     var productList = {};
     var finalList = [];
