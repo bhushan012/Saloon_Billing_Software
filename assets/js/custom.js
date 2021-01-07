@@ -10,8 +10,8 @@ $(document).ready(function () {
         $("body").css("background-color: transparent")  
              
     },3000);
-    // var siteUrl = "http://parlourbilling.weblozee.com";
-    var siteUrl = "http://127.0.0.1:9000";
+     var siteUrl = "http://weblozee.com/billing";
+    //var siteUrl = "http://127.0.0.1:9000";
    
     // END MODEL
     $('#datepicker').datepicker({
