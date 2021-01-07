@@ -57,7 +57,10 @@ include "../operations.php";
                 <td><?= $row['billDate']; ?></td>
                 <td><?= $row['billTotal']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>
-                <?php if ($row['amountPaid'] < $row['billAmountPayable']){?>
+                <?php 
+                $amntPaid = $row['amountPaid'];
+                $payable = $row['billAmountPayable'];
+                if ($amntPaid < $payable ){?>
                     <td><?= $row['amountPaid'];?></td>
                 <?php }
                 else{?>
