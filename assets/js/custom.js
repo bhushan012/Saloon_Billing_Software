@@ -512,6 +512,8 @@ $(document).on("click", "#addCredits", function () {
     var amntPaid = $("#amntId").val();
     var calculateCredit = parseInt(total) - parseInt(amntPaid);
     console.log(calculateCredit);
+    $("#creditToPay").html('');
+    $("#creditToPay").html(calculateCredit);
 
 });
 });
