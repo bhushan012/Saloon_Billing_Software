@@ -432,10 +432,7 @@ $(document).ready(function () {
         console.log("-------------after val---------");
     });
     //add credit
-    $(document).on("click", "#addCredits", function () {
-
-        console.log("clicked");
-    });
+    
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
@@ -509,5 +506,8 @@ $(document).ready(function () {
         }
     });
 });
+$(document).on("click", "#addCredits", function () {
 
+    console.log("clicked");
+});
 });
