@@ -432,7 +432,8 @@ $(document).ready(function () {
         console.log("-------------after val---------");
     });
     //add credit
-    $("#addCredit").on("click", function(){
+    $(document).on("click", "#addCredit", function () {
+
         console.log("clicked");
     });
     $("#saveBill").on("click", function () {
