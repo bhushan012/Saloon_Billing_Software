@@ -174,6 +174,21 @@ if (isset($_GET['success'])) {
                     </div>
                 </div>
             </div>
+            <div class="row">
+            <div class="col-md-4">
+                <label class="h6">Add Quantity:</label>
+                    <div class="">
+                        <input class="form-control p-3" id="amnt" type="text" placeholder="Quantity" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group text-center mb-2">
+                        <div class="input-group-btn">
+                            <button class="btn btn-success" id="addCredit" type="button"><i class="fa fa-plus"></i><span class="h6"> Add</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <?php
             $response = "";
             if ($successResponse == 1) {

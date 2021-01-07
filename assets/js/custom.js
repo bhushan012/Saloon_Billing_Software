@@ -431,6 +431,10 @@ $(document).ready(function () {
         $("#customerId").val(id);
         console.log("-------------after val---------");
     });
+    //add credit
+    $("#addCredit").on("click", function(){
+        console.log("clicked");
+    });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
