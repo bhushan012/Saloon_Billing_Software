@@ -144,6 +144,11 @@ if (isset($_GET['success'])) {
                     </div>
                 </div>
             </div>
+            <div class="row">
+            <div class="col-md-4">
+            <h2>new text</h2>
+            </div>
+            </div>
             <div class="row" id="successMessage" class="d-none">
                         <div class="col-md-12">
                         <div class="valid-feedback">Details Stored Successfully!</div>
