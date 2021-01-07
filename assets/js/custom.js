@@ -446,14 +446,17 @@ $(document).ready(function () {
         randomCustomerName = $('#searchedNameRandom').text();
         var staffId = '';
          staffId = $('#staffSelect').val();
-
-        console.log(randomCustomerName+ "name");
-        console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
+        var amntPaid = $("#amntPaid").text;
+        var creditAmnt = $("#creditToPay").text;
+        amntPaid = parseFloat(amntPaid);
+        creditAmnt = parseFloat(creditAmnt);
+        //console.log(randomCustomerName+ "name");
+        //console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
          if((randomCustomerName != '' || customerId != '') && staffId != ''  && billTotal != '0'){
             $.ajax({
                 url: siteUrl + '/logic/insertBillingDetails.php',
                 type: 'POST',
-                data: {  billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: finalList},
+                data: { amntpaid: amntPaid,creditAmnt, billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: finalList},
                 success: function (data) {
                     console.log(data);
                    // $('#successMessage').html('');
@@ -514,6 +517,8 @@ $(document).on("click", "#addCredits", function () {
     console.log(calculateCredit);
     $("#creditToPay").html('');
     $("#creditToPay").html(calculateCredit);
+    $("#amntPaid").html('');
+    $("#amntPaid").html(amntPaid);
 
 });
 });

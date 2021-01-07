@@ -8,6 +8,8 @@ $customerType = htmlentities($_POST['customerType'],ENT_QUOTES,'utf-8', TRUE);
 $customerId = htmlentities($_POST['customerId'],ENT_QUOTES,'utf-8', TRUE);
 $randomCustomerName = htmlentities($_POST['randomCustomerName'],ENT_QUOTES,'utf-8', TRUE);
 $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
+$creditAmnt = htmlentities($_POST['creditAmnt'],ENT_QUOTES,'utf-8', TRUE);
+$amntpaid = htmlentities($_POST['amntpaid'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds= $_POST['servicesTaken'];
 
 $productList = $_POST['prodList'];
@@ -24,7 +26,9 @@ foreach ($productList as $key) {
    $sendList["prod".$key['id']] = $key['qty'];
 
 }
-
- $result =  $operationInstance->inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
+ if($creditAmnt == 0 && $amntpaid == 0){
+     $amntpaid = "Paid";
+ }
+ $result =  $operationInstance->inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
  echo $result;
 ?>

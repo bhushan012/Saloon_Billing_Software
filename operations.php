@@ -316,11 +316,11 @@ class Operations {
 
     }
     //INSERT BILL DETAILS
-    function inserBillDetails($billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
+    function inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
-       $sql = "INSERT INTO `billing`( `billDate`, `billDiscountSelected`, `billDiscount`, `billTotal`, `billAmountPayable`, `customerType`, `customerId`, `staffId`, `randomCustomerName`) 
-       VALUES ('".$date."','".$billDiscountSelected."','".$billDiscount."','".$billTotal."','".$billAmountPayable."','".$customerType."','".$customerId."','".$staffId."','".$randomCustomerName."')";
+       $sql = "INSERT INTO `billing`( `billDate`, `billDiscountSelected`, `billDiscount`, `billTotal`, `billAmountPayable`, `customerType`, `customerId`, `staffId`, `randomCustomerName`, `amountPaid`, `creditRemaining`) 
+       VALUES ('".$date."','".$billDiscountSelected."','".$billDiscount."','".$billTotal."','".$billAmountPayable."','".$customerType."','".$customerId."','".$staffId."','".$randomCustomerName."','".$amntpaid."','".$creditAmnt."')";
        global $conn;
        if($conn->query($sql) === TRUE){
           $billId = $conn->insert_id;
