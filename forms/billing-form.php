@@ -144,11 +144,7 @@ if (isset($_GET['success'])) {
                     </div>
                 </div>
             </div>
-            <div class="row">
-            <div class="col-md-4">
-            <h2>new text</h2>
-            </div>
-            </div>
+            
             <div class="row" id="successMessage" class="d-none">
                         <div class="col-md-12">
                         <div class="valid-feedback">Details Stored Successfully!</div>
@@ -175,6 +171,14 @@ if (isset($_GET['success'])) {
                 <div class="col-md-4 dicountCol mt-1" style="display:none;">
                     <div class="input-group-btn ">
                         <button class="btn btn-success" id="discountBtn" type="button"><i class="fa fa-check-square-o"></i><span class="h6"> Discount</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="h6">Amount Paid:</label>
+                    <div class="">
+                        <input class="form-control p-3" id="amntPaid" type="text" placeholder="Amount Paid" />
                     </div>
                 </div>
             </div>
