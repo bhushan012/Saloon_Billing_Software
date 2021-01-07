@@ -178,7 +178,7 @@ if (isset($_GET['success'])) {
             <div class="col-md-4">
                 <label class="h6">Add Quantity:</label>
                     <div class="">
-                        <input class="form-control p-3" id="amnt" type="text" placeholder="Quantity" />
+                        <input class="form-control p-3" id="amntId" type="text" placeholder="Quantity" />
                     </div>
                 </div>
                 <div class="col-md-4">

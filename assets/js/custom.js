@@ -508,6 +508,10 @@ $(document).ready(function () {
 });
 $(document).on("click", "#addCredits", function () {
 
-    console.log("clicked");
+    var total = $('#total').text();
+    var amntPaid = $("#amntId").val();
+    var calculateCredit = parseInt(total) - parseInt(amntPaid);
+    console.log(calculateCredit);
+
 });
 });
