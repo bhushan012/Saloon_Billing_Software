@@ -4,6 +4,7 @@ include "../operations.php";
 $operationInstance = new Operations();
 $staffID = $_POST['staffID'];
 $month = $_POST['month'];
+$year = $_POST['year'];
 ?>
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
 <thead>
@@ -22,36 +23,40 @@ $month = $_POST['month'];
         </tr>
     </thead>
 <?php
-$result =  $operationInstance->staffHistory($month,$staffID);
-if ($result->num_rows > 0) {
-    $i=0;
-    
-    ?>
-
-    <tbody>
-    <?php
-    while($row = $result->fetch_assoc()) {
-        $i++;
-        $tenper = $row['billTotal']*0.1;
-        $totalExpense = $totalExpense + $tenper;
-        ?>
-          <tr>
-              <td><?php echo $row['billNo'];?></td>
-              <td><?php echo $row['staffName'];?></td>
-              <td><?php echo $row['billDate'];?></td>
-              <td><?php echo $row['billTotal'];?></td>
-              <td><?php echo $tenper?></td>
-              <!-- <td><?php echo $row['totalamount'];?></td> -->
-          </tr>
-
-         
-        <?php
+$result =  $operationInstance->staffHistory($month,$staffID,$year);
+if($result != ''){
+    if ($result->num_rows > 0) {
+        $i=0;
         
-    }
-    ?>
-     </tbody>
+        ?>
     
-    <?php
+        <tbody>
+        <?php
+        $totalExpense = 0;
+        while($row = $result->fetch_assoc()) {
+            $i++;
+            $tenper = $row['billTotal']*0.1;
+            $totalExpense = $totalExpense + $tenper;
+            ?>
+              <tr>
+                  <td><?php echo $row['billNo'];?></td>
+                  <td><?php echo $row['staffName'];?></td>
+                  <td><?php echo $row['billDate'];?></td>
+                  <td><?php echo $row['billTotal'];?></td>
+                  <td><?php echo $tenper?></td>
+                  <!-- <td><?php echo $row['totalamount'];?></td> -->
+              </tr>
+    
+             
+            <?php
+            
+        }
+        ?>
+         </tbody>
+        
+        <?php
+    }
+    
 }
 else{?>
     <tr>
@@ -89,7 +94,7 @@ else{?>
 
     </div>
     <div class="col-md-4">
-       <h3>Rs. <?echo $totalExpense;?></h3>
+       <h3>Rs. <?echo $totalExpense ?? "";?></h3>
     </div>
 </div>
 <?php

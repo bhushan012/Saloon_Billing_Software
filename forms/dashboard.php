@@ -10,9 +10,12 @@ $operationInstance = new Operations();
   <div class="card-body text-success text-center">
     <?
        $result = $operationInstance->getTotalSales();
-       while ($row = $result->fetch_assoc()) {
-           echo "<h1 class='card-title'>₹" . $row['total'] . "</h1>";
+       if($result != ''){
+        while ($row = $result->fetch_assoc()) {
+            echo "<h1 class='card-title'>₹" . $row['total'] . "</h1>";
+        }
        }
+    
     ?>
     <!-- <h1 class="card-title">₹1.59L</h1> -->
   </div>
@@ -24,9 +27,10 @@ $operationInstance = new Operations();
   <div class="card-body text-danger text-center">
   <?
        $result = $operationInstance->totalDiscount();
+       if($result != ''){
        while ($row = $result->fetch_assoc()) {
            echo "<h1 class='card-title'>₹" . $row['discount'] . "</h1>";
-       }
+       }}
     ?>
   </div>
 </div>
@@ -37,9 +41,10 @@ $operationInstance = new Operations();
   <div class="card-body text-info text-center">
   <?
        $result = $operationInstance->getTotalCustomers();
+       if($result != ''){
        while ($row = $result->fetch_assoc()) {
            echo "<h1 class='card-title'>" . $row['customers'] . "</h1>";
-       }
+       }}
     ?>
   </div>
  
@@ -51,9 +56,10 @@ $operationInstance = new Operations();
   <div class="card-body text-warning text-center">
   <?
        $result = $operationInstance->totalServices();
+       if($result != ''){
        while ($row = $result->fetch_assoc()) {
            echo "<h1 class='card-title'>" . $row['services'] . "</h1>";
-       }
+       }}
     ?>
   </div>
 </div>

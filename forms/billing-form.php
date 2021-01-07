@@ -19,6 +19,7 @@ if (isset($_GET['success'])) {
                         <option value="">Services Type</option>
                         <?php
                         $result = $operationInstance->getAllSaloonCategory();
+                        
                         while ($row = $result->fetch_assoc()) {
                             echo "<option value=" . $row['categoryId'] . ">" . $row['categoryName'] . "</option>";
                         }
@@ -144,7 +145,6 @@ if (isset($_GET['success'])) {
                     </div>
                 </div>
             </div>
-            
             <div class="row" id="successMessage" class="d-none">
                         <div class="col-md-12">
                         <div class="valid-feedback">Details Stored Successfully!</div>
@@ -171,21 +171,6 @@ if (isset($_GET['success'])) {
                 <div class="col-md-4 dicountCol mt-1" style="display:none;">
                     <div class="input-group-btn ">
                         <button class="btn btn-success" id="discountBtn" type="button"><i class="fa fa-check-square-o"></i><span class="h6"> Discount</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mt-3">
-                    <label class="h6">Amount Paid:</label>
-                    <div class="">
-                        <input class="form-control p-3" id="amntPaid" type="text" placeholder="Amount Paid" />
-                    </div>
-                </div>
-                <div class="col-md-4 mt-3">
-                    <div class="form-group text-center mb-2">
-                        <div class="input-group-btn">
-                            <button class="btn btn-success" id="addCredit" type="button"><i class="fa fa-plus"></i><span class="h6"> Add</span></button>
-                        </div>
                     </div>
                 </div>
             </div>

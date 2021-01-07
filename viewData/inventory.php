@@ -5,6 +5,20 @@ $operationInstance = new Operations();
 ?>
 <h1 class="display-5 mt-3">Inventory </h1>
 <div class="mt-3">
+        <label>Select Year:</label>
+        <select class="form-control" id="selectYear" name="productSelect" required>
+            <?php 
+                $year = date("Y");
+            ?>
+            <option value="2020" <?php if($year == 2020) { echo "Selected"; } ?>>2020</option>
+            <option value="2021" <?php if($year == 2021) { echo "Selected"; } ?>>2021</option>
+            <option value="2022" <?php if($year == 2022) { echo "Selected"; } ?>>2022</option>
+            <option value="2023" <?php if($year == 2023) { echo "Selected"; } ?>>2023</option>
+            <option value="2024" <?php if($year == 2024) { echo "Selected"; } ?>>2024</option>
+            
+        </select>
+    </div>
+<div class="mt-3">
         <label>Select Month:</label>
         <?php
         $months = array();

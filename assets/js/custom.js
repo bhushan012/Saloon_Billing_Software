@@ -10,7 +10,8 @@ $(document).ready(function () {
         $("body").css("background-color: transparent")  
              
     },3000);
-    var siteUrl = "http://parlourbilling.weblozee.com";
+    // var siteUrl = "http://parlourbilling.weblozee.com";
+    var siteUrl = "http://127.0.0.1:9000";
    
     // END MODEL
     $('#datepicker').datepicker({
@@ -165,15 +166,17 @@ $(document).ready(function () {
         });
     });
     //GET PRODUCT EXPANSE TABLE AJAX
-    $("#selectMonth , #prodList").on('change', function (e) {
+    $("#selectMonth , #prodList , #selectYear").on('change', function (e) {
         var month = $('#selectMonth').val();
         var prodID = $('#prodList').val();
+        var year = $('#selectYear').val();
         console.log("month" + month);
         console.log("prod" + prodID);
+        console.log("year" + year);
         $.ajax({
             url: siteUrl + '/logic/inventoryTable.php',
             type: 'POST',
-            data: { month: month, prodID: prodID },
+            data: { month: month, prodID: prodID, year: year },
             success: function (data) {
                 console.log(data);
                 $('#inventoryData').html('');
@@ -185,15 +188,16 @@ $(document).ready(function () {
         });
     });
     //GET STAFF SERVICE HISTORY
-    $("#selectMonth1 , #staffList").on('change', function (e) {
+    $("#selectMonth1 , #staffList, #selectYearStaff").on('change', function (e) {
         var month = $('#selectMonth1').val();
         var staffID = $('#staffList').val();
+        var year = $('#selectYearStaff').val();
         console.log("month" + month);
         console.log("staff" + staffID);
         $.ajax({
             url: siteUrl + '/logic/staffServiceHistory.php',
             type: 'POST',
-            data: { month: month, staffID: staffID },
+            data: { month: month, staffID: staffID,year: year },
             success: function (data) {
                 console.log(data);
                 $('#inventoryData').html('');
@@ -335,7 +339,6 @@ $(document).ready(function () {
         }
         
     });
-   
     //ADD PRODUCT TO BILL
     var productList = {};
     var finalList = [];
@@ -428,12 +431,6 @@ $(document).ready(function () {
         $("#customerId").val(id);
         console.log("-------------after val---------");
     });
-    // Add Amount Paid
-    $("#addCredit").on("click", function(){
-        console.log("text");
-        var amntPaid = $("#amntPaid").val();
-        console.log(amntPaid);
-    });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
@@ -507,5 +504,5 @@ $(document).ready(function () {
         }
     });
 });
- 
+
 });

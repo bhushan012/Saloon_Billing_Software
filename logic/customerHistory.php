@@ -23,6 +23,9 @@ $custID = $_POST['custID'];
     </thead>
 <?php
 $result =  $operationInstance->getClientHistory($custID);
+if($result != ''){
+    
+
 if ($result->num_rows > 0) {
     $i=0;
     
@@ -30,6 +33,7 @@ if ($result->num_rows > 0) {
 
     <tbody>
     <?php
+    $totalExpense = 0;
     while($row = $result->fetch_assoc()) {
         $i++;
         $totalExpense = $totalExpense + $row['billAmountPayable'];
@@ -59,7 +63,7 @@ if ($result->num_rows > 0) {
      </tbody>
     
     <?php
-}
+}}
 else{?>
     <tr>
     <td></td>
@@ -90,49 +94,50 @@ else{?>
 </table>
 <div class="mt-3 row">
     <div class="col-md-12">
-        <h4><?php echo $name;?>'s Details:</h4>
+<?php if(isset($name)): ?>  <h4><?=$name;?>'s Details:</h4><?php endif; ?>
+        
     </div>
     <div class="col-md-6">
         <h6>Name: </h6>
     </div>
     <div class="col-md-6">
-        <p><?php echo $name; ?></p>
+        <p><?php echo $name ?? ""; ?></p>
     </div>
     <div class="col-md-6">
         <h6>Address: </h6>
     </div>
     <div class="col-md-6">
-        <p><?php echo $address;?></p>
+        <p><?php echo $address ?? "";?></p>
     </div>
     <div class="col-md-6">
         <h6>Contact No.: </h6>
     </div>
     <div class="col-md-6">
-        <p><?php echo $contactno;?></p>
+        <p><?php echo $contactno ?? "";?></p>
     </div>
     <div class="col-md-6">
         <h6>Medications: </h6>
     </div>
     <div class="col-md-6">
-    <p><?php echo $medication;?></p>
+    <p><?php echo $medication ?? "";?></p>
     </div>
     <div class="col-md-6">
     <h6>Allergy: </h6>
     </div>
     <div class="col-md-6">
-    <p><?php echo $allergy;?></p>
+    <p><?php echo $allergy ?? "";?></p>
     </div>
     <div class="col-md-6">
     <h6>Membership: </h6>
     </div>
     <div class="col-md-6">
-    <p><?php echo $member;?></p>
+    <p><?php echo $member ?? "";?></p>
     </div>
     <div class="col-md-6">
     <h6>Total Amount: </h6>
     </div>
     <div class="col-md-6">
-    <p>Rs. <?php echo $totalExpense;?></p>
+    <p>Rs. <?php echo $totalExpense ?? "";?></p>
     </div>
 </div>
 <?php

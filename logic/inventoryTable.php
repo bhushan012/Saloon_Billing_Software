@@ -4,6 +4,7 @@ include "../operations.php";
 $operationInstance = new Operations();
 $prodID = $_POST['prodID'];
 $month = $_POST['month'];
+$year = $_POST['year'];
 ?>
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
 <thead>
@@ -23,7 +24,7 @@ $month = $_POST['month'];
         </tr>
     </thead>
 <?php
-$result =  $operationInstance->getProductInventory($month,$prodID);
+$result =  $operationInstance->getProductInventory($month,$prodID,$year);
 if ($result->num_rows > 0) {
     $i=0;
     
@@ -31,6 +32,7 @@ if ($result->num_rows > 0) {
 
     <tbody>
     <?php
+    $totalExpense = 0;
     while($row = $result->fetch_assoc()) {
         $i++;
         $totalExpense = $totalExpense + $row['totalamount'];
@@ -98,13 +100,14 @@ else{?>
     </div>
 </div>
 <?php
- $result =  $operationInstance->productGetStock($prodID);
- if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $productTotalStock = $row['totalqty'];
-        $productTotalSold =  $row['sold'];
-        $productCurrentStock =  $productTotalStock - $productTotalSold;
-  
+if(!empty($prodID)){
+    $result =  $operationInstance->productGetStock($prodID);
+    if ($result->num_rows > 0) {
+       while($row = $result->fetch_assoc()) {
+           $productTotalStock = $row['totalqty'];
+           $productTotalSold =  $row['sold'];
+           $productCurrentStock =  $productTotalStock - $productTotalSold;
+
 ?>
         <div class="mt-3 row">
             <div class="col-md-4">
@@ -126,6 +129,7 @@ else{?>
         </div>
     <?php
   }
+}
 }
 ?>
 <?php
