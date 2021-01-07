@@ -77,7 +77,7 @@ include "urlMapping.php";
   </div>
 </div>
 <!---Small Modal-->
-    <script src="<?= $homeUrl; ?>/assets/js/jquery-3.5.1.js"></script>
+    <script src="<?= $homeUrl; ?>/assets/js/jquery-3.5.1.js" defer></script>
     <script src="<?= $homeUrl; ?>/assets/autoComplete/autocomplete.min.js"></script>
     <script src="<?= $homeUrl; ?>/assets/js/popper.min.js"></script>
     <script src="<?= $homeUrl; ?>/assets/js/mdb.min.js"></script>
