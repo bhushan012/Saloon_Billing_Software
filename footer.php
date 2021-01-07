@@ -93,7 +93,7 @@ include "urlMapping.php";
 
 <script type="text/javascript">
 $(document).ready(function(){
-    console.log(<?php foreach($data as $key => $value){ echo "'"; echo $value; echo "'";echo ",";} ?>)
+  
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
