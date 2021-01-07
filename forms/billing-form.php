@@ -184,7 +184,7 @@ if (isset($_GET['success'])) {
                 <div class="col-md-4">
                     <div class="form-group text-center mb-2">
                         <div class="input-group-btn">
-                            <button class="btn btn-success" id="addCredit" type="button"><i class="fa fa-plus"></i><span class="h6"> Add</span></button>
+                            <button class="btn btn-success" id="addCredits" type="button"><i class="fa fa-plus"></i><span class="h6"> Add</span></button>
                         </div>
                     </div>
                 </div>
