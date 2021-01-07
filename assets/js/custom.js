@@ -446,10 +446,10 @@ $(document).ready(function () {
         randomCustomerName = $('#searchedNameRandom').text();
         var staffId = '';
          staffId = $('#staffSelect').val();
-        var amntPaid = $("#amntPaid").text;
-        var creditAmnt = $("#creditToPay").text;
-        amntPaid = parseInt(amntPaid);
-        creditAmnt = parseInt(creditAmnt);
+        var amntPaid = $("#amntPaid").text();
+        var creditAmnt = $("#creditToPay").text();
+        amntPaid = parseFloat(amntPaid);
+        creditAmnt = parseFloat(creditAmnt);
         //console.log(randomCustomerName+ "name");
         //console.log(billDiscount+''+billTotal+''+billAmountPayable+''+customerType+''+customerId+''+randomCustomerName+''+staffId);
          if((randomCustomerName != '' || customerId != '') && staffId != ''  && billTotal != '0'){
