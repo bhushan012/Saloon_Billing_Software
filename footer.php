@@ -87,7 +87,7 @@ include "urlMapping.php";
    
     <script src="<?= $homeUrl; ?>/assets/dataTables/js/addons/datatables.min.js"></script>
 
-    <script src="<?= $homeUrl; ?>/assets/js/custom.js?version=1"></script>
+    <script src="<?= $homeUrl; ?>/assets/js/custom.js?version=1.1"></script>
 
 
 </footer>
