@@ -428,6 +428,12 @@ $(document).ready(function () {
         $("#customerId").val(id);
         console.log("-------------after val---------");
     });
+    // Add Amount Paid
+    $("#addCredit").on("click", function(){
+        console.log("text");
+        var amntPaid = $("#amntPaid").val();
+        console.log(amntPaid);
+    });
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
@@ -501,10 +507,5 @@ $(document).ready(function () {
         }
     });
 });
- // Add Amount Paid
- $("#addCredit").on("click", function(){
-    console.log("text");
-    var amntPaid = $("#amntPaid").val();
-    console.log(amntPaid);
-});
+ 
 });
