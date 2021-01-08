@@ -60,8 +60,8 @@ include "../operations.php";
                 <?php 
                 $amntPaid = $row['amountPaid'];
                 $payable = $row['billAmountPayable'];
-                if ($amntPaid < $payable ){?>
-                    <td><?= $row['amountPaid'];?></td>
+                if ($row ['creditTaken'] == 1 ){?>
+                    <td><?= $row['amountPaid'];?> ( credit: <?php echo $row['creditRemaining'];?> )</td>
                 <?php }
                 else{?>
                     <td><?= $row['billAmountPayable'];?></td>
