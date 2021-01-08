@@ -270,6 +270,16 @@ $(document).ready(function () {
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         console.log(serviceIdList);
+        var subtotal = totalAmt - amtDiscounted;
+        var amntPaid = $("#amntId").val();
+        if(amntPaid > 0){
+            var calculateCredit = creditCalc(subtotal,amntPaid);
+            console.log(calculateCredit);
+            $("#creditToPay").html('');
+            $("#creditToPay").html(calculateCredit);
+            $("#amntPaid").html('');
+            $("#amntPaid").html(amntPaid);
+        }
     });
 
     $("body").on("click", ".removeService", function () {
