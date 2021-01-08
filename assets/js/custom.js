@@ -55,6 +55,9 @@ $(document).ready(function () {
     function percentage(num, per) {
         return (num / 100) * per;
     }
+    function creditCalc(total,amntPaid){
+        return total - amntPaid;
+    }
 
     $("#discountBtn").on('click', function (e) {
         console.log("in discount");
@@ -69,6 +72,17 @@ $(document).ready(function () {
             $('#discount').empty().append(amtDiscounted);
             console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
+            var subtotal = totalAmt - amtDiscounted;
+            var amntPaid = $("#amntId").val();
+            if(amntPaid > 0){
+                var calculateCredit = creditCalc(subtotal,amntPaid);
+                console.log(calculateCredit);
+                $("#creditToPay").html('');
+                $("#creditToPay").html(calculateCredit);
+                $("#amntPaid").html('');
+                $("#amntPaid").html(amntPaid);
+            }
+            
         }
         
     });
@@ -509,11 +523,13 @@ $(document).ready(function () {
         }
     });
 });
+
 $(document).on("click", "#addCredits", function () {
 
-    var total = $('#total').text();
+    var total = $('#subTotal').text();
     var amntPaid = $("#amntId").val();
-    var calculateCredit = parseInt(total) - parseInt(amntPaid);
+    var total = $('#total').text();
+    var calculateCredit = creditCalc(total,amntPaid);
     console.log(calculateCredit);
     $("#creditToPay").html('');
     $("#creditToPay").html(calculateCredit);
