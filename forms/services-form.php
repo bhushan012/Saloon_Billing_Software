@@ -6,12 +6,13 @@ $successResponse = "3";
 if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
 }
+
 ?>
 <form id="customerForm" method="POST" action="../submitData.php">
     <h1 class="display-5 mt-3">Service Form</h1>
     <div class="mt-3">
         <label>Service Category:</label>
-        <select class="form-control" id="serviceCategory" name="serviceCategory" required>
+        <select class="form-control test" id="serviceCategory" name="serviceCategory" required>
             <option value="">Service Category</option>
             <?php
             $result = $operationInstance->getAllSaloonCategory();
