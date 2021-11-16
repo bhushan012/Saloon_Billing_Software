@@ -94,6 +94,16 @@ class Operations {
             return "";
         }
     }
+    Function getSaloonSubCategoryById($id){
+        $sql = "SELECT * FROM saloon_subcategory where category_id = '${$id}'";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
     Function getAllServices(){
         $sql = "SELECT sd.serviceId,sd.serviceName,sd.cost,sc.categoryName FROM service_details as sd INNER JOIN saloon_category as sc ON sd.serviceCategoryId = sc.categoryId";
         global $conn;

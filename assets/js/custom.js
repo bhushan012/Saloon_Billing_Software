@@ -534,17 +534,21 @@ $(document).ready(function () {
     });
 });
 
-$(document).on("click", "#addCredits", function () {
+    $(document).on("click", "#addCredits", function () {
 
-    var total = $('#subTotal').text();
-    var amntPaid = $("#amntId").val();
-    var total = $('#total').text();
-    var calculateCredit = creditCalc(total,amntPaid);
-    console.log(calculateCredit);
-    $("#creditToPay").html('');
-    $("#creditToPay").html(calculateCredit);
-    $("#amntPaid").html('');
-    $("#amntPaid").html(amntPaid);
+        var total = $('#subTotal').text();
+        var amntPaid = $("#amntId").val();
+        var total = $('#total').text();
+        var calculateCredit = creditCalc(total,amntPaid);
+        console.log(calculateCredit);
+        $("#creditToPay").html('');
+        $("#creditToPay").html(calculateCredit);
+        $("#amntPaid").html('');
+        $("#amntPaid").html(amntPaid);
 
-});
+    });
+    $("#serviceCategory").on('change', function (e) {
+        var serviceCategory = $(this).val();
+        console.log("Category Id: ",serviceCategory,e)
+    });
 });
