@@ -27,7 +27,7 @@ if(isset($_GET['success'])){
         <select class="form-control test" id="serviceSubCategory" name="serviceSubCategory" required>
             <option value="">Service Sub-Category</option>
             <?php
-            $result = $operationInstance->getSaloonSubCategoryById();
+            $result = $operationInstance->getSaloonSubCategoryById(1);
             while ($row = $result->fetch_assoc()) {
                 echo "<option value=" . $row['sub_category_id'] . ">" . $row['sub_category_name'] . "</option>";
             }
