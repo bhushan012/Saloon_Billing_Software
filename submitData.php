@@ -28,9 +28,10 @@ endif;
 ////////////////////////////// NEW SERVICE ADD
 if(isset($_POST['servicesFormSubmit'])):
     $serviceCategory = htmlentities($_POST['serviceCategory'],ENT_QUOTES,'utf-8', TRUE);
+    $serviceSubCategory = htmlentities($_POST['serviceSubCategory'],ENT_QUOTES,'utf-8', TRUE);
     $serviceName = htmlentities($_POST['serviceName'],ENT_QUOTES,'utf-8', TRUE);
     $serviceCost = htmlentities($_POST['serviceCost'],ENT_QUOTES,'utf-8', TRUE);
-    $response = $operationInstance->addService($serviceCategory,$serviceName,$serviceCost);
+    $response = $operationInstance->addService($serviceCategory,$serviceName,$serviceCost,$serviceSubCategory);
     if($response):
         $actual_link = $formUrl."/services-form.php?success=1";
         header("Location: $actual_link");

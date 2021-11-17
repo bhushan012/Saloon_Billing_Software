@@ -42,8 +42,8 @@ class Operations {
             return false;
         }
     }
-    Function addService($serviceCategory,$serviceName,$serviceCost): bool{
-        $sql = "INSERT INTO `service_details` (`serviceCategoryId`, `serviceName`, `cost`) VALUES ('".$serviceCategory."', '".$serviceName."', '".$serviceCost."')";
+    Function addService($serviceCategory,$serviceName,$serviceCost,$serviceSubCategory): bool{
+        $sql = "INSERT INTO `service_details` (`serviceCategoryId`, `serviceName`, `cost`, `service_subcategory_id`) VALUES ('".$serviceCategory."', '".$serviceName."', '".$serviceCost."', '".$serviceSubCategory."')";
         global $conn;
         if ($conn->query($sql) === TRUE) {
             return true;
