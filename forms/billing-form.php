@@ -34,7 +34,7 @@ if (isset($_GET['success'])) {
                 </div>
                 <div class="form-group col-md-4">
                     <label class="h6">Service:</label>
-                    <select class="form-control " id="serviceCategory" name="serviceCategory" required>
+                    <select class="form-control " id="serviceNames" name="serviceCategory" required>
                         <option value="">Service Name</option>
                     </select>
                 </div>

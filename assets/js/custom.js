@@ -133,7 +133,7 @@ $(document).ready(function () {
     //based on subcategory services list
     $(".subcategoryClass").on('change', function (e) {
         var subCategoryId = $(this).val();
-        console.log("on change subcategoryClass",subCategoryId);
+        // console.log("on change subcategoryClass",subCategoryId);
         // console.log(serviceCategoryBilling);
         $.ajax({
             url: siteUrl + '/logic/servicesListByCategory.php',
@@ -141,7 +141,7 @@ $(document).ready(function () {
             data: { subCategoryId: subCategoryId },
             success: function (data) {
                 console.log(data);
-                $('#serviceCategory').html(data);
+                $('#serviceNames').html(data);
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
@@ -247,7 +247,7 @@ $(document).ready(function () {
 
     var serviceIdList = [];
     $("#billingAddService").on("click", function () {
-        var serviceId = $("#serviceCategory").val();
+        var serviceId = $("#serviceNames").val();
         // serviceIdList.push(serviceId);
         console.log(serviceId + "service id");
         var price = $("#" + serviceId).attr("price");
