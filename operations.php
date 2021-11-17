@@ -117,7 +117,7 @@ class Operations {
         }
     }
     Function getAllServices(){
-        $sql = "SELECT sd.serviceId,sd.serviceName,sd.cost,sc.categoryName FROM service_details as sd INNER JOIN saloon_category as sc ON sd.serviceCategoryId = sc.categoryId";
+        $sql = "SELECT sd.serviceId,sd.serviceName,sd.cost,sc.categoryName,subc.sub_category_name FROM service_details as sd INNER JOIN saloon_category as sc ON sd.serviceCategoryId = sc.categoryId INNER JOIN saloon_subcategory as subc ON sd.serviceCategoryId = subc.category_id";
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {

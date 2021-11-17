@@ -7,6 +7,8 @@ include "../operations.php";
         <tr>
             <th class="th-sm">Service Category
             </th>
+            <th class="th-sm">Service Sub-Category
+            </th>
             <th class="th-sm">Service Name
             </th>
             <th class="th-sm">Service Cost
@@ -23,6 +25,7 @@ include "../operations.php";
         ?>
             <tr>
                 <td><?= $row['categoryName']; ?></td>
+                <td><?= $row['sub_category_name']; ?></td>
                 <td><?= $row['serviceName']; ?></td>
                 <td><?= $row['cost']; ?></td>
             </tr>
@@ -32,6 +35,8 @@ include "../operations.php";
     <tfoot>
         <tr>
             <th>Service Category
+            </th>
+            <th>Service Sub-Category
             </th>
             <th>Service Name
             </th>
