@@ -130,13 +130,14 @@ $(document).ready(function () {
             $('#customerSearchContact').attr("class", "col-md-12 d-none");
         }
     });
-    $("#serviceCategoryBilling").on('change', function (e) {
-        var serviceCategoryBilling = $(this).val();
+    //based on subcategory services list
+    $("#subcategoryClass").on('change', function (e) {
+        var subCategoryId = $(this).val();
         console.log(serviceCategoryBilling);
         $.ajax({
             url: siteUrl + '/logic/servicesListByCategory.php',
             type: 'POST',
-            data: { serviceCategoryBilling: serviceCategoryBilling },
+            data: { subCategoryId: subCategoryId },
             success: function (data) {
                 console.log(data);
                 $('#serviceCategory').html(data);
@@ -548,7 +549,7 @@ $(document).ready(function () {
 
     });
    
-    $("#serviceCategory").on('change', function (e) {
+    $("#serviceCategory, #serviceCategoryBilling").on('change', function (e) {
         var serviceCategory = $(this).val();
         $("#subCategorySec").removeClass("d-none");  
         $.ajax({

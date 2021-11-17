@@ -26,9 +26,15 @@ if (isset($_GET['success'])) {
                         ?>
                     </select>
                 </div>
+                <div class="form-group col-md-4" id="subCategorySec">
+                    <label class="h6">Service Sub-Category:</label>
+                    <select class="form-control test " id="serviceSubCategory" name="serviceSubCategory" required>
+                        <option value="">Service Sub-Category</option>
+                    </select>
+                </div>
                 <div class="form-group col-md-4">
                     <label class="h6">Service:</label>
-                    <select class="form-control" id="serviceCategory" name="serviceCategory" required>
+                    <select class="form-control subcategoryClass" id="serviceCategory" name="serviceCategory" required>
                         <option value="">Service Name</option>
                     </select>
                 </div>
