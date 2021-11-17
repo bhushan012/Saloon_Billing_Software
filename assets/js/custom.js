@@ -547,6 +547,7 @@ $(document).ready(function () {
         $("#amntPaid").html(amntPaid);
 
     });
+   
     $("#serviceCategory").on('change', function (e) {
         var serviceCategory = $(this).val();
         $("#subCategorySec").removeClass("d-none");  

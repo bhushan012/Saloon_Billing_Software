@@ -6,10 +6,10 @@ $successResponse = "3";
 if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
 }
-
 ?>
 <form id="customerForm" method="POST" action="../submitData.php">
-    <h1 class="display-5 mt-3">Service Form</h1>
+    <h1 class="display-5 mt-3">Add Sub Category</h1>
+    
     <div class="mt-3">
         <label>Service Category:</label>
         <select class="form-control test" id="serviceCategory" name="serviceCategory" required>
@@ -22,23 +22,13 @@ if(isset($_GET['success'])){
             ?>
         </select>
     </div>
-    <div id="subCategorySec" class="mt-3 d-none">
-        <label>Service Sub-Category:</label>
-        <select class="form-control test " id="serviceSubCategory" name="serviceSubCategory" required>
-            <option value="">Service Sub-Category</option>
-        </select>
-    </div>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
-            <label for="firstName">Service Name</label>
-            <input type="text" name="serviceName" class="form-control" id="serviceName" required>
-        </div>
-        <div class="form-group col-md-6">
-            <label for="lastName">Service Cost</label>
-            <input type="number" min="0" name="serviceCost" class="form-control" id="serviceCost" required>
+            <label for="subCategory">Service Sub-Category Name</label>
+            <input type="text" name="subCategoryName" class="form-control" id="subCategoryName" required>
         </div>
     </div>
-    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="servicesFormSubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">Submit form</button>
+    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="subCategoryFormSubmit" value="subCategoryFormSubmit" id="subCategoryFormSubmit" type="submit">Submit form</button>
         <?php 
             $response = "";
             if($successResponse == 1){

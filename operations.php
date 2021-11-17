@@ -64,6 +64,17 @@ class Operations {
             return false;
         }
     }
+    Function addSubCategory($subCategoryName,$categoryId): bool{
+        $sql = "INSERT INTO `saloon_subcategory`( `category_id`, `sub_category_name`) VALUES ('".$categoryId."','".$subCategoryName."')";
+        global $conn;
+        if ($conn->query($sql) === TRUE) {
+            return true;
+        } else {
+            $log = "Error: " . $sql . "<br>" . $conn->error;
+            file_put_contents('logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+            return false;
+        }
+    }
     Function verifyContactNumber($contactNumber): bool{
         $sql = "SELECT * FROM `customers` WHERE `contactNumber` = '".$contactNumber."'";
         global $conn;

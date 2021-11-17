@@ -40,6 +40,20 @@ if(isset($_POST['servicesFormSubmit'])):
         header("Location: $actual_link");
     endif;
 endif;
+////////////////////////////// NEW SUB CATEGORY ADD
+if(isset($_POST['subCategoryFormSubmit'])):
+    $CategoryId = htmlentities($_POST['serviceCategory'],ENT_QUOTES,'utf-8', TRUE);
+    $subcategoryName = htmlentities($_POST['subCategoryName'],ENT_QUOTES,'utf-8', TRUE);
+    $response = $operationInstance->addSubCategory($subcategoryName,$CategoryId);
+    if($response):
+        $actual_link = $formUrl."/subCategoryAdd-form.php?success=1";
+        header("Location: $actual_link");
+    else:
+        echo "something went wrong.";
+        $actual_link = $formUrl."/subCategoryAdd-form.php?success=0";
+        header("Location: $actual_link");
+    endif;
+endif;
 
 ////////////////////////////// NEW BILL ADD
 if(isset($_POST['billFormSubmit'])):
