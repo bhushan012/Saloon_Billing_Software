@@ -549,6 +549,21 @@ $(document).ready(function () {
     });
     $("#serviceCategory").on('change', function (e) {
         var serviceCategory = $(this).val();
-        console.log("Category Id: ",serviceCategory,e)
+        $("#subCategorySec").removeClass("d-none");  
+        $.ajax({
+            url: siteUrl + '/logic/getSubCategory.php',
+            type: 'POST',
+            data: {  categoryId : serviceCategory},
+            success: function (data) {
+                console.log(data);
+                $("#serviceSubCategory").html("");
+                $("#serviceSubCategory").html(data);
+            },
+            error: function (data) {
+                $("#serviceSubCategory").html("");
+                console.log('failed ajax with error: ' + data);
+            }
+        });
+        console.log("Category Id: ",serviceCategory)
     });
 });

@@ -22,18 +22,15 @@ if(isset($_GET['success'])){
             ?>
         </select>
     </div>
-    <!-- <div class="mt-3">
+    <div id="subCategorySec" class="mt-3 d-none">
         <label>Service Sub-Category:</label>
-        <select class="form-control test" id="serviceSubCategory" name="serviceSubCategory" required>
+        <select class="form-control test " id="serviceSubCategory" name="serviceSubCategory" required>
             <option value="">Service Sub-Category</option>
-            <?php
-            // $result = $operationInstance->getSaloonSubCategoryById(1);
-            // while ($row = $result->fetch_assoc()) {
-            //     echo "<option value=" . $row['sub_category_id'] . ">" . $row['sub_category_name'] . "</option>";
-            // }
-            ?>
+        
+           
+          
         </select>
-    </div> -->
+    </div>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
             <label for="firstName">Service Name</label>
