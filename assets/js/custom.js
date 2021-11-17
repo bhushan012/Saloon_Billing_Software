@@ -133,7 +133,8 @@ $(document).ready(function () {
     //based on subcategory services list
     $(".subcategoryClass").on('change', function (e) {
         var subCategoryId = $(this).val();
-        console.log(serviceCategoryBilling);
+        console.log("on change subcategoryClass",subCategoryId);
+        // console.log(serviceCategoryBilling);
         $.ajax({
             url: siteUrl + '/logic/servicesListByCategory.php',
             type: 'POST',
@@ -566,6 +567,6 @@ $(document).ready(function () {
                 console.log('failed ajax with error: ' + data);
             }
         });
-        console.log("Category Id: ",serviceCategory)
+        // console.log("Category Id: ",serviceCategory)
     });
 });
