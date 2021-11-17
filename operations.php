@@ -107,6 +107,7 @@ class Operations {
     }
     Function getSaloonSubCategoryById($id){
         $sql = "SELECT * FROM saloon_subcategory where category_id = '${$id}'";
+        echo $sql;
         global $conn;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
