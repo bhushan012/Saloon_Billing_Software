@@ -558,7 +558,7 @@ $(document).ready(function () {
             type: 'POST',
             data: {  categoryId : serviceCategory},
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $("#serviceSubCategory").html("");
                 $("#serviceSubCategory").html(data);
             },

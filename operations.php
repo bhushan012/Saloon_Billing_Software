@@ -127,7 +127,7 @@ class Operations {
         }
     }
     Function getAllServicesByCategory($subcategoryId){
-        $sql = "SELECT * FROM service_details where service_subcategoryId = ".$subcategoryId;
+        $sql = "SELECT * FROM service_details where service_subcategory_id = ".$subcategoryId;
         global $conn;
         $result = $conn->query($sql);
         return $result;
