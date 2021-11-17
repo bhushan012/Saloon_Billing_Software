@@ -131,7 +131,7 @@ $(document).ready(function () {
         }
     });
     //based on subcategory services list
-    $("#subcategoryClass").on('change', function (e) {
+    $(".subcategoryClass").on('change', function (e) {
         var subCategoryId = $(this).val();
         console.log(serviceCategoryBilling);
         $.ajax({
