@@ -200,7 +200,7 @@ if (isset($_GET['success'])) {
                 </div>
                 <div class="col-md-4 partialPatmentCol mt-1" style="display:none;">
                     <div class="input-group-btn ">
-                        <button class="btn btn-success" id="addCredits" type="button"><i class="fa fa-check-square-o"></i><span class="h6"> Discount</span></button>
+                        <button class="btn btn-success" id="addCredits" type="button"><i class="fa fa-check-square-o"></i><span class="h6">Calculate Credit</span></button>
                     </div>
                 </div>
             </div>
