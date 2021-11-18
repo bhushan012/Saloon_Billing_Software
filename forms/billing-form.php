@@ -180,18 +180,27 @@ if (isset($_GET['success'])) {
                     </div>
                 </div>
             </div>
+            <div class="dropdown-divider"></div>
             <div class="row">
-            <div class="col-md-4">
-                <label class="h6">Add Quantity:</label>
-                    <div class="">
-                        <input class="form-control p-3" id="amntId" type="text" placeholder="Quantity" />
+                <div class="col-md-4 text-center mt-3">
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" value="1" id="partialPaymentCheck">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Partial Payment
+                        </label>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="form-group text-center mb-2">
-                        <div class="input-group-btn">
-                            <button class="btn btn-success" id="addCredits" type="button"><i class="fa fa-plus"></i><span class="h6"> Add</span></button>
+                <div class="col-md-4 partialPatmentCol mt-3" style="display:none;">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">₹</span>
                         </div>
+                        <input type="text" id="amntId" value ="0" class="form-control" placeholder="Amount Paid" aria-label="Amount" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                <div class="col-md-4 dicountCol mt-1" style="display:none;">
+                    <div class="input-group-btn ">
+                        <button class="btn btn-success" id="addCredits" type="button"><i class="fa fa-check-square-o"></i><span class="h6"> Discount</span></button>
                     </div>
                 </div>
             </div>

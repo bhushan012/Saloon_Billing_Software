@@ -100,6 +100,13 @@ $(document).ready(function () {
             $('.dicountCol').css('display', 'none');
         }
     });
+    $("#partialPaymentCheck").on('click', function (e) {
+        if ($('#partialPaymentCheck').is(':checked')) {
+            $('.partialPatmentCol').css('display', 'block');
+        } else {
+            $('.partialPatmentCol').css('display', 'none');
+        }
+    });
     $("#customerTypeSelect").on('change', function (e) {
         var customerTypeId = $(this).val();
         if (customerTypeId == "0" || customerTypeId == "1") {
