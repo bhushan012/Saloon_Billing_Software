@@ -204,6 +204,7 @@ if (isset($_GET['success'])) {
                     </div>
                 </div>
             </div>
+            <div class="dropdown-divider"></div>
             <?php
             $response = "";
             if ($successResponse == 1) {
