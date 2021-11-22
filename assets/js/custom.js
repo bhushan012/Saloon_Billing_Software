@@ -309,6 +309,7 @@ $(document).ready(function () {
         console.log(newsub+"Sub Total");
         var creditAmnt = creditCalc(newsub,cred);
         console.log(creditAmnt + "Credit");
+        $("#creditToPay").html(creditAmnt);
         $(this).parents(".removeServiceRow").remove();
         $('.' + rowId).remove();
           // Find and remove item from an array
@@ -436,8 +437,13 @@ $(document).ready(function () {
             $('#discount').empty().append(amtDiscounted);
             console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
-    //    finalList.filter(function (param) { 
-        // });
+            var cred = parseInt($("#amntPaid").text());
+            console.log(cred+"cred paid");
+            var newsub = totalAmt - amtDiscounted;
+            console.log(newsub+"Sub Total");
+            var creditAmnt = creditCalc(newsub,cred);
+            console.log(creditAmnt + "Credit");
+            $("#creditToPay").html(creditAmnt);
        
     });
     function RemoveNode(productIdentifier) {
@@ -462,7 +468,17 @@ $(document).ready(function () {
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         $(this).parents(".removeProductRow").remove();
         finalList = RemoveNode(rowId);
-        // console.log(newData);
+        var cred = parseInt($("#amntPaid").text());
+        console.log(cred+"cred paid");
+        var newsub = totalAmt - amtDiscounted;
+        console.log(newsub+"Sub Total");
+        var creditAmnt = creditCalc(newsub,cred);
+        console.log(creditAmnt + "Credit");
+        $("#creditToPay").html(creditAmnt);
+        if(calculateTotal == 0){
+            $("#amntPaid").html("0");
+            $("#creditToPay").html("0");
+        }
     });
     // Set search input value on click of result item
     $(document).on("click", ".result p", function () {
