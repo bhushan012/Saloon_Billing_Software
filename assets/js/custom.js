@@ -546,6 +546,7 @@ $(document).ready(function () {
     $(document).on("click", "#addCredits", function () {
 
         var total = $('#subTotal').text();
+        console.log(total+ "total amount");
         var amntPaid = $("#amntId").val();
         var total = $('#total').text();
         var calculateCredit = creditCalc(total,amntPaid);
