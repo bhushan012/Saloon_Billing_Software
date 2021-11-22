@@ -303,6 +303,10 @@ $(document).ready(function () {
         $('#discount').empty().append(amtDiscounted);
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
+        var cred = $("#creditToPay").val();
+        var newsub = totalAmt - amtDiscounted;
+        var creditAmnt = creditCalc(newsub,cred);
+        console.log(creditAmnt + "Credit");
         $(this).parents(".removeServiceRow").remove();
         $('.' + rowId).remove();
           // Find and remove item from an array
