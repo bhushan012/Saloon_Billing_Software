@@ -348,7 +348,7 @@ class Operations {
        global $conn;
        if($conn->query($sql) === TRUE){
           $billId = $conn->insert_id;
-          if($creditTaken == 1 && $customerId != ''){
+          if($creditTaken == '1' ){
               $query = "select user_id from user_credit where user_id = '".$customerId."'";
               $result = $conn->query($query);
               if($result->num_rows == 0){
