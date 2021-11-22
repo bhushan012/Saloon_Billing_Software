@@ -352,11 +352,12 @@ class Operations {
               $query = "select user_id from user_credit where user_id = '".$customerId."'";
               $result = $conn->query($query);
               if($result->num_rows == 0){
-                $query = "UPDATE `user_credit` SET `credit_amount`= '".$creditAmnt."',`updated_at`= '".$date."' WHERE `user_id`= '".$customerId."'";
+               
+                $query = "INSERT INTO `user_credit`( `user_id`, `credit_amount`, `updated_at`) VALUES ('".$customerId."','".$creditAmnt."','".$date."')";
                 $result = $conn->query($query);
             }
             else{
-                $query = "INSERT INTO `user_credit`( `user_id`, `credit_amount`, `updated_at`) VALUES ('".$customerId."','".$creditAmnt."','".$date."')";
+                $query = "UPDATE `user_credit` SET `credit_amount`= '".$creditAmnt."',`updated_at`= '".$date."' WHERE `user_id`= '".$customerId."'";
                 $result = $conn->query($query);
             }
            
