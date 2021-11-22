@@ -303,7 +303,7 @@ $(document).ready(function () {
         $('#discount').empty().append(amtDiscounted);
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
-        var cred = parseInt($("#creditToPay").text());
+        var cred = parseInt($("#amntPaid").text());
         console.log(cred+"cred paid");
         var newsub = totalAmt - amtDiscounted;
         console.log(newsub+"Sub Total");
