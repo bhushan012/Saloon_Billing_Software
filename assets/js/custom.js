@@ -311,6 +311,10 @@ $(document).ready(function () {
                 serviceIdList.splice(i, 1);
           }
           console.log(serviceIdList);
+          if(calculateTotal == 0){
+              $("#amntPaid").html("0");
+              $("#creditToPay").html("0");
+          }
 
     });
 
