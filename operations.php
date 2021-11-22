@@ -358,7 +358,7 @@ class Operations {
                 $result = $conn->query($query);
             }
             else{
-                $query = "UPDATE `user_credit` SET `credit_amount`= 'credit_amount". + $creditAmnt."',`updated_at`= '".$dateWithTime."' WHERE `user_id`= '".$customerId."'";
+                $query = "UPDATE `user_credit` SET `credit_amount`= `credit_amount` + '". $creditAmnt."',`updated_at`= '".$dateWithTime."' WHERE `user_id`= '".$customerId."'";
                 $result = $conn->query($query);
             }
            
