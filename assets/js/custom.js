@@ -304,7 +304,9 @@ $(document).ready(function () {
         console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         var cred = $("#creditToPay").val();
+        console.log(cred+"cred paid");
         var newsub = totalAmt - amtDiscounted;
+        console.log(newsub+"Sub Total");
         var creditAmnt = creditCalc(newsub,cred);
         console.log(creditAmnt + "Credit");
         $(this).parents(".removeServiceRow").remove();
