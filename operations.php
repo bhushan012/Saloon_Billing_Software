@@ -340,6 +340,7 @@ class Operations {
     //INSERT BILL DETAILS
     function inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
+        $dateWithTime = date('Y-m-d H:i:s');
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
         $creditTaken = $amntpaid > 0 ? '1' : '0';
 
@@ -353,11 +354,11 @@ class Operations {
               $result = $conn->query($query);
               if($result->num_rows == 0){
                
-                $query = "INSERT INTO `user_credit`( `user_id`, `credit_amount`, `updated_at`) VALUES ('".$customerId."','".$creditAmnt."','".$date."')";
+                $query = "INSERT INTO `user_credit`( `user_id`, `credit_amount`, `updated_at`) VALUES ('".$customerId."','".$creditAmnt."','".$$dateWithTime."')";
                 $result = $conn->query($query);
             }
             else{
-                $query = "UPDATE `user_credit` SET `credit_amount`= '".$creditAmnt."',`updated_at`= '".$date."' WHERE `user_id`= '".$customerId."'";
+                $query = "UPDATE `user_credit` SET `credit_amount`= 'credit_amount + ".$creditAmnt."',`updated_at`= '".$$dateWithTime."' WHERE `user_id`= '".$customerId."'";
                 $result = $conn->query($query);
             }
            
