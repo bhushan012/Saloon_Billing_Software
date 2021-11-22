@@ -321,6 +321,7 @@ $(document).ready(function () {
           if(calculateTotal == 0){
               $("#amntPaid").html("0");
               $("#creditToPay").html("0");
+              $("#amntId").val(0);
           }
 
     });
@@ -478,6 +479,7 @@ $(document).ready(function () {
         if(calculateTotal == 0){
             $("#amntPaid").html("0");
             $("#creditToPay").html("0");
+            $("#amntId").val(0);
         }
     });
     // Set search input value on click of result item
