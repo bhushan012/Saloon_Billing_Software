@@ -55,8 +55,8 @@ $(document).ready(function () {
     function percentage(num, per) {
         return (num / 100) * per;
     }
-    function creditCalc(total,amntPaid){
-        return total - amntPaid;
+    function creditCalc(totalVal,amntPaid){
+        return totalVal - amntPaid;
     }
 
     $("#discountBtn").on('click', function (e) {
