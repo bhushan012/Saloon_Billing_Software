@@ -342,11 +342,25 @@ class Operations {
         $date = date('Y-m-d');
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
         $creditTaken = $amntpaid > 0 ? '1' : '0';
+
        $sql = "INSERT INTO `billing`( `billDate`, `billDiscountSelected`, `billDiscount`, `billTotal`, `billAmountPayable`, `customerType`, `customerId`, `staffId`, `randomCustomerName`, `amountPaid`, `creditRemaining`, `creditTaken`) 
        VALUES ('".$date."','".$billDiscountSelected."','".$billDiscount."','".$billTotal."','".$billAmountPayable."','".$customerType."','".$customerId."','".$staffId."','".$randomCustomerName."','".$amntpaid."','".$creditAmnt."','".$creditTaken."')";
        global $conn;
        if($conn->query($sql) === TRUE){
           $billId = $conn->insert_id;
+          if($creditTaken == 1 && $customerId != ''){
+              $query = "select user_id from user_credit where user_id = '".$customerId."'";
+              $result = $conn->query($query);
+              if($result->num_rows == 0){
+                $query = "UPDATE `user_credit` SET `credit_amount`= '".$creditAmnt."',`updated_at`= '".$date."' WHERE `user_id`= '".$customerId."'";
+                $result = $conn->query($query);
+            }
+            else{
+                $query = "INSERT INTO `user_credit`( `user_id`, `credit_amount`, `updated_at`) VALUES ('".$customerId."','".$creditAmnt."','".$date."')";
+                $result = $conn->query($query);
+            }
+           
+          }
           foreach ($servicesIds as $value) {
               $subsql = "INSERT INTO `bill_services`(`billNo`, `serviceId`) VALUES ('".$billId."','".$value."')";
               $result = $conn->query($subsql);
@@ -367,6 +381,7 @@ class Operations {
             $setQuery = "UPDATE `productList` SET `sold`= '".$sold."' WHERE productID = '".$pID."'";
             $conn->query($setQuery);
           }
+         
           return true;
         }
         else { 
