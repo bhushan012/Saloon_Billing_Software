@@ -342,7 +342,11 @@ class Operations {
         global $conn;
         $sql = "select credit_amount from user_credit where customer_id = '".$customerId."'";
         $result = $conn->query($sql);
-        return $result;
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
     }
     //INSERT BILL DETAILS
     function inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
