@@ -347,8 +347,7 @@ class Operations {
              $result = $conn->query($sql);
              
              $res =  $result->fetch_assoc();
-             $output = $res[0];
-             var_dump($output);
+             var_dump($res);
             // if ($result->num_rows > 0) {
             //     return $result->fetch_assoc();
             // }else{
