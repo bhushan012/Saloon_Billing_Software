@@ -342,10 +342,10 @@ class Operations {
         // try {
             global $conn;
             $sql = "SELECT `credit_amount` FROM `user_credit` WHERE `user_id` = '".$customerId."'";
-            // return $sql;
-            $result = $conn->query($sql);
+            return $sql;
+            // $result = $conn->query($sql);
             // if ($result->num_rows > 0) {
-                return $result;
+                // return $result;
             // }else{
             //     return "0";
             // }
