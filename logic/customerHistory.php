@@ -9,12 +9,16 @@ $userCredit =  $creditInstance->getCreditByCustomerId($custID);
 ?>
 <div class="mt-3 row">
         <div class="col-md-6">
-            <h6>Credit Pending: </h6>
+            <h6>Credit Pending: <?php echo $userCredit; ?></h6>
         </div>
         <div class="col-md-6">
-            <p>
-                <?php echo $userCredit; ?>
-            </p>
+            <button type="button" class="mt-2 btn btn-primary is-invalid waves-effect waves-light">Pay Credit</button>
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">₹</span>
+                </div>
+                <input type="text" id="amntId" value ="0" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="addon-wrapping">
+            </div>
         </div>
     </div>    
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
