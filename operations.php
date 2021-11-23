@@ -339,7 +339,7 @@ class Operations {
     }
     //GET CREDIT INFO BY CUSTOMER ID
     function getCreditByCustomerId($customerId){
-        try {
+        // try {
             global $conn;
             $sql = "SELECT `credit_amount` FROM `user_credit` WHERE `user_id` = '".$customerId."'";
             // return $sql;
@@ -349,9 +349,9 @@ class Operations {
             // }else{
             //     return "0";
             // }
-        } catch (\Throwable $th) {
-           return "Something went wrong, Try again. \n Error: ".$th;
-        }
+        // } catch (\Throwable $th) {
+        //    return "Something went wrong, Try again. \n Error: ".$th;
+        // }
         // return $customerId;
        
     }
