@@ -247,7 +247,7 @@ $(document).ready(function () {
                 $('#inventoryData').html(data);
             },
             error: function (data) {
-                console.log('failed ajax with error: ' + data);
+                console.log('failed ajax with error: ',data);
             }
         });
     });
