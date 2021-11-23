@@ -6,19 +6,22 @@ $creditInstance = new Operations();
 $custID = $_POST['custID'];
 // $month = $_POST['month'];
 $userCredit =  $creditInstance->getCreditByCustomerId($custID);
-while($row = $userCredit->fetch_assoc()) {
-    $creditAmount = $row['credit_amount']; 
+echo $userCredit;
+// while($row = $userCredit->fetch_assoc()) {
+    // $creditAmount = $row['credit_amount']; 
     ?>
-    <div class="mt-3 row">
+    <!-- <div class="mt-3 row">
         <div class="col-md-6">
             <h6>Credit Pending: </h6>
         </div>
         <div class="col-md-6">
-            <p><?php echo $creditAmount ?? ""; ?></p>
+            <p>
+                <?php // echo $creditAmount ?? ""; ?>
+            </p>
         </div>
-    </div>    
+    </div>     -->
 <?php
-}
+// }
 ?>
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
 <thead>
