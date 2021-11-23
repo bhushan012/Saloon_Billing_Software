@@ -345,7 +345,8 @@ class Operations {
             global $conn;
             print($sql);
              $result = $conn->query($sql);
-             var_dump($result);
+             
+             var_dump($result->fetch_assoc());
             // if ($result->num_rows > 0) {
                 // return $result;
             // }else{
