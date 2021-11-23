@@ -102,8 +102,8 @@ $(document).ready(function () {
             type: 'POST',
             data: { creditAmount: creditAmount, userId: userId},
             success: function (data) {
-                console.log(data);
-                // window.location.reload();    
+                // console.log(data);
+                window.location.reload();    
             },
             error: function (data) {
                 console.log('failed ajax with error: ' + data);
