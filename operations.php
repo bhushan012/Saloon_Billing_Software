@@ -346,12 +346,12 @@ class Operations {
             print($sql);
              $result = $conn->query($sql);
              
-            //  return $result->fetch_assoc();
-            if ($result->num_rows > 0) {
-                return $result->fetch_assoc();
-            }else{
-                return "0";
-            }
+             return $result->fetch_assoc();
+            // if ($result->num_rows > 0) {
+            //     return $result->fetch_assoc();
+            // }else{
+            //     return "0";
+            // }
         // } catch (\Throwable $th) {
         //    return "Something went wrong, Try again. \n Error: ".$th;
         // }

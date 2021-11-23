@@ -6,9 +6,9 @@ $creditInstance = new Operations();
 $custID = $_POST['custID'];
 // $month = $_POST['month'];
 $userCredit =  $creditInstance->getCreditByCustomerId($custID);
-echo $userCredit;
+// echo $userCredit;
 while($userCredit) {
-    $creditAmount = $row['credit_amount']; 
+    $creditAmount = $userCredit['credit_amount']; 
     ?>
     <div class="mt-3 row">
         <div class="col-md-6">
