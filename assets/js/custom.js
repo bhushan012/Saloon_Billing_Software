@@ -93,7 +93,7 @@ $(document).ready(function () {
     //         alert("hello");
     //     }
     // });
-    $("#creditClear").on('click', function (e) {
+    $(document).on('click',"#creditClear", function (e) {
         var creditAmount = $('#amntId').val();
         var userId = $('#customerId').val();
         console.log(`Customer Id: ${userId} \n Credit Amount: ${creditAmount}`);
