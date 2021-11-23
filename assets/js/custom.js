@@ -97,6 +97,18 @@ $(document).ready(function () {
         var creditAmount = $('#amntId').val();
         var userId = $('#customerId').val();
         console.log(`Customer Id: ${userId} \n Credit Amount: ${creditAmount}`);
+        $.ajax({
+            url: siteUrl + '/logic/payCredit.php',
+            type: 'POST',
+            data: { creditAmount: creditAmount, userId: userId},
+            success: function (data) {
+                console.log(data);
+                // window.location.reload();    
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ' + data);
+            }
+        });
     });
     $("#defaultCheck1").on('click', function (e) {
         if ($('#defaultCheck1').is(':checked')) {

@@ -7,7 +7,7 @@ $custID = $_POST['custID'];
 $userCredit =  $creditInstance->getCreditByCustomerId($custID);
 ?>
 <div class="mt-3 row">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-4">
         <h6>Credit Pending: <?php echo $userCredit; ?></h6>
     </div>
     <div class="col-md-6">

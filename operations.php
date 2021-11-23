@@ -339,25 +339,22 @@ class Operations {
     }
     //GET CREDIT INFO BY CUSTOMER ID
     function getCreditByCustomerId($customerId){
-        // try {
-            
             $sql = "SELECT credit_amount FROM user_credit WHERE user_id = '".$customerId."'";
             global $conn;
-            // print($sql);
              $result = $conn->query($sql);
              
              $res =  $result->fetch_assoc();
              return $res['credit_amount'] ?? "0";
-            // if ($result->num_rows > 0) {
-            //     return $result->fetch_assoc();
-            // }else{
-            //     return "0";
-            // }
-        // } catch (\Throwable $th) {
-        //    return "Something went wrong, Try again. \n Error: ".$th;
-        // }
-        // return $customerId;
-       
+    }
+    //CLEAR CREDIT 
+    function creditPayment($customerId, $amount){
+        $query = "UPDATE `user_credit` SET `credit_amount`= `credit_amount` - '". $amount."' WHERE `user_id`= '".$customerId."'";
+        global $conn;
+        if($conn->query($query) === TRUE){
+            return true;
+        }else{
+            return false;
+        }
     }
     //INSERT BILL DETAILS
     function inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
