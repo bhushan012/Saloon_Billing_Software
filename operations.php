@@ -341,7 +341,7 @@ class Operations {
     function getCreditByCustomerId($customerId){
         // try {
             
-            $sql = "SELECT `credit_amount` FROM `user_credit` WHERE `user_id` = '".$customerId."'";
+            $sql = "SELECT credit_amount FROM user_credit WHERE user_id = '".$customerId."'";
             global $conn;
             //return $sql;
              $result = $conn->query($sql);
