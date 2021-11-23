@@ -339,16 +339,21 @@ class Operations {
     }
     //GET CREDIT INFO BY CUSTOMER ID
     function getCreditByCustomerId($customerId){
-        // return $customerId;
-        global $conn;
-        $sql = "select credit_amount from user_credit where user_id = '".$customerId."'";
-        // return $sql;
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            return $result;
-        }else{
-            return "";
+        try {
+            global $conn;
+            $sql = "select credit_amount from user_credit where user_id = '".$customerId."'";
+            // return $sql;
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                return $result;
+            }else{
+                return "";
+            }
+        } catch (\Throwable $th) {
+           return "Something went wrong, Try again. \n Error: ".$th;
         }
+        // return $customerId;
+       
     }
     //INSERT BILL DETAILS
     function inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
