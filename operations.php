@@ -343,7 +343,7 @@ class Operations {
             
             $sql = "SELECT credit_amount FROM user_credit WHERE user_id = '".$customerId."'";
             global $conn;
-            print($sql);
+            // print($sql);
              $result = $conn->query($sql);
              
              return $result->fetch_assoc();
