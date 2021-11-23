@@ -337,6 +337,13 @@ class Operations {
             }
 
     }
+    //GET CREDIT INFO BY CUSTOMER ID
+    function getCreditByCustomerId($customerId){
+        global $conn;
+        $sql = "select credit_amount from user_credit where customer_id = '".$customerId."'";
+        $result = $conn->query($sql);
+        return $result;
+    }
     //INSERT BILL DETAILS
     function inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
