@@ -347,7 +347,7 @@ class Operations {
              $result = $conn->query($sql);
              
              $res =  $result->fetch_assoc();
-             var_dump($res['credit_amount']);
+             return $res['credit_amount'] ?? "0";
             // if ($result->num_rows > 0) {
             //     return $result->fetch_assoc();
             // }else{

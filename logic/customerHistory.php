@@ -6,8 +6,17 @@ $creditInstance = new Operations();
 $custID = $_POST['custID'];
 // $month = $_POST['month'];
 $userCredit =  $creditInstance->getCreditByCustomerId($custID);
-echo $userCredit;
 ?>
+<div class="mt-3 row">
+        <div class="col-md-6">
+            <h6>Credit Pending: </h6>
+        </div>
+        <div class="col-md-6">
+            <p>
+                <?php echo $userCredit; ?>
+            </p>
+        </div>
+    </div>    
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
 <thead>
         <tr>
