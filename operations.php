@@ -347,7 +347,7 @@ class Operations {
             if ($result->num_rows > 0) {
                 return $result;
             }else{
-                return "";
+                return "0";
             }
         } catch (\Throwable $th) {
            return "Something went wrong, Try again. \n Error: ".$th;
