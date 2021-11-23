@@ -7,8 +7,8 @@ $custID = $_POST['custID'];
 // $month = $_POST['month'];
 $userCredit =  $creditInstance->getCreditByCustomerId($custID);
 echo $userCredit;
-while($userCredit) {
-    $creditAmount = $userCredit['credit_amount']; 
+while($row = $userCredit->fetch_assoc()) {
+    $creditAmount = $row['credit_amount']; 
     ?>
     <div class="mt-3 row">
         <div class="col-md-6">
