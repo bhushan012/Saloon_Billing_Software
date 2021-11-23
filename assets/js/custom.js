@@ -93,6 +93,11 @@ $(document).ready(function () {
     //         alert("hello");
     //     }
     // });
+    $("#creditClear").on('click', function (e) {
+        var creditAmount = $('#amntId').val();
+        var userId = $('#customerId').val();
+        console.log(`Customer Id: ${userId} \n Credit Amount: ${creditAmount}`);
+    });
     $("#defaultCheck1").on('click', function (e) {
         if ($('#defaultCheck1').is(':checked')) {
             $('.dicountCol').css('display', 'block');
