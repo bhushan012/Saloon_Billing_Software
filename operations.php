@@ -344,11 +344,11 @@ class Operations {
             $sql = "select credit_amount from user_credit where user_id = '".$customerId."'";
             // return $sql;
             $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
+            // if ($result->num_rows > 0) {
                 return $result;
-            }else{
-                return "0";
-            }
+            // }else{
+            //     return "0";
+            // }
         } catch (\Throwable $th) {
            return "Something went wrong, Try again. \n Error: ".$th;
         }
