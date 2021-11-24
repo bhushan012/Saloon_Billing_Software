@@ -383,8 +383,9 @@ $(document).ready(function () {
         /* Get input value on change */
         console.log("keypress searchCust");
         var inputVal = $(this).val();
-        var resultDropdown = $(".custResult");
+        var resultDropdown = $(this).siblings(".custResult");
         var customerType = $('#customerTypeSelect').val();
+        console.log(`customerContact : ${inputVal} customer type: ${customerType}`);
         if (inputVal.length) {
             $.get(siteUrl + '/logic/searchCustomersByContact.php', { customerContact: inputVal, customerType: customerType }).done(function (data) {
                 // Display the returned data in browser
