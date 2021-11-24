@@ -50,7 +50,7 @@ $operationInstance = new Operations();
             <div class="col-md-6">Customer Name: <span class="searchedCustomerResult"></span></div>
         </div>
     </div>
-    <input type="hidden" id="customerId">
+    <!-- <input type="hidden" id="customerId"> -->
     <div class="col-md-12 d-none" id="customerSearchContact">
         <div class="row">
             <div class="col-md-6">
