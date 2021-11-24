@@ -364,7 +364,7 @@ $(document).ready(function () {
         var customerId = $(this).attr('id');
         console.log("Customer Id: ",customerId);
     })
-    $('#searchCustomerC').on('keypress', function () {
+    $('#searchCustomerC,#searchCust').on('keypress', function () {
         /* Get input value on change */
         console.log("keypress");
         var inputVal = $(this).val();

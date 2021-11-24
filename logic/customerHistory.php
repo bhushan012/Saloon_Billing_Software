@@ -113,7 +113,6 @@ $userCredit =  $creditInstance->getCreditByCustomerId($custID);
         </tr>
     </tfoot>
 </table>
-<!-- <input type="hidden" id="customerId" value="<?php echo $custID; ?>" /> -->
 <div class="mt-3 row">
     <div class="col-md-12">
         <?php if (isset($name)) : ?> <h4><?= $name; ?>'s Details:</h4><?php endif; ?>
