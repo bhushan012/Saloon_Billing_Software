@@ -359,7 +359,7 @@ $(document).ready(function () {
             resultDropdown.empty();
         }
     });
-    $(document).on('click',".customerDetail", function () {
+    $(document).on("click",".customerDetail", function (e) {
         // var customerName = $(this).text();
         var customerId = $(this).attr('id');
         console.log("Customer Id: ",customerId);

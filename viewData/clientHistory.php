@@ -43,8 +43,8 @@ $operationInstance = new Operations();
         <div class="row">
             <div class="col-md-6">
                 <div class="search-box">
-                    <input class="form-control p-3" id="searchCustomer" type="text" autocomplete="on" placeholder="Search customer..." />
-                    <div class="result"></div>
+                    <input class="form-control p-3" id="searchCust" type="text" autocomplete="on" placeholder="Search customer..." />
+                    <div class="custResult"></div>
                 </div>
             </div>
             <div class="col-md-6">Customer Name: <span class="searchedCustomerResult"></span></div>
