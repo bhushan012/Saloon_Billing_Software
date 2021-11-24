@@ -381,7 +381,7 @@ $(document).ready(function () {
     });
     $('#searchCust').on('keypress', function () {
         /* Get input value on change */
-        console.log("keypress");
+        console.log("keypress searchCust");
         var inputVal = $(this).val();
         var resultDropdown = $(this).siblings(".custResult");
         var customerType = $('#customerTypeSelect').val();
