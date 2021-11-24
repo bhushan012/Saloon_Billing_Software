@@ -359,6 +359,22 @@ $(document).ready(function () {
             resultDropdown.empty();
         }
     });
+    $('#searchCust').on('keypress', function () {
+        /* Get input value on change */
+        console.log("keypress");
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".custResult");
+        var customerType = $('#customerTypeSelect').val();
+        if (inputVal.length) {
+            $.get(siteUrl + '/logic/searchCustomersByName.php', { customerName: inputVal, customerType: customerType }).done(function (data) {
+                // Display the returned data in browser
+                resultDropdown.html(data);
+                console.log(data);
+            });
+        } else {
+            resultDropdown.empty();
+        }
+    });
     $(document).on("click",".customerDetail", function (e) {
         // var customerName = $(this).text();
         var customerId = $(this).attr('id');
@@ -379,7 +395,7 @@ $(document).ready(function () {
             resultDropdown.empty();
         }
     });
-    $('#searchCust').on('keypress', function () {
+    $('#searchCustContact').on('keypress', function () {
         /* Get input value on change */
         console.log("keypress searchCust");
         var inputVal = $(this).val();
