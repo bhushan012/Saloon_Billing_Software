@@ -249,25 +249,24 @@ $(document).ready(function () {
         });
     });
     //GET CUSTOMER HISTORY
-    $("#customerList").on('change', function (e) {
-        //var month = $('#selectMonth1').val();
-        var custID = $('#customerList').val();
-        //console.log("month" + month);
-        console.log("staff" + custID);
-        $.ajax({
-            url: siteUrl + '/logic/customerHistory.php',
-            type: 'POST',
-            data: { custID: custID },
-            success: function (data) {
-                console.log(data);
-                $('#inventoryData').html('');
-                $('#inventoryData').html(data);
-            },
-            error: function (data) {
-                console.log('failed ajax with error: ',data);
-            }
-        });
-    });
+    // $("#customerList").on('change', function (e) {
+    //     //var month = $('#selectMonth1').val();
+    //     var custID = $('#customerList').val();
+    //     console.log("staff" + custID);
+    //     $.ajax({
+    //         url: siteUrl + '/logic/customerHistory.php',
+    //         type: 'POST',
+    //         data: { custID: custID },
+    //         success: function (data) {
+    //             console.log(data);
+    //             $('#inventoryData').html('');
+    //             $('#inventoryData').html(data);
+    //         },
+    //         error: function (data) {
+    //             console.log('failed ajax with error: ',data);
+    //         }
+    //     });
+    // });
 
     var serviceIdList = [];
     $("#billingAddService").on("click", function () {
@@ -377,7 +376,22 @@ $(document).ready(function () {
     });
     $(document).on("click",".customerDetail", function (e) {
         // var customerName = $(this).text();
-        var customerId = $(this).attr('id');
+        var custID = $(this).attr('id');
+        // var custID = $('#customerList').val();
+        console.log("staff" + custID);
+        $.ajax({
+            url: siteUrl + '/logic/customerHistory.php',
+            type: 'POST',
+            data: { custID: custID },
+            success: function (data) {
+                console.log(data);
+                $('#inventoryData').html('');
+                $('#inventoryData').html(data);
+            },
+            error: function (data) {
+                console.log('failed ajax with error: ',data);
+            }
+        });
         console.log("Customer Id: ",customerId);
     })
     $('#searchCustomerC').on('keypress', function () {
