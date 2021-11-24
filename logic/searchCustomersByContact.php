@@ -7,7 +7,7 @@ $output = array();
 $result =  $operationInstance->getCustomerByContact($customerContact,$customerType);
 if($result != ""){
     while($row = $result->fetch_assoc()) {
-        echo "<p id='".$row["customer_id"]."'>" . $row["fullName"] . "</p>";
+        echo "<p class='customerDetail' id='".$row["customer_id"]."'>" . $row["fullName"] . "</p>";
     }
     // echo json_encode($output);
 }else{

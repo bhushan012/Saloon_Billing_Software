@@ -359,6 +359,11 @@ $(document).ready(function () {
             resultDropdown.empty();
         }
     });
+    $(document).on('click',".customerDetail", function () {
+        // var customerName = $(this).text();
+        var customerId = $(this).attr('id');
+        console.log("Customer Id: ",customerId);
+    })
     $('#searchCustomerC').on('keypress', function () {
         /* Get input value on change */
         console.log("keypress");
