@@ -42,13 +42,15 @@ i {
   left: 0;
 }
 /* Formatting result items */
-.result p {
+.result p,
+.custResult p {
   margin: 0;
   padding: 7px 10px;
   border: 1px solid #CCCCCC;
   border-top: none;
 }
-.result p:hover {
+.result p:hover,
+.custResult p:hover {
   background: #f2f2f2;
 }
 .modal.left .modal-dialog,
