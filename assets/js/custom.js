@@ -377,6 +377,10 @@ $(document).ready(function () {
     $(document).on("click",".customerDetail", function (e) {
         // var customerName = $(this).text();
         var custID = $(this).attr('id');
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".custResult").empty();
+        $('.searchedCustomerResult').html('');
+        $('.searchedCustomerResult').html($(this).text());
         // var custID = $('#customerList').val();
         console.log("staff" + custID);
         $.ajax({
