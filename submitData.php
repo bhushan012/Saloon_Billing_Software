@@ -33,6 +33,7 @@ if(isset($_POST['login_submit'])):
     // print_r($response);
     // echo $hashPassword;
     if($response['status']):
+        session_start();
         $_SESSION['username'] = $response['username']; 
         $_SESSION['userId'] = $response['userId']; 
         $_SESSION['user_type'] = $response['user_type']; 
