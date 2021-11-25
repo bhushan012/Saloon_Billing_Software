@@ -11,10 +11,6 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 <body>
-<?php 
-include $homeUrl."/operations.php";
-$operationInstance = new Operations();
-?>
 <header>
 <div class="sidenav">
     <div class="login-main-text">
