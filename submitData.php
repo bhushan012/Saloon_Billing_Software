@@ -37,7 +37,8 @@ if(isset($_POST['login_submit'])):
         $_SESSION['userId'] = $response['userId']; 
         $_SESSION['user_type'] = $response['user_type']; 
         $actual_link = $homeUrl."/index.php";
-        header("Location: $actual_link");
+        echo "success with: ".$response."<br> Actual Link: ".$actual_link;
+        // header("Location: $actual_link");
     else:
         // echo "something went wrong.";
         $actual_link = $homeUrl."/login.php?error=1";
