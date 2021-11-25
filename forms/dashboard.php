@@ -15,7 +15,6 @@ $operationInstance = new Operations();
             echo "<h1 class='card-title'>₹" . $row['total'] . "</h1>";
         }
        }
-    
     ?>
     <!-- <h1 class="card-title">₹1.59L</h1> -->
   </div>
