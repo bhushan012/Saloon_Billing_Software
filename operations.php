@@ -3,7 +3,7 @@ include "connection.php";
 
 class Operations {
     function userLogin($username,$hashPassword) {
-        $sql = "SELECT `userId`,`username` from users where `username` = '".$username."' AND `password` = '".$hashPassword."'";
+        $sql = "SELECT `userId`,`username` FROM `users` WHERE `username` = `".$username."` AND `password` = `".$hashPassword."`";
         global $conn;
         if ($conn->query($sql) === TRUE) {
             $result = $conn->query($sql);
