@@ -1,5 +1,6 @@
 <?php include "urlMapping.php"; 
 session_start();
+echo "USERNAME: ".$_SESSION['username'];
 if(empty($_SESSION['username'])){
     header('Location: '.$homeUrl.'/login.php'); 
 }
