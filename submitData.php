@@ -30,16 +30,17 @@ if(isset($_POST['login_submit'])):
     $username = $_POST['username'];
     $hashPassword =  md5($_POST['password']);
     $response = $operationInstance->userLogin($username,$password);
+    echo $response;
     if($response['status']):
         $_SESSION['username'] = $response['username']; 
         $_SESSION['userId'] = $response['userId']; 
         $_SESSION['user_type'] = $response['user_type']; 
         $actual_link = $homeUrl."/index.php";
-        header("Location: $actual_link");
+        // header("Location: $actual_link");
     else:
         // echo "something went wrong.";
         $actual_link = $homeUrl."/login.php?error=1";
-        header("Location: $actual_link");
+        // header("Location: $actual_link");
     endif;
 endif;
 ////////////////////////////// NEW SERVICE ADD
