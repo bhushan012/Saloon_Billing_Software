@@ -3,14 +3,21 @@ include "connection.php";
 
 class Operations {
     function userLogin($username,$hashPassword) {
-        $sql = "SELECT `userId`,`username` FROM `users` WHERE `username` = '".$username."' AND `password` = '".$hashPassword."'";
+        
+        $sql = "SELECT `userId`,`username`,`user_type` FROM `users` WHERE `username` = '".$username."' AND `password` = '".$hashPassword."'";
+        
         // echo $sql."<br>";
         global $conn;
         if ($conn->query($sql) == TRUE) {
             $result = $conn->query($sql);
             // print_r($result);
             while($row = $result->fetch_assoc()) {
-                return array("username" => $row['username'], "userId" => $row['userId'], "status" => 'true');
+                $date = new DateTime();
+                // echo $date->getTimestamp();
+                $dateWithTime = $date->getTimestamp();
+                $updateLogged = "UPDATE `users` SET `last_logged`= '".$dateWithTime."' WHERE `userId`= '".$row['userId']."'";
+                $conn->query($updateLogged);
+                return array("username" => $row['username'],"user_type" => $row['user_type'], "userId" => $row['userId'], "status" => 'true');
             }    
         }
         else{

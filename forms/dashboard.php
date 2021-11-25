@@ -2,9 +2,9 @@
 include "../header.php"; 
 include "../operations.php";
 $operationInstance = new Operations();
-echo "Username: ".$_SESSION['username'];
-echo "UserType: ".$_SESSION['user_type'];
-echo "userId: ".$_SESSION['userId'];
+// echo "Username: ".$_SESSION['username'];
+// echo "UserType: ".$_SESSION['user_type'];
+// echo "userId: ".$_SESSION['userId'];
 ?>
 
 <div class="row mt-2">
