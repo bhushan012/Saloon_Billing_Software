@@ -29,7 +29,7 @@ endif;
 if(isset($_POST['login_submit'])):
     $username = $_POST['username'];
     $hashPassword =  md5($_POST['password']);
-    $response = $operationInstance->userLogin($username,$password);
+    $response = $operationInstance->userLogin($username,$hashPassword);
     print_r($response);
     echo $hashPassword;
     if($response['status']):
