@@ -30,7 +30,7 @@ if(isset($_POST['login_submit'])):
     $username = $_POST['username'];
     $hashPassword =  md5($_POST['password']);
     $response = $operationInstance->userLogin($username,$password);
-    echo $response;
+    print_r($response);
     if($response['status']):
         $_SESSION['username'] = $response['username']; 
         $_SESSION['userId'] = $response['userId']; 
