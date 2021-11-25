@@ -1,4 +1,5 @@
 <?php include "urlMapping.php"; 
+session_start();
 $error = "3";
 if(isset($_GET['success'])){
     $error = $_GET['error'];
@@ -32,11 +33,11 @@ if(isset($_GET['success'])){
             <form method="POST" action="<?= $homeUrl; ?>/submitData.php">
                 <div class="form-group">
                     <label>User Name</label>
-                    <input type="text" name="username" class="form-control" placeholder="User Name">
+                    <input type="text" name="username" class="form-control" placeholder="User Name" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <button type="submit" name="login_submit" class="btn btn-black">Login</button>
                 <?php 

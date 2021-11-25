@@ -2,6 +2,18 @@
 include "connection.php";
 
 class Operations {
+    function userLogin($username,$hashPassword) {
+        $sql = "SELECT `userId`,`username` from users where `username` = '".$username."' AND `password` = '".$hashPassword."'";
+        global $conn;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                return array("username" => $row['username'], "userId" => $row['userId'], "status" => true);
+            }    
+        }else{
+            return array("status" => false);
+        }
+    }
     Function addFund($reason,$ServiceType,$amount,$date) : bool{
         $sql = "INSERT INTO funds (reason, service_type, amount, date) VALUES ('".$reason."','".$ServiceType."','".$amount."','".$date."')";
         global $conn;

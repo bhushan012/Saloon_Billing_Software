@@ -2,7 +2,11 @@
 include "../header.php"; 
 include "../operations.php";
 $operationInstance = new Operations();
+echo "Username: ".$_SESSION['username'];
+echo "UserType: ".$_SESSION['user_type'];
+echo "userId: ".$_SESSION['userId'];
 ?>
+
 <div class="row mt-2">
     <div class="col-md-3">
         <div class="card border-success mb-3" style="max-width: 18rem;">
