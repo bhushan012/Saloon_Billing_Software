@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/less/login.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
-
+<body>
 <?php 
-include "../operations.php";
+include $homeUrl."/operations.php";
 $operationInstance = new Operations();
 ?>
 <header>
@@ -48,3 +48,5 @@ $operationInstance = new Operations();
 <script src="<?= $homeUrl; ?>/assets/js/jquery-3.5.1.js" ></script>
 <script src="<?= $homeUrl; ?>/assets/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 </footer>
+</body>
+</html>
