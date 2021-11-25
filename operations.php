@@ -6,13 +6,14 @@ class Operations {
         $sql = "SELECT `userId`,`username` FROM `users` WHERE `username` = '".$username."' AND `password` = '".$hashPassword."'";
         // echo $sql."<br>";
         global $conn;
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) == TRUE) {
             $result = $conn->query($sql);
             // print_r($result);
             while($row = $result->fetch_assoc()) {
                 return array("username" => $row['username'], "userId" => $row['userId'], "status" => 'true');
             }    
-        }else{
+        }
+        else{
             return array("status" => 'false');
         }
     }
