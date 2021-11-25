@@ -1,5 +1,5 @@
 <?php include "urlMapping.php"; 
-// session_start();
+session_destroy();
 // if(!empty($_SESSION['username'])){
 //     header('Location: '.$formUrl.'/dashboard.php'); 
 // }
