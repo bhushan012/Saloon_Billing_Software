@@ -25,6 +25,22 @@ if(isset($_POST['customerFormSubmit'])):
     endif;
 endif;
 
+////////////////////////////// LOGIN
+if(isset($_POST['login_submit'])):
+    $username = $_POST['username'];
+    $password =  password_hash("password", PASSWORD_DEFAULT);
+    if (password_verify($_POST['password'], $password)) {
+        echo "Verified with hash: ".$password;
+    }
+    // if($response):
+    //     $actual_link = $formUrl."/services-form.php?error=0";
+    //     header("Location: $actual_link");
+    // else:
+    //     echo "something went wrong.";
+    //     $actual_link = $formUrl."/services-form.php?error=1";
+    //     header("Location: $actual_link");
+    // endif;
+endif;
 ////////////////////////////// NEW SERVICE ADD
 if(isset($_POST['servicesFormSubmit'])):
     $serviceCategory = htmlentities($_POST['serviceCategory'],ENT_QUOTES,'utf-8', TRUE);
