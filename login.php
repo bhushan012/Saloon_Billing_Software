@@ -45,7 +45,7 @@ if(isset($_GET['success'])){
                 <button type="submit" name="login_submit" class="btn btn-black">Login</button>
                 <?php 
                     $response = "";
-                    if($error == 1){
+                    if($error == '1'){
                         echo '<div class="invalid-feedback">Incorrect Credentials.</div>';
                     }
                 ?>
