@@ -15,7 +15,7 @@ class Operations {
                 $date = new DateTime();
                 // echo $date->getTimestamp();
                 $dateWithTime = $date->getTimestamp();
-                $updateLogged = "UPDATE `users` SET `last_logged`= '".$dateWithTime."' WHERE `userId`= '".$row['userId']."'";
+                $updateLogged = "UPDATE `users` SET `last_logged`= 'now()' WHERE `userId`= '".$row['userId']."'";
                 $conn->query($updateLogged);
                 return array("username" => $row['username'],"user_type" => $row['user_type'], "userId" => $row['userId'], "status" => 'true');
             }    
