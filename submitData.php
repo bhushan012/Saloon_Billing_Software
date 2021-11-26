@@ -32,7 +32,7 @@ if(isset($_POST['login_submit'])):
     $response = $operationInstance->userLogin($username,$hashPassword);
     // print_r($response);
     // echo $hashPassword;
-    session_start();
+    // session_start();
     $_SESSION["test"] = "test";
     $actual_link = $formUrl."/dashboard.php";
     header("Location: $actual_link");
