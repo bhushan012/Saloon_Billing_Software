@@ -257,8 +257,8 @@ if (isset($_GET['success'])) {
                     <!-- <p class="font-weight-bold pl-4 mb-0">Taxes</p> -->
                     <div class="dropdown-divider"></div>
                     <p class="font-weight-bold pl-4 mb-0">Amount Payable</p>
-                    <p class="partialPay font-weight-bold pl-4 mb-0">Amount Paid</p>
-                    <p class="partialPay font-weight-bold pl-4 mb-0">Credit</p>
+                    <p style="display:none;" class="partialPay font-weight-bold pl-4 mb-0">Amount Paid</p>
+                    <p style="display:none;" class="partialPay font-weight-bold pl-4 mb-0">Credit</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <p class="mb-0" id="total">0</p>

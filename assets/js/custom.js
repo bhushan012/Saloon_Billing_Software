@@ -455,7 +455,7 @@ $(document).ready(function () {
         console.log(qty+"Quantity");
         stockAvailableUnique = parseInt(stockAvailableUnique);
         console.log(stockAvailableUnique);
-        if(stockAvailableUnique <= qty){
+        if(stockAvailableUnique < qty || stockAvailableUnique  == 0){
             alert("You have only "+stockAvailableUnique+" items in stock! Kindly re-enter the quantity.");
             $("#addQty").val(1);
         }

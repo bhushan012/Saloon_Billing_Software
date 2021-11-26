@@ -2,6 +2,9 @@
 include "../header.php";
 include "../operations.php";
 $operationInstance = new Operations();
+if($_SESSION['user_type'] != '1'){
+    header('Location: '.$formUrl.'/staff-form.php'); 
+}
 ?>
 <h1 class="display-5 mt-3">Staff History </h1>
 <div class="mt-3">

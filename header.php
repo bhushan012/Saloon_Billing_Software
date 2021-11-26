@@ -74,6 +74,7 @@ if(empty($_SESSION['username'])){
 
                     </div>
                     <ul class="nav flex-column">
+                    <?php if($_SESSION['user_type'] != '1'){ ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $formUrl; ?>/dashboard.php">
                                 <i class="fa fa-circle-o-notch " style="
@@ -83,6 +84,7 @@ if(empty($_SESSION['username'])){
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
+                        <?php } ?>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fa fa-plus"></i>
@@ -172,9 +174,12 @@ if(empty($_SESSION['username'])){
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD STAFF</a>
                                     </li>
+                                    <?php if($_SESSION['user_type'] != '1'){ ?>
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/staffHistory.php"><i class="fa fa-eye p-1"></i>STAFF</a>
                                     </li>
+                                    <?php } ?>
+                                    
                                     <!-- <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
                                     </li>  -->
@@ -184,10 +189,7 @@ if(empty($_SESSION['username'])){
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $formUrl; ?>/billing-form.php">
-                                <i class="fa fa-usd" style="
-    width: 16px;
-    height: 16px;
-"></i>
+                                <i class="fa fa-usd" style="width: 16px;height: 16px;"></i>
                                 Billing
                             </a>
                         </li>
