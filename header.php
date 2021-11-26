@@ -22,7 +22,6 @@ date_default_timezone_set('Asia/Kolkata');
 
 <?php 
 session_start();
-print_r($_SESSION);
 // echo "USERNAME: ".$_SESSION['username'];
 if(empty($_SESSION['username'])){
     // header('Location: '.$homeUrl.'/login.php'); 

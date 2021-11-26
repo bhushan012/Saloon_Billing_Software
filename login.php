@@ -1,9 +1,5 @@
 <?php include "urlMapping.php"; 
 session_destroy();
-// $_SESSION = array();
-// if(!empty($_SESSION['username'])){
-//     header('Location: '.$formUrl.'/dashboard.php'); 
-// }
 $error = "3";
 if(isset($_GET['success'])){
     $error = $_GET['error'];
