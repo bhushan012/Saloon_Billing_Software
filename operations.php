@@ -12,10 +12,10 @@ class Operations {
             $result = $conn->query($sql);
             // print_r($result);
             while($row = $result->fetch_assoc()) {
-                $date = new DateTime();
+                // $date = new DateTime();
                 // echo $date->getTimestamp();
-                $dateWithTime = $date->getTimestamp();
-                $updateLogged = "UPDATE `users` SET `last_logged`= 'now()' WHERE `userId`= '".$row['userId']."'";
+                $dateWithTime = date("Y-m-d H:i:s");
+                $updateLogged = "UPDATE `users` SET `last_logged`= '".$dateWithTime."' WHERE `userId`= '".$row['userId']."'";
                 $conn->query($updateLogged);
                 return array("username" => $row['username'],"user_type" => $row['user_type'], "userId" => $row['userId'], "status" => 'true');
             }    
@@ -370,8 +370,8 @@ class Operations {
     }
     //CLEAR CREDIT 
     function creditPayment($customerId, $amount){
-        $date = new DateTime();
-        $dateWithTime = $date->getTimestamp();
+        // $date = new DateTime();
+        $dateWithTime = date("Y-m-d H:i:s");
         // $dateWithTime = date('Y-m-d H:i:s');
         $query = "UPDATE `user_credit` SET `credit_amount`= `credit_amount` - '". $amount."',`updated_at`= '".$dateWithTime."' WHERE `user_id`= '".$customerId."'";
         global $conn;
@@ -384,8 +384,8 @@ class Operations {
     //INSERT BILL DETAILS
     function inserBillDetails($userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
-        $dateTimestamp = new DateTime();
-        $dateWithTime = $dateTimestamp->getTimestamp();
+        // $dateTimestamp = new DateTime();
+        $dateWithTime = date("Y-m-d H:i:s");
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
         $creditTaken = $amntpaid > 0 ? '1' : '0';
 

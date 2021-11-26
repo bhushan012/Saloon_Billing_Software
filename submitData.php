@@ -38,14 +38,15 @@ if(isset($_POST['login_submit'])):
         $_SESSION['userId'] = $response['userId']; 
         $_SESSION['user_type'] = $response['user_type']; 
         $actual_link = $formUrl."/dashboard.php";
-        // echo "<br> Actual Link: ".$actual_link;
+        
+        echo "<br> Actual Link: ".$actual_link;
         // print_r($response);
         // echo "<br>".$_SESSION['username'];
-        header("Location: $actual_link");
+        // header("Location: $actual_link");
     else:
-        // echo "something went wrong.";
+        echo "something went wrong.";
         $actual_link = $homeUrl."/login.php?error=1";
-        header("Location: $actual_link");
+        // header("Location: $actual_link");
     endif;
 endif;
 ////////////////////////////// NEW SERVICE ADD
