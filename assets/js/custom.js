@@ -120,8 +120,12 @@ $(document).ready(function () {
     $("#partialPaymentCheck").on('click', function (e) {
         if ($('#partialPaymentCheck').is(':checked')) {
             $('.partialPatmentCol').css('display', 'block');
+            $('.partialPay').css('display', 'block');
         } else {
             $('.partialPatmentCol').css('display', 'none');
+            $("#creditToPay").html("0");
+            $("#amntId").val(0);
+            $('.partialPay').css('display', 'none');
         }
     });
     $("#customerTypeSelect").on('change', function (e) {
@@ -514,11 +518,12 @@ $(document).ready(function () {
             console.log(cred+"cred paid");
             var newsub = totalAmt - amtDiscounted;
             console.log(newsub+"Sub Total");
-            var creditAmnt = creditCalc(newsub,cred);
-            console.log(creditAmnt + "Credit");
-            $("#creditToPay").html(creditAmnt);
-       
-    });
+            if ($('#partialPaymentCheck').is(':checked')) {
+                var creditAmnt = creditCalc(newsub,cred);
+                console.log(creditAmnt + "Credit");
+                $("#creditToPay").html(creditAmnt);
+            }
+        });
     function RemoveNode(productIdentifier) {
         return finalList.filter(function(emp) {
             if (emp.productIdentifier == productIdentifier) {

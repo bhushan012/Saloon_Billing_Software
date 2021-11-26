@@ -436,7 +436,7 @@ class Operations {
     //FETCH BILL DETAILS
     function getBillDetail(){
        // $sql = "SELECT billing.billNo , billing.billDate , billing.billTotal , billing.billDiscount , billing.billAmountPayable , customers.fullName , staffTable.staffName FROM `billing` INNER JOIN customers ON billing.customerId = customers.customer_Id INNER JOIN staffTable ON billing.staffId = staffTable.staffID ORDER BY billing.billNo DESC";
-       $sql = "SELECT billNo, billDate, billTotal,billDiscount,billAmountPayable, randomCustomerName , customerId, staffId, amountPaid , creditTaken , creditRemaining
+       $sql = "SELECT billNo,bill_created_by, billDate, billTotal,billDiscount,billAmountPayable, randomCustomerName , customerId, staffId, amountPaid , creditTaken , creditRemaining
        FROM billing 
        ORDER BY billNo DESC"; 
        global $conn;
