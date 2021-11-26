@@ -33,8 +33,9 @@ if(isset($_POST['login_submit'])):
     // print_r($response);
     // echo $hashPassword;
     session_start();
-    echo ini_get('session.cookie_domain');
+    
     $_SESSION["test"] = "test";
+    echo session_id();
     $actual_link = $formUrl."/dashboard.php";
     // header("Location: $actual_link");
     // if($response['status']):
