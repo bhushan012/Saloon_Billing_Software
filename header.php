@@ -1,11 +1,6 @@
 <?php include "urlMapping.php"; 
 date_default_timezone_set('Asia/Kolkata');
-session_start();
-// echo "USERNAME: ".$_SESSION['username'];
-if(empty($_SESSION['username'])){
-    // header('Location: '.$homeUrl.'/login.php'); 
-    print_r($_SESSION);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +20,14 @@ if(empty($_SESSION['username'])){
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
-
+<?php 
+session_start();
+// echo "USERNAME: ".$_SESSION['username'];
+if(empty($_SESSION['username'])){
+    // header('Location: '.$homeUrl.'/login.php'); 
+    print_r($_SESSION);
+}
+?>
 <body id="bodyLoad" class="blue" style="overflow-x: hidden;">
     <div class="loading" id="loading">
 
