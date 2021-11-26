@@ -370,7 +370,10 @@ class Operations {
     }
     //CLEAR CREDIT 
     function creditPayment($customerId, $amount){
-        $query = "UPDATE `user_credit` SET `credit_amount`= `credit_amount` - '". $amount."' WHERE `user_id`= '".$customerId."'";
+        $date = new DateTime();
+        $dateWithTime = $date->getTimestamp();
+        // $dateWithTime = date('Y-m-d H:i:s');
+        $query = "UPDATE `user_credit` SET `credit_amount`= `credit_amount` - '". $amount."',`updated_at`= '".$dateWithTime."' WHERE `user_id`= '".$customerId."'";
         global $conn;
         if($conn->query($query) === TRUE){
             return true;
@@ -381,7 +384,8 @@ class Operations {
     //INSERT BILL DETAILS
     function inserBillDetails($userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
-        $dateWithTime = date('Y-m-d H:i:s');
+        $dateTimestamp = new DateTime();
+        $dateWithTime = $dateTimestamp->getTimestamp();
         $billDiscountSelected = $billDiscount>0 ? '1' : '0';
         $creditTaken = $amntpaid > 0 ? '1' : '0';
 

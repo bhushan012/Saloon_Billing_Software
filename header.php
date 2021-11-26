@@ -1,4 +1,5 @@
 <?php include "urlMapping.php"; 
+date_default_timezone_set('Asia/Kolkata');
 session_start();
 // echo "USERNAME: ".$_SESSION['username'];
 if(empty($_SESSION['username'])){
@@ -58,9 +59,11 @@ if(empty($_SESSION['username'])){
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?php echo $homeUrl?>"><img style="height: 50px;" class="img-fluid" src="<?php echo $homeUrl.'/assets/images/tranquil-Logo-icon.png'?>"></a>
         <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
         <ul class="navbar-nav px-3">
+        <?php if($_SESSION['user_type'] == '1'){ ?>
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="<?php echo $homeUrl."/backupdb.php";?>"><i style=" width: 16px;height: 16px;" class="fa fa-hdd-o"></i> Backup</a>
             </li>
+        <?php } ?>
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="<?php echo $homeUrl."/login.php";?>"><i class="fa fa-sign-out" style=" width: 16px;height: 16px;"></i>Sign out</a>
             </li>
@@ -74,7 +77,7 @@ if(empty($_SESSION['username'])){
 
                     </div>
                     <ul class="nav flex-column">
-                    <?php if($_SESSION['user_type'] != '1'){ ?>
+                    <?php if($_SESSION['user_type'] == '1'){ ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $formUrl; ?>/dashboard.php">
                                 <i class="fa fa-circle-o-notch " style="
@@ -174,7 +177,7 @@ if(empty($_SESSION['username'])){
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD STAFF</a>
                                     </li>
-                                    <?php if($_SESSION['user_type'] != '1'){ ?>
+                                    <?php if($_SESSION['user_type'] == '1'){ ?>
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/staffHistory.php"><i class="fa fa-eye p-1"></i>STAFF</a>
                                     </li>
