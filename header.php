@@ -13,7 +13,7 @@ if(empty($_SESSION['username'])){
     <link rel="icon" type="image/x-icon" href="<?= $homeUrl; ?>/assets/img/mdb-favicon.ico" />
     <title>Barbery Billing Software</title>
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/bootstrap-4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/less/style.css">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/less/style.css?version=<?php echo rand(); ?>">
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/css/dashboard.css">
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
