@@ -40,9 +40,11 @@ if(isset($_POST['login_submit'])):
         $actual_link = $formUrl."/dashboard.php";
         
         // echo "<br> Actual Link: ".$actual_link;
-        // print_r($response);
+        print_r($response);
         // echo "<br>".$_SESSION['username'];
-        header("Location: $actual_link");
+        echo "<br>";
+        print_r($_SESSION);
+        // header("Location: $actual_link");
     else:
         // echo "something went wrong.";
         $actual_link = $homeUrl."/login.php?error=1";
