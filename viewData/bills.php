@@ -8,6 +8,8 @@ include "../operations.php";
         <tr>
             <th class="th-sm">Bill No
             </th>
+            <th class="th-sm">Created By
+            </th>
             <th class="th-sm">Customer
             </th>
             <th class="th-sm">Staff Name
@@ -52,6 +54,7 @@ include "../operations.php";
         ?>
             <tr>
                 <td> #TTT <?= $row['billNo']; ?></td>
+                <td><?= $row['bill_created_by'] == '1' ? "ADMIN" : "STAFF"; ?></td>
                 <td><?= $name; ?></td>
                 <td><?= $staffName; ?></td>
                 <td><?= $row['billDate']; ?></td>
@@ -76,7 +79,9 @@ include "../operations.php";
     </tbody>
     <tfoot>
         <tr>
-        <th >Bill No
+        <th>Bill No
+            </th>
+            <th>Created By
             </th>
             <th >Customer
             </th>

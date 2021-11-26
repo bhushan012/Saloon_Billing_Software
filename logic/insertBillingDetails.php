@@ -11,6 +11,8 @@ $staffId = htmlentities($_POST['staffId'],ENT_QUOTES,'utf-8', TRUE);
 $creditAmnt = htmlentities($_POST['creditAmnt'],ENT_QUOTES,'utf-8', TRUE);
 $amntpaid = htmlentities($_POST['amntpaid'],ENT_QUOTES,'utf-8', TRUE);
 $servicesIds= $_POST['servicesTaken'];
+session_start();
+$userId = $_SESSION['userId'];
 
 $productList = $_POST['prodList'];
 $sendList;
@@ -29,6 +31,6 @@ foreach ($productList as $key) {
 //  if($creditAmnt == 0 && $amntpaid == 0){
 //      $amntpaid = "Paid";
 //  }
- $result =  $operationInstance->inserBillDetails($amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
+ $result =  $operationInstance->inserBillDetails($userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
  echo $result;
 ?>
