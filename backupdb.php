@@ -27,5 +27,8 @@ $servername = "localhost";
 $username = "u298126064_parlour";
 $password = "F6[2H50>i";
 $dbname = "u298126064_parlour";
-EXPORT_DATABASE($servername, $username, $password, $dbname);
+session_start();
+if($_SESSION['user_type'] == '1'){
+    EXPORT_DATABASE($servername, $username, $password, $dbname);
+}
 ?>

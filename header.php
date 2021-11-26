@@ -59,6 +59,9 @@ if(empty($_SESSION['username'])){
         <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
+                <a class="nav-link" href="<?php echo $homeUrl."/backupdb.php";?>"><i style=" width: 16px;height: 16px;" class="fa fa-hdd-o"></i> Backup</a>
+            </li>
+            <li class="nav-item text-nowrap">
                 <a class="nav-link" href="<?php echo $homeUrl."/login.php";?>">Sign out</a>
             </li>
         </ul>
