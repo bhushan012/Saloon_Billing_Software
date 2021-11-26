@@ -5,7 +5,10 @@ $creditInstance = new Operations();
 $custID = $_POST['custID'];
 // $month = $_POST['month'];
 $userCredit =  $creditInstance->getCreditByCustomerId($custID);
+session_start();
+if ($_SESSION['user_type'] == '1') { 
 ?>
+
 <div class="mt-3 row">
     <div class="col-md-6 mt-4">
         <h6>Credit Pending: <?php echo $userCredit; ?></h6>
@@ -24,6 +27,7 @@ $userCredit =  $creditInstance->getCreditByCustomerId($custID);
         </div>
     </div>
 </div>
+<?php } ?>
 <table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
     <thead>
         <tr>

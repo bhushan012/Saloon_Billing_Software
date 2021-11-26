@@ -1,16 +1,17 @@
-<?php include "urlMapping.php"; 
+<?php include "urlMapping.php";
 date_default_timezone_set('Asia/Kolkata');
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="<?= $homeUrl; ?>/assets/img/mdb-favicon.ico" />
     <title>Barbery Billing Software</title>
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/bootstrap-4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/less/style.css?version=<?php echo rand(); ?>">
+    <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/less/style.css">
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/css/dashboard.css">
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= $homeUrl; ?>/assets/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
@@ -20,14 +21,14 @@ date_default_timezone_set('Asia/Kolkata');
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
-<?php 
+<?php
 session_start();
-// echo "USERNAME: ".$_SESSION['username'];
-if(empty($_SESSION['username'])){
-    // header('Location: '.$homeUrl.'/login.php'); 
-    print_r($_SESSION);
+if (empty($_SESSION['username'])) {
+    header('Location: ' . $homeUrl . '/login.php');
+    // print_r($_SESSION);
 }
 ?>
+
 <body id="bodyLoad" class="blue" style="overflow-x: hidden;">
     <div class="loading" id="loading">
 
@@ -59,16 +60,16 @@ if(empty($_SESSION['username'])){
         </div>
     </div>
     <nav id="one" class="d-none  navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?php echo $homeUrl?>"><img style="height: 50px;" class="img-fluid" src="<?php echo $homeUrl.'/assets/images/tranquil-Logo-icon.png'?>"></a>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?php echo $homeUrl ?>"><img style="height: 50px;" class="img-fluid" src="<?php echo $homeUrl . '/assets/images/tranquil-Logo-icon.png' ?>"></a>
         <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
         <ul class="navbar-nav px-3">
-        <?php if($_SESSION['user_type'] == '1'){ ?>
+            <?php if ($_SESSION['user_type'] == '1') { ?>
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="<?php echo $homeUrl . "/backupdb.php"; ?>"><i style=" width: 16px;height: 16px;" class="fa fa-hdd-o"></i> Backup</a>
+                </li>
+            <?php } ?>
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="<?php echo $homeUrl."/backupdb.php";?>"><i style=" width: 16px;height: 16px;" class="fa fa-hdd-o"></i> Backup</a>
-            </li>
-        <?php } ?>
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="<?php echo $homeUrl."/login.php";?>"><i class="fa fa-sign-out" style=" width: 16px;height: 16px;"></i>Sign out</a>
+                <a class="nav-link" href="<?php echo $homeUrl . "/login.php"; ?>"><i class="fa fa-sign-out" style=" width: 16px;height: 16px;"></i>Sign out</a>
             </li>
         </ul>
     </nav>
@@ -80,16 +81,16 @@ if(empty($_SESSION['username'])){
 
                     </div>
                     <ul class="nav flex-column">
-                    <?php if($_SESSION['user_type'] == '1'){ ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= $formUrl; ?>/dashboard.php">
-                                <i class="fa fa-circle-o-notch " style="
+                        <?php if ($_SESSION['user_type'] == '1') { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= $formUrl; ?>/dashboard.php">
+                                    <i class="fa fa-circle-o-notch " style="
     width: 16px;
     height: 16px;
 "></i>
-                                Dashboard <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
+                                    Dashboard <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
                         <?php } ?>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">
@@ -180,12 +181,12 @@ if(empty($_SESSION['username'])){
                                     <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/staff-form.php"><i class="fa fa-plus p-1"></i>ADD STAFF</a>
                                     </li>
-                                    <?php if($_SESSION['user_type'] == '1'){ ?>
-                                    <li class="nav-item">
-                                        <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/staffHistory.php"><i class="fa fa-eye p-1"></i>STAFF</a>
-                                    </li>
+                                    <?php if ($_SESSION['user_type'] == '1') { ?>
+                                        <li class="nav-item">
+                                            <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/staffHistory.php"><i class="fa fa-eye p-1"></i>STAFF</a>
+                                        </li>
                                     <?php } ?>
-                                    
+
                                     <!-- <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
                                     </li>  -->
@@ -201,19 +202,13 @@ if(empty($_SESSION['username'])){
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $viewDataUrl; ?>/bills.php">
-                                <i class="fa fa-eye" style="
-    width: 16px;
-    height: 16px;
-"></i>
+                                <i class="fa fa-eye" style="width: 16px;height: 16px;"></i>
                                 View Billing
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= $viewDataUrl; ?>/clientHistory.php">
-                                <i class="fa fa-eye" style="
-    width: 16px;
-    height: 16px;
-"></i>
+                                <i class="fa fa-eye" style="width: 16px;height: 16px;"></i>
                                 Client History
                             </a>
                         </li>
