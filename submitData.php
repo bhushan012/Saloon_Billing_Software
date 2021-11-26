@@ -36,7 +36,7 @@ if(isset($_POST['login_submit'])):
     
     $_SESSION["test"] = "test";
     
-    $actual_link = $formUrl."/dashboard.php";
+    $actual_link = $formUrl."/dashboard.php?sessionId=".session_id();
     header("Location: $actual_link");
     // if($response['status']):
     //     session_start();
