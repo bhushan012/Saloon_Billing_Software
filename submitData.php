@@ -34,6 +34,7 @@ if(isset($_POST['login_submit'])):
     // echo $hashPassword;
     session_start();
     $_SESSION["test"] = "test";
+    $actual_link = $formUrl."/dashboard.php";
     header("Location: $actual_link");
     // if($response['status']):
     //     session_start();
