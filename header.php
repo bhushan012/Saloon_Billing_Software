@@ -21,7 +21,7 @@ date_default_timezone_set('Asia/Kolkata');
 </head>
 
 <?php 
-if (!isset($_SESSION)) { session_start(); print_r($_SESSION);}
+// if (!isset($_SESSION)) { session_start(); print_r($_SESSION);}
 session_start();
 // echo "USERNAME: ".$_SESSION['username'];
 // if(isset($_SESSION['test'])){
