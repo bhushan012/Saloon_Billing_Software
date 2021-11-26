@@ -62,7 +62,7 @@ if(empty($_SESSION['username'])){
                 <a class="nav-link" href="<?php echo $homeUrl."/backupdb.php";?>"><i style=" width: 16px;height: 16px;" class="fa fa-hdd-o"></i> Backup</a>
             </li>
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="<?php echo $homeUrl."/login.php";?>">Sign out</a>
+                <a class="nav-link" href="<?php echo $homeUrl."/login.php";?>"><i class="fa fa-sign-out" style=" width: 16px;height: 16px;"></i>Sign out</a>
             </li>
         </ul>
     </nav>
