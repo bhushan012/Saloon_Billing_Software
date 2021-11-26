@@ -1,6 +1,6 @@
 <?php include "urlMapping.php"; 
 date_default_timezone_set('Asia/Kolkata');
-session_start();
+// session_start();
 // echo "USERNAME: ".$_SESSION['username'];
 if(empty($_SESSION['username'])){
     // header('Location: '.$homeUrl.'/login.php'); 
