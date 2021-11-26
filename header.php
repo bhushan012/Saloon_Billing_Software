@@ -1,5 +1,7 @@
 <?php include "urlMapping.php"; 
 date_default_timezone_set('Asia/Kolkata');
+echo "session";
+print_r($_SESSION);
 // session_start();
 // echo "USERNAME: ".$_SESSION['username'];
 if(empty($_SESSION['username'])){
