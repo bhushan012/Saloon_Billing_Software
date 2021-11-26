@@ -32,30 +32,24 @@ if(isset($_POST['login_submit'])):
     $response = $operationInstance->userLogin($username,$hashPassword);
     // print_r($response);
     // echo $hashPassword;
-    session_start();
-    
-    $_SESSION["test"] = "test";
-    
-    $actual_link = $formUrl."/dashboard.php?sessionId=".session_id();
-    header("Location: $actual_link");
-    // if($response['status']):
-    //     session_start();
-    //     $_SESSION['username'] = $response['username']; 
-    //     $_SESSION['userId'] = $response['userId']; 
-    //     $_SESSION['user_type'] = $response['user_type']; 
-    //     $actual_link = $formUrl."/dashboard.php";
+    if($response['status']):
+        session_start();
+        $_SESSION['username'] = $response['username']; 
+        $_SESSION['userId'] = $response['userId']; 
+        $_SESSION['user_type'] = $response['user_type']; 
+        $actual_link = $formUrl."/dashboard.php";
         
-    //     // echo "<br> Actual Link: ".$actual_link;
-    //     // print_r($response);
-    //     // echo "<br>".$_SESSION['username'];
-    //     // echo "<br>";
-    //     // print_r($_SESSION);
-    //     header("Location: $actual_link");
-    // else:
-    //     // echo "something went wrong.";
-    //     $actual_link = $homeUrl."/login.php?error=1";
-    //     header("Location: $actual_link");
-    // endif;
+        // echo "<br> Actual Link: ".$actual_link;
+        // print_r($response);
+        // echo "<br>".$_SESSION['username'];
+        // echo "<br>";
+        // print_r($_SESSION);
+        header("Location: $actual_link");
+    else:
+        // echo "something went wrong.";
+        $actual_link = $homeUrl."/login.php?error=1";
+        header("Location: $actual_link");
+    endif;
 endif;
 ////////////////////////////// NEW SERVICE ADD
 if(isset($_POST['servicesFormSubmit'])):

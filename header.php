@@ -21,14 +21,12 @@ date_default_timezone_set('Asia/Kolkata');
 </head>
 
 <?php 
-// if (!isset($_SESSION)) { session_start(); print_r($_SESSION);}
 session_start();
-echo session_id();
 // echo "USERNAME: ".$_SESSION['username'];
-// if(isset($_SESSION['test'])){
+if(empty($_SESSION['username'])){
     // header('Location: '.$homeUrl.'/login.php'); 
     print_r($_SESSION);
-// }
+}
 ?>
 <body id="bodyLoad" class="blue" style="overflow-x: hidden;">
     <div class="loading" id="loading">
