@@ -1,5 +1,6 @@
 <?php
 include "connection.php";
+date_default_timezone_set('Asia/Kolkata');
 
 class Operations {
     function userLogin($username,$hashPassword) {
