@@ -124,6 +124,7 @@ $(document).ready(function () {
         } else {
             $('.partialPatmentCol').css('display', 'none');
             $("#creditToPay").html("0");
+            $("#amntPaid").html("0");
             $("#amntId").val(0);
             $('.partialPay').css('display', 'none');
         }
