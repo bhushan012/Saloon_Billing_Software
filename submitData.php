@@ -38,7 +38,7 @@ if(isset($_POST['login_submit'])):
         $_SESSION['userId'] = $response['userId']; 
         $_SESSION['user_type'] = $response['user_type']; 
         // $actual_link = $formUrl."/dashboard.php";
-        if($response['user_type'] == 1){
+        if($response['user_type'] == '1'){
             header('Location: '.$formUrl.'/dashboard.php'); 
         }else{
             header('Location: '.$formUrl.'/billing-form.php'); 
@@ -48,7 +48,7 @@ if(isset($_POST['login_submit'])):
         // echo "<br>".$_SESSION['username'];
         // echo "<br>";
         // print_r($_SESSION);
-        header("Location: $actual_link");
+        // header("Location: $actual_link");
     else:
         // echo "something went wrong.";
         $actual_link = $homeUrl."/login.php?error=1";
