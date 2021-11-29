@@ -654,8 +654,8 @@ $(document).ready(function () {
         var total = $('#subTotal').text();
         console.log(total+ "total amount");
         var amntPaid = $("#amntId").val();
-        var total = $('#total').text();
-        var calculateCredit = creditCalc(total,amntPaid);
+        var subTotal = $('#subTotal').text();
+        var calculateCredit = creditCalc(subTotal,amntPaid);
         console.log(calculateCredit);
         $("#creditToPay").html('');
         $("#creditToPay").html(calculateCredit);
