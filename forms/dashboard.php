@@ -2,7 +2,7 @@
 include "../header.php"; 
 include "../operations.php";
 $operationInstance = new Operations();
-if($_SESSION['user_type'] !== '1'){
+if($_SESSION['user_type'] == '2'){
     header('Location: '.$formUrl.'/billing-form.php'); 
 }
 echo "Username: ".$_SESSION['username'];
