@@ -37,8 +37,12 @@ if(isset($_POST['login_submit'])):
         $_SESSION['username'] = $response['username']; 
         $_SESSION['userId'] = $response['userId']; 
         $_SESSION['user_type'] = $response['user_type']; 
-        $actual_link = $formUrl."/dashboard.php";
-        
+        // $actual_link = $formUrl."/dashboard.php";
+        if($response['user_type'] == 1){
+            header('Location: '.$formUrl.'/dashboard.php'); 
+        }else{
+            header('Location: '.$formUrl.'/billing-form.php'); 
+        }
         // echo "<br> Actual Link: ".$actual_link;
         // print_r($response);
         // echo "<br>".$_SESSION['username'];
