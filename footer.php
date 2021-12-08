@@ -79,6 +79,7 @@ include "urlMapping.php";
 <!---Small Modal-->
     <script src="<?= $homeUrl; ?>/assets/js/jquery-3.5.1.js" ></script>
     <script src="<?= $homeUrl; ?>/assets/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+    <script src="<?= $homeUrl; ?>/assets/table2excel.js"></script>
     <script src="<?= $homeUrl; ?>/assets/autoComplete/autocomplete.min.js" ></script>
     <script src="<?= $homeUrl; ?>/assets/js/popper.min.js"></script>
     <script src="<?= $homeUrl; ?>/assets/js/mdb.min.js"></script>

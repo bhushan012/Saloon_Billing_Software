@@ -649,6 +649,11 @@ $(document).ready(function () {
     });
 });
 
+    $(document).on("click", "#excel_export", function () {
+        $("#billDataExcel").table2excel({
+            filename: "bills.xls"
+        });
+    });
     $(document).on("click", "#addCredits", function () {
 
         var total = $('#subTotal').text();

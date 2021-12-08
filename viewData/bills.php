@@ -3,7 +3,8 @@ include "../header.php";
 include "../operations.php";
 ?>
 <h1 class="display-5 mt-3">Customer Bills</h1>
-<table class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
+<button id="excel_export"></button>
+<table id="billDataExcel" class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th class="th-sm">Bill No
