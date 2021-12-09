@@ -3,7 +3,7 @@ include "../header.php";
 include "../operations.php";
 ?>
 <h1 class="display-5 mt-3">Customer Bills</h1>
-<button id="excel_export"></button>
+<button id="excel_export">Export Excel</button>
 <table id="billDataExcel" class="table table-striped table-bordered table-sm mt-4" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -68,7 +68,8 @@ include "../operations.php";
                 $amntPaid = $row['amountPaid'];
                 $payable = $row['billAmountPayable'];
                 if ($row ['creditTaken'] == 1 ){?>
-                    <td><?= $row['amountPaid'];?> ( credit: <?php echo $row['creditRemaining'];?> )</td>
+                    <td><?= $row['amountPaid'];?></td>
+                    <!-- <td> ( credit: <?php // echo $row['creditRemaining'];?> )</td> -->
                 <?php }
                 else{?>
                     <td><?= $row['billAmountPayable'];?></td>
