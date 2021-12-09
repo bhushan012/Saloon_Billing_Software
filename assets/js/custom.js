@@ -318,9 +318,11 @@ $(document).ready(function () {
         var rowId = $(this).parents(".removeServiceRow").attr("id");
         var price = $('.' + rowId).text();
         var total = $('#total').text();
-        var gstCalculate = $('#gstCalculate').text();
+        // var gstCalculate = $('#gstCalculate').text();
         var calculateTotal = parseInt(total) - parseInt(price);
+        var gstCalc = calculateTotal * 18 / 100;
         $('#total').empty().append(calculateTotal);
+        $('#gstCalculate').empty().append(gstCalc);
         var totalAmt = parseInt($('#total').text()) + parseInt($('#gstCalculate').text());
         var discount = parseInt($('#discountPercent').val());
         var amtDiscounted = percentage(totalAmt, discount);
