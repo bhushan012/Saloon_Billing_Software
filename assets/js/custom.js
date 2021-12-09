@@ -29,13 +29,13 @@ $(document).ready(function () {
     $("#contactNumber").on('keypress change paste keyup', function (e) {
         // e.preventDefault();
         var contactNumber = $(this).val();
-        console.log(contactNumber);
+        // console.log(contactNumber);
         $.ajax({
             url: siteUrl + '/logic/verifyPhoneNumber.php',
             type: 'POST',
             data: { contactNumber: contactNumber },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 if (data == 1) {
                     console.log("Contact Number not available.");
                     $('#contactNumber').removeClass("is-invalid");
@@ -60,7 +60,7 @@ $(document).ready(function () {
     }
 
     $("#discountBtn").on('click', function (e) {
-        console.log("in discount");
+        // console.log("in discount");
         var totalAmt = parseInt($('#total').text());
         var discount = parseInt($('#discountPercent').val());
         if(discount>99){
@@ -70,13 +70,13 @@ $(document).ready(function () {
         }else{
             var amtDiscounted = percentage(totalAmt, discount);
             $('#discount').empty().append(amtDiscounted);
-            console.log(totalAmt + "totalAmt Price");
+            // console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
             var subtotal = totalAmt - amtDiscounted;
             var amntPaid = $("#amntId").val();
             if(amntPaid > 0){
                 var calculateCredit = creditCalc(subtotal,amntPaid);
-                console.log(calculateCredit);
+                // console.log(calculateCredit);
                 $("#creditToPay").html('');
                 $("#creditToPay").html(calculateCredit);
                 $("#amntPaid").html('');
@@ -96,7 +96,7 @@ $(document).ready(function () {
     $(document).on('click',"#creditClear", function (e) {
         var creditAmount = $('#amntId').val();
         var userId = $('#customerId').val();
-        console.log(`Customer Id: ${userId} \n Credit Amount: ${creditAmount}`);
+        // console.log(`Customer Id: ${userId} \n Credit Amount: ${creditAmount}`);
         $.ajax({
             url: siteUrl + '/logic/payCredit.php',
             type: 'POST',
@@ -169,7 +169,7 @@ $(document).ready(function () {
             type: 'POST',
             data: { subCategoryId: subCategoryId },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('#serviceNames').html(data);
             },
             error: function (data) {
@@ -180,13 +180,13 @@ $(document).ready(function () {
     //GET PRODUCT PRICE AJAX
     $("#productSelect").on('change', function (e) {
         var productSelect = $(this).val();
-        console.log(productSelect);
+        // console.log(productSelect);
         $.ajax({
             url: siteUrl + '/logic/productLatestPrice.php',
             type: 'POST',
             data: { productSelect: productSelect },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('#priceDisplay').html('');
                 $('#priceDisplay').html(data);
                 $("#addQty").val("1");
@@ -200,7 +200,7 @@ $(document).ready(function () {
             type: 'POST',
             data: {  prodID: productSelect},
             success: function (data) {
-                console.log(data + "available");
+                // console.log(data + "available");
                  stockAvailableUnique = data; 
                 
                
@@ -215,15 +215,15 @@ $(document).ready(function () {
         var month = $('#selectMonth').val();
         var prodID = $('#prodList').val();
         var year = $('#selectYear').val();
-        console.log("month" + month);
-        console.log("prod" + prodID);
-        console.log("year" + year);
+        // console.log("month" + month);
+        // console.log("prod" + prodID);
+        // console.log("year" + year);
         $.ajax({
             url: siteUrl + '/logic/inventoryTable.php',
             type: 'POST',
             data: { month: month, prodID: prodID, year: year },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('#inventoryData').html('');
                 $('#inventoryData').html(data);
             },
@@ -237,14 +237,14 @@ $(document).ready(function () {
         var month = $('#selectMonth1').val();
         var staffID = $('#staffList').val();
         var year = $('#selectYearStaff').val();
-        console.log("month" + month);
-        console.log("staff" + staffID);
+        // console.log("month" + month);
+        // console.log("staff" + staffID);
         $.ajax({
             url: siteUrl + '/logic/staffServiceHistory.php',
             type: 'POST',
             data: { month: month, staffID: staffID,year: year },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('#inventoryData').html('');
                 $('#inventoryData').html(data);
             },
@@ -277,10 +277,10 @@ $(document).ready(function () {
     $("#billingAddService").on("click", function () {
         var serviceId = $("#serviceNames").val();
         // serviceIdList.push(serviceId);
-        console.log(serviceId + "service id");
+        // console.log(serviceId + "service id");
         var price = $("#" + serviceId).attr("price");
         var serviceName = $("#" + serviceId).text();
-        console.log("Price: " + price + "Service Name:" + serviceName);
+        // console.log("Price: " + price + "Service Name:" + serviceName);
         var randomNumber = Math.floor((Math.random() * 100) + 1);
         var serviceIdentifier = serviceId +"-"+ randomNumber+'List-'+price;
         var serviceList = "<div class='mb-3 mt-1 removeServiceRow' id='" + serviceIdentifier +"'><span class='removeService mt-2 mr-1 p-1' style='cursor: pointer;'><i class='fa fa-minus'></i></span><span>" + serviceName + "</span></div>";
@@ -290,21 +290,23 @@ $(document).ready(function () {
         $('#costList').append(costList);
         var total = $('#total').text();
         var calculateTotal = parseInt(price) + parseInt(total);
+        var gstCalc = calculateTotal * 18 / 100;
         $('#total').empty().append(calculateTotal);
+        $('#gstCalculate').empty().append(gstCalc);
         $('#subTotal').empty().append(calculateTotal);
         //discount
         var totalAmt = parseInt($('#total').text());
         var discount = parseInt($('#discountPercent').val());
         var amtDiscounted = percentage(totalAmt, discount);
         $('#discount').empty().append(amtDiscounted);
-        console.log(totalAmt + "totalAmt Price");
+        // console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
-        console.log(serviceIdList);
+        // console.log(serviceIdList);
         var subtotal = totalAmt - amtDiscounted;
         var amntPaid = $("#amntId").val();
         if(amntPaid > 0){
             var calculateCredit = creditCalc(subtotal,amntPaid);
-            console.log(calculateCredit);
+            // console.log(calculateCredit);
             $("#creditToPay").html('');
             $("#creditToPay").html(calculateCredit);
             $("#amntPaid").html('');
@@ -322,14 +324,14 @@ $(document).ready(function () {
         var discount = parseInt($('#discountPercent').val());
         var amtDiscounted = percentage(totalAmt, discount);
         $('#discount').empty().append(amtDiscounted);
-        console.log(totalAmt + "totalAmt Price");
+        // console.log(totalAmt + "totalAmt Price");
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         var cred = parseInt($("#amntPaid").text());
-        console.log(cred+"cred paid");
+        // console.log(cred+"cred paid");
         var newsub = totalAmt - amtDiscounted;
-        console.log(newsub+"Sub Total");
+        // console.log(newsub+"Sub Total");
         var creditAmnt = creditCalc(newsub,cred);
-        console.log(creditAmnt + "Credit");
+        // console.log(creditAmnt + "Credit");
         $("#creditToPay").html(creditAmnt);
         $(this).parents(".removeServiceRow").remove();
         $('.' + rowId).remove();
@@ -338,7 +340,7 @@ $(document).ready(function () {
           if(i != -1) {
                 serviceIdList.splice(i, 1);
           }
-          console.log(serviceIdList);
+        //   console.log(serviceIdList);
           if(calculateTotal == 0){
               $("#amntPaid").html("0");
               $("#creditToPay").html("0");
@@ -357,7 +359,7 @@ $(document).ready(function () {
             $.get(siteUrl + '/logic/searchCustomersByName.php', { customerName: inputVal, customerType: customerType }).done(function (data) {
                 // Display the returned data in browser
                 resultDropdown.html(data);
-                console.log(data);
+                // console.log(data);
             });
         } else {
             resultDropdown.empty();
@@ -373,7 +375,7 @@ $(document).ready(function () {
             $.get(siteUrl + '/logic/searchCustomersByName.php', { customerName: inputVal, customerType: customerType }).done(function (data) {
                 // Display the returned data in browser
                 resultDropdown.html(data);
-                console.log(data);
+                // console.log(data);
             });
         } else {
             resultDropdown.empty();
@@ -387,13 +389,13 @@ $(document).ready(function () {
         $('.searchedCustomerResult').html('');
         $('.searchedCustomerResult').html($(this).text());
         // var custID = $('#customerList').val();
-        console.log("staff" + custID);
+        // console.log("staff" + custID);
         $.ajax({
             url: siteUrl + '/logic/customerHistory.php',
             type: 'POST',
             data: { custID: custID },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('#inventoryData').html('');
                 $('#inventoryData').html(data);
             },
@@ -401,7 +403,7 @@ $(document).ready(function () {
                 console.log('failed ajax with error: ',data);
             }
         });
-        console.log("Customer Id: ",customerId);
+        // console.log("Customer Id: ",customerId);
     })
     $('#searchCustomerC').on('keypress', function () {
         /* Get input value on change */
@@ -424,7 +426,7 @@ $(document).ready(function () {
         var inputVal = $(this).val();
         var resultDropdown = $(this).siblings(".custResult");
         var customerType = $('#customerTypeSelect').val();
-        console.log(`customerContact : ${inputVal} customer type: ${customerType}`);
+        // console.log(`customerContact : ${inputVal} customer type: ${customerType}`);
         if (inputVal.length) {
             $.get(siteUrl + '/logic/searchCustomersByContact.php', { customerContact: inputVal, customerType: customerType }).done(function (data) {
                 // Display the returned data in browser
@@ -452,9 +454,9 @@ $(document).ready(function () {
     $("#addQty").on('keypress', function(){
         var qty = $("#addQty").val();
         var id = $("#productSelect").val();
-        console.log(qty+"Quantity");
+        // console.log(qty+"Quantity");
         stockAvailableUnique = parseInt(stockAvailableUnique);
-        console.log(stockAvailableUnique);
+        // console.log(stockAvailableUnique);
         if(stockAvailableUnique < qty || stockAvailableUnique  == 0){
             alert("You have only "+stockAvailableUnique+" items in stock! Kindly re-enter the quantity.");
             $("#addQty").val(1);
@@ -481,21 +483,21 @@ $(document).ready(function () {
        //check Availablity
        var qty = $("#addQty").val()
        stockAvailableUnique = parseInt(stockAvailableUnique);
-        console.log(stockAvailableUnique);
+        // console.log(stockAvailableUnique);
         if(stockAvailableUnique <= qty){
             alert("You have only "+stockAvailableUnique+" items in stock! Kindly re-enter the quantity.");
             e.preventDefault();
         }
        
     
-       console.log("NOT FOUND");
+    //    console.log("NOT FOUND");
             var prodName = $("#product"+id).attr("prodname")
             var qty = $("#addQty").val()
             var price = $("#latestPrice").val()
             var totalCost = $("#total").text();
             var costqty = parseInt(qty)*parseInt(price);
             var totalToShow = costqty + parseInt(totalCost);
-            console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
+            // console.log(qty+ " : qty "+price+ " : price "+ totalToShow+ " : total");
             
            
             $("#total").empty().append(totalToShow);
@@ -508,16 +510,16 @@ $(document).ready(function () {
                 price: price
             }
             finalList.push(productList);
-            console.log(finalList);
+            // console.log(finalList);
             //discount
             var totalAmt = parseInt($('#total').text());
             var discount = parseInt($('#discountPercent').val());
             var amtDiscounted = percentage(totalAmt, discount);
             $('#discount').empty().append(amtDiscounted);
-            console.log(totalAmt + "totalAmt Price");
+            // console.log(totalAmt + "totalAmt Price");
             $('#subTotal').empty().append(totalAmt - amtDiscounted);
             var cred = parseInt($("#amntPaid").text());
-            console.log(cred+"cred paid");
+            // console.log(cred+"cred paid");
             var newsub = totalAmt - amtDiscounted;
             console.log(newsub+"Sub Total");
             if ($('#partialPaymentCheck').is(':checked')) {
@@ -640,7 +642,7 @@ $(document).ready(function () {
         type: 'POST',
         data: {  billID : billID},
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             $("#showServiceData").html("");
             $("#showServiceData").html(data);
         },
@@ -658,11 +660,11 @@ $(document).ready(function () {
     $(document).on("click", "#addCredits", function () {
 
         var total = $('#subTotal').text();
-        console.log(total+ "total amount");
+        // console.log(total+ "total amount");
         var amntPaid = $("#amntId").val();
         var subTotal = $('#subTotal').text();
         var calculateCredit = creditCalc(subTotal,amntPaid);
-        console.log(calculateCredit);
+        // console.log(calculateCredit);
         $("#creditToPay").html('');
         $("#creditToPay").html(calculateCredit);
         $("#amntPaid").html('');

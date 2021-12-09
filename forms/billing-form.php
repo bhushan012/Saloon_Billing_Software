@@ -252,7 +252,7 @@ if (isset($_GET['success'])) {
             <div class="row ">
                 <div class="col-md-8">
                     <p class="font-weight-bold pl-4 mb-0">Total</p>
-
+                    <p class="font-weight-bold pl-4 mb-0">GST (18%)</p>
                     <p class="font-weight-bold pl-4 mb-0">Discount</p>
                     <!-- <p class="font-weight-bold pl-4 mb-0">Taxes</p> -->
                     <div class="dropdown-divider"></div>
@@ -262,7 +262,7 @@ if (isset($_GET['success'])) {
                 </div>
                 <div class="col-md-4 text-center">
                     <p class="mb-0" id="total">0</p>
-
+                    <p class="mb-0" id="gstCalculate">0</p>
                     <p class="mb-0" id="discount">0</p>
                     <!-- <p class="mb-0" id="taxes">1000</p> -->
                     <div class="dropdown-divider"></div>
