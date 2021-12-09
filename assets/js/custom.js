@@ -504,7 +504,8 @@ $(document).ready(function () {
             productList = {
                 id : id,
                 qty : qty,
-                productIdentifier : productId
+                productIdentifier : productId,
+                price: price
             }
             finalList.push(productList);
             console.log(finalList);

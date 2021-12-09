@@ -16,6 +16,7 @@ $userId = $_SESSION['userId'];
 
 $productList = $_POST['prodList'];
 $sendList;
+$productPriceList;
 $serviceid;
 $perServicePrice;
 $i=0;
@@ -27,11 +28,11 @@ foreach ($servicesIds as $value) {
 }
 foreach ($productList as $key) {
    $sendList["prod".$key['id']] = $key['qty'];
-
-}
+   $productPriceList["prod".$key['id']] = $key['price'];
+}   
 //  if($creditAmnt == 0 && $amntpaid == 0){
 //      $amntpaid = "Paid";
 //  }
- $result =  $operationInstance->inserBillDetails($perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
+ $result =  $operationInstance->inserBillDetails($productPriceList,$perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
  echo $result;
 ?>

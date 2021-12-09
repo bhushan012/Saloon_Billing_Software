@@ -383,7 +383,7 @@ class Operations {
         }
     }
     //INSERT BILL DETAILS
-    function inserBillDetails($perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
+    function inserBillDetails($productPriceList,$perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
         // $dateTimestamp = new DateTime();
         $dateWithTime = date("Y-m-d H:i:s");
@@ -416,8 +416,9 @@ class Operations {
               $serviceI++;
           }
           foreach ($productList as $key => $value) {
+              $price = $productPriceList[$key];
               $pID = str_replace("prod","",$key);
-              $addProd = "INSERT INTO `productBilling`(`billID`, `productID`, `qty`) VALUES ('".$billId."','".$pID."','".$value."')";
+              $addProd = "INSERT INTO `productBilling`(`billID`, `productID`, `qty`,`price`) VALUES ('".$billId."','".$pID."','".$value."','".$price."')";
               $result = $conn->query($addProd);
               $query = "SELECT totalqty , sold FROM `productList` WHERE productID = '".$pID."'";
             $result = $conn->query($query);
