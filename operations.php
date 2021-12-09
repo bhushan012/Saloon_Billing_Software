@@ -383,7 +383,7 @@ class Operations {
         }
     }
     //INSERT BILL DETAILS
-    function inserBillDetails($userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
+    function inserBillDetails($perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $servicesIds, $productList){
         $date = date('Y-m-d');
         // $dateTimestamp = new DateTime();
         $dateWithTime = date("Y-m-d H:i:s");
@@ -409,9 +409,11 @@ class Operations {
             }
            
           }
+          $serviceI = 0;
           foreach ($servicesIds as $value) {
-              $subsql = "INSERT INTO `bill_services`(`billNo`, `serviceId`) VALUES ('".$billId."','".$value."')";
+              $subsql = "INSERT INTO `bill_services`(`billNo`, `serviceId`, `servicePrice`) VALUES ('".$billId."','".$value."','".$perServicePrice[$serviceI]."')";
               $result = $conn->query($subsql);
+              $serviceI++;
           }
           foreach ($productList as $key => $value) {
               $pID = str_replace("prod","",$key);
@@ -429,7 +431,6 @@ class Operations {
             $setQuery = "UPDATE `productList` SET `sold`= '".$sold."' WHERE productID = '".$pID."'";
             $conn->query($setQuery);
           }
-         
           return true;
         }
         else { 
