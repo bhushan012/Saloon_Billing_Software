@@ -582,6 +582,7 @@ $(document).ready(function () {
     $("#saveBill").on("click", function () {
         console.log(serviceIdList + "services taken");
         var billDiscount = $('#discount').text();
+        var gstAmount = $('#gstCalculate').text();
         var billTotal = '';
          billTotal = $('#total').text();
         var billAmountPayable = $('#subTotal').text();
@@ -602,7 +603,7 @@ $(document).ready(function () {
             $.ajax({
                 url: siteUrl + '/logic/insertBillingDetails.php',
                 type: 'POST',
-                data: { amntpaid: amntPaid,creditAmnt, billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: finalList},
+                data: { gstAmount: gstAmount,amntpaid: amntPaid,creditAmnt, billDiscount: billDiscount, billTotal: billTotal, billAmountPayable: billAmountPayable, customerType: customerType, customerId: customerId, randomCustomerName: randomCustomerName, staffId: staffId, servicesTaken: serviceIdList, prodList: finalList},
                 success: function (data) {
                     console.log(data);
                    // $('#successMessage').html('');
@@ -658,6 +659,7 @@ $(document).ready(function () {
 
     $(document).on("click", "#excel_export", function () {
         $("#billDataExcel").table2excel({
+            exclude:"notInExcel",
             filename: "bills.xls"
         });
     });

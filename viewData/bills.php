@@ -19,11 +19,13 @@ include "../operations.php";
             </th>
             <th class="th-sm">Total
             </th>
+            <th class="th-sm">Gst
+            </th>
             <th class="th-sm">Discount
             </th>
             <th class="th-sm">Amount Paid
             </th>
-            <th class="th-sm">Details</th>
+            <th class="th-sm notInExcel">Details</th>
         </tr>
     </thead>
     <tbody>
@@ -60,6 +62,7 @@ include "../operations.php";
                 <td><?= $staffName; ?></td>
                 <td><?= $row['billDate']; ?></td>
                 <td><?= $row['billTotal']; ?></td>
+                <td><?= $row['gstAmount']; ?></td>
                 <td><?= $row['billDiscount']; ?></td>
                 <?php 
                 $amntPaid = $row['amountPaid'];
@@ -71,7 +74,7 @@ include "../operations.php";
                     <td><?= $row['billAmountPayable'];?></td>
                 <?php }?>
                 
-                <td><button type="button" class="btn btn-demo openServiceModal" data-name = "<?php echo $name; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
+                <td class="notInExcel"><button type="button" class="btn btn-demo openServiceModal" data-name = "<?php echo $name; ?>" data-billid = "<?php echo $row['billNo']; ?>" data-toggle="modal" data-target="#myModal2">
 			        View 
 		</button></td>
             </tr>
@@ -92,11 +95,13 @@ include "../operations.php";
             </th>
             <th>Total
             </th>
+            <th>Gst
+            </th>
             <th >Discount
             </th>
             <th>Amount Paid
             </th>
-            <th>Details</th>
+            <th class="notInExcel">Details</th>
         </tr>
     </tfoot>
 </table>

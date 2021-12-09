@@ -2,6 +2,7 @@
 include "../operations.php";
 $operationInstance = new Operations();
 $billDiscount = htmlentities($_POST['billDiscount'],ENT_QUOTES,'utf-8', TRUE);
+$gstAmount = htmlentities($_POST['gstAmount'],ENT_QUOTES,'utf-8', TRUE);
 $billTotal = htmlentities($_POST['billTotal'],ENT_QUOTES,'utf-8', TRUE);
 $billAmountPayable = htmlentities($_POST['billAmountPayable'],ENT_QUOTES,'utf-8', TRUE);
 $customerType = htmlentities($_POST['customerType'],ENT_QUOTES,'utf-8', TRUE);
@@ -33,6 +34,6 @@ foreach ($productList as $key) {
 //  if($creditAmnt == 0 && $amntpaid == 0){
 //      $amntpaid = "Paid";
 //  }
- $result =  $operationInstance->inserBillDetails($productPriceList,$perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
+ $result =  $operationInstance->inserBillDetails($gstAmount,$productPriceList,$perServicePrice,$userId,$amntpaid, $creditAmnt, $billDiscount,$billTotal,$billAmountPayable,$customerType,$customerId,$randomCustomerName,$staffId, $serviceid, $sendList);
  echo $result;
 ?>
