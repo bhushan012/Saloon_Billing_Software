@@ -30,7 +30,7 @@ $i=0;
             ?>
                 <tr>
                     <td><?= $row['serviceName']; ?></td>
-                    <td><?= $row['price']; ?></td>
+                    <td><?= $row['servicePrice']; ?></td>
                 </tr>
             <?php } ?>
     </tbody>
