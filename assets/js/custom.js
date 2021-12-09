@@ -61,7 +61,7 @@ $(document).ready(function () {
 
     $("#discountBtn").on('click', function (e) {
         // console.log("in discount");
-        var totalAmt = parseInt($('#total').text());
+        var totalAmt = parseInt($('#total').text()) + parseInt($('#gstCalculate').text());
         var discount = parseInt($('#discountPercent').val());
         if(discount>99){
             alert("Incorrect Discount Added");
@@ -293,16 +293,16 @@ $(document).ready(function () {
         var gstCalc = calculateTotal * 18 / 100;
         $('#total').empty().append(calculateTotal);
         $('#gstCalculate').empty().append(gstCalc);
-        $('#subTotal').empty().append(calculateTotal);
+        $('#subTotal').empty().append(calculateTotal + gstCalc);
         //discount
         var totalAmt = parseInt($('#total').text());
         var discount = parseInt($('#discountPercent').val());
         var amtDiscounted = percentage(totalAmt, discount);
         $('#discount').empty().append(amtDiscounted);
         // console.log(totalAmt + "totalAmt Price");
-        $('#subTotal').empty().append(totalAmt - amtDiscounted);
+        $('#subTotal').empty().append((totalAmt - amtDiscounted) + gstCalc);
         // console.log(serviceIdList);
-        var subtotal = totalAmt - amtDiscounted;
+        var subtotal = (totalAmt - amtDiscounted) + gstCalc;
         var amntPaid = $("#amntId").val();
         if(amntPaid > 0){
             var calculateCredit = creditCalc(subtotal,amntPaid);
@@ -318,13 +318,15 @@ $(document).ready(function () {
         var rowId = $(this).parents(".removeServiceRow").attr("id");
         var price = $('.' + rowId).text();
         var total = $('#total').text();
+        var gstCalculate = $('#gstCalculate').text();
         var calculateTotal = parseInt(total) - parseInt(price);
         $('#total').empty().append(calculateTotal);
-        var totalAmt = parseInt($('#total').text());
+        var totalAmt = parseInt($('#total').text()) + parseInt($('#gstCalculate').text());
         var discount = parseInt($('#discountPercent').val());
         var amtDiscounted = percentage(totalAmt, discount);
         $('#discount').empty().append(amtDiscounted);
         // console.log(totalAmt + "totalAmt Price");
+        
         $('#subTotal').empty().append(totalAmt - amtDiscounted);
         var cred = parseInt($("#amntPaid").text());
         // console.log(cred+"cred paid");
