@@ -54,7 +54,7 @@ include "urlMapping.php";
                 
                 <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-info waves-effect waves-light text-white" ><a href="<?=$formUrl; ?>/billing-form.php"><i class="fa fa-check "></i></a></button>
+                    <div class="btn bg-success waves-effect waves-light text-white" ><a href="<?=$formUrl; ?>/billing-form.php"><i class="text-white h6 fa-check "></i></a></div>
                 </div>
             </div>
         </div>
