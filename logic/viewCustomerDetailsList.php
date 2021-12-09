@@ -30,7 +30,7 @@ $i=0;
             ?>
                 <tr>
                     <td><?= $row['serviceName']; ?></td>
-                    <td><?= $row['cost']; ?></td>
+                    <td><?= $row['price']; ?></td>
                 </tr>
             <?php } ?>
     </tbody>
@@ -50,6 +50,8 @@ if ($result->num_rows > 0) {
             </th>
             <th class="th-sm">Qty
             </th>
+            <th class="th-sm">Price
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -60,6 +62,7 @@ if ($result->num_rows > 0) {
                 <tr>
                     <td><?= $row['productName']; ?></td>
                     <td><?= $row['qty']; ?></td>
+                    <td><?= $row['price']; ?></td>
                 </tr>
             <?php } ?>
     </tbody>

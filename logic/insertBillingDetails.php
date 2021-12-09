@@ -28,7 +28,7 @@ foreach ($servicesIds as $value) {
 }
 foreach ($productList as $key) {
    $sendList["prod".$key['id']] = $key['qty'];
-   $productPriceList["prod".$key['id']] = $key['price'];
+   $productPriceList["prod".$key['id']] = $key['price'] * $key['qty'];
 }   
 //  if($creditAmnt == 0 && $amntpaid == 0){
 //      $amntpaid = "Paid";
