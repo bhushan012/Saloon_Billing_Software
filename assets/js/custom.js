@@ -42,7 +42,7 @@ $(document).ready(function () {
         var id = $(this).data("prodid");
         console.log("EDIT PRODUCT ID: ",id);
         $("#productIDno").val(id);
-        $($(this).attr("data-target")).modal("exampleModal");
+        // $($(this).attr("data-target")).modal("exampleModal");
         
     });
 
