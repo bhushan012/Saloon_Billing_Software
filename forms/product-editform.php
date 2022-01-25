@@ -57,23 +57,23 @@ if(isset($_GET['success'])){
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Update Products Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form method="POST" action="../submitData.php">
-    <h1 class="display-5 mt-3">Add Products</h1>
+    <h1 class="display-5 mt-3">Update Products Name</h1>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
             <label for="firstName">Product Name</label>
              <input type="hidden" name="productID" class="form-control" id="productIDno">
-            <input type="text" name="productName" class="form-control" id="serviceName" required>
+            <input type="text" name="productName" class="form-control" id="productNameUpdate" required>
         </div>
         
     </div>
-    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productFormSubmit" value="servicesFormSubmit" id="servicesFormSubmit" type="submit">Submit form</button>
+    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productFormSubmit" value="servicesFormSubmit" id="productUpdateName" type="submit">Submit form</button>
         <?php 
             $response = "";
             if($successResponse == 1){
@@ -85,7 +85,6 @@ if(isset($_GET['success'])){
 </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

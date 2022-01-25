@@ -545,6 +545,12 @@ class Operations {
             return "";
         }
     }
+    function updateProductName($product_name,$product_id){
+        $sql = "UPDATE `productList` SET `productName` = ".$product_name." WHERE `productList`.`productID` = ".$product_id."";
+        global $conn;
+        $conn->query($sql);
+        return true;
+    }
     function fetchMonthlySales($month){
         $first_day = date('Y-'.$month.'-01'); 
         $last_day  = date('Y-'.$month.'-t');
