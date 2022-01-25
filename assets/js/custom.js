@@ -41,7 +41,7 @@ $(document).ready(function () {
         // e.preventDefault();
         var id = $(this).data("prodid");
         console.log("EDIT PRODUCT ID: ",id);
-        var productOldName = $(this).data("old_productName");
+        var productOldName = $(this).data("oldproductName");
         console.log("EDIT PRODUCT NAME: ",productOldName);
         $("#productIDno").val(id);
         $("#oldProductName").text(productOldName);

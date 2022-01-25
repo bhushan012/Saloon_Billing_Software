@@ -33,7 +33,7 @@ if(isset($_GET['success'])){
                 <td><?php echo $i;?></td>
                 <td><?= $row['productName']; ?></td>
                
-                <td><button type="button" data-old_productName = "<?= $row['productName']; ?>" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary editProd" data-toggle="modal" data-target="#exampleModal">
+                <td><button type="button" data-oldproductName = "<?= $row['productName']; ?>" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary editProd" data-toggle="modal" data-target="#exampleModal">
                 <!-- data-toggle="modal" data-target="#exampleModal" -->
   EDIT
 </button></td>

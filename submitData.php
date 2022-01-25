@@ -157,6 +157,7 @@ if(isset($_POST['productUpdateNames'])):
     echo $product_name = $_POST['product_name'];
 
     $result = $operationInstance->updateProductName($product_name,$product_id);
+    print_r($result);
     // $actual_link = $formUrl."/product-editform.php?success=1";
     // header("Location: $actual_link");
 endif;
