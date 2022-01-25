@@ -38,8 +38,8 @@ $(document).ready(function () {
         });
     });
     $("#editProduct .editProd").click(function(e){
-        e.preventDefault();
-        var id = $(this).data("prodID");
+        // e.preventDefault();
+        var id = $(this).data("prodid");
         console.log("EDIT PRODUCT ID: ",id);
         $("#productIDno").val(id);
         $($(this).attr("data-target")).modal("exampleModal");
