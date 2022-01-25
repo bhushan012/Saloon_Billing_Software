@@ -154,8 +154,8 @@ endif;
 //UPDATE PRODUCT NAMES
 if(isset($_POST['productUpdateNames'])):
    
-    echo $product_id = $_POST['product_id'];
-    echo $product_name = $_POST['product_name'];
+     $product_id = $_POST['product_id'];
+     $product_name = $_POST['product_name'];
 
     $result = $operationInstance->updateProductName($product_name,$product_id);
     print_r($result);

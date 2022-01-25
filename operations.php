@@ -547,7 +547,8 @@ class Operations {
     }
     function updateProductName($product_name,$product_id){
         try {
-            $sql = "UPDATE `productList` SET `productName` = ".$product_name." WHERE `productList`.`productID` = ".$product_id."";
+            $sql = "UPDATE `productList` SET `productName` = ".$product_name." WHERE productID = '".$product_id."'";
+            echo $sql;
             global $conn;
             $result = $conn->query($sql);
             return $result;
