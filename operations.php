@@ -553,7 +553,7 @@ class Operations {
             $result = $conn->query($sql);
             return $result;
         } catch (\Throwable $th) {
-            print_r($th);
+            // print_r($th);
             return $th;
         }
         

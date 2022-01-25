@@ -7,7 +7,14 @@ if(isset($_GET['success'])){
     $successResponse = $_GET['success'];
 }
 ?>
-
+<?php 
+            $response = "";
+            if($successResponse == 1){
+                echo '<div class="valid-feedback">Name Updated Successfully!</div>';
+            }else if($successResponse == 0){
+                echo '<div class="invalid-feedback">Something went wrong. Try again.</div>';
+            }
+        ?>
 <table class="table table-striped table-bordered table-sm mt-4 test" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -75,14 +82,7 @@ if(isset($_GET['success'])){
         
     </div>
     <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productUpdateNames" value="productUpdateNames" type="submit">Submit form</button>
-        <?php 
-            $response = "";
-            if($successResponse == 1){
-                echo '<div class="valid-feedback">Details Stored Successfully!</div>';
-            }else if($successResponse == 0){
-                echo '<div class="invalid-feedback">Something went wrong. Try again.</div>';
-            }
-        ?>
+        
 </form>
       </div>
       <div class="modal-footer">
