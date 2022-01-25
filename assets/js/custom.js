@@ -18,6 +18,11 @@ $(document).ready(function () {
         autoclose: true,
         endDate: "today",
     });
+    $("#editProduct .editProd").click(function(){
+       var id = $(this).data("prodID");
+       console.log("EDIT PRODUCT ID: ",id);
+       $("#productIDno").val(id);
+    });
     $('#membership').click(function () {
         if ($(this).prop("checked") == true) {
             $("#contactNumber").prop('required', true);

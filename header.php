@@ -165,6 +165,9 @@ if (empty($_SESSION['username'])) {
                                         <a class="pl-5 nav-link pt-0" href="<?= $viewDataUrl; ?>/inventory.php"><i class="fa fa-eye p-1"></i>VIEW</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/product-editform.php"><i class="fa fa-eye p-1"></i>EDIT PRODUCT</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="pl-5 nav-link pt-0" href="<?= $formUrl; ?>/inventory-form.php"><i class="fa fa-tachometer p-1"></i>MANAGE INVENTORY</a>
                                     </li>
                                 </ul>

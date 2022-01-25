@@ -1,11 +1,7 @@
-<?php 
-
-include "urlMapping.php";
+<?php include "urlMapping.php";
 //include "operations.php";
 //$operationInstance = new Operations(); 
-
-?>
-<?php
+    try {
         $result = $operationInstance->getProductPrice(1);
         $perServiceCount = array();
         $months = array();
@@ -36,6 +32,10 @@ include "urlMapping.php";
             }
             $i++;
         }
+    } catch (\Throwable $th) {
+        throw $th;
+    }
+        
         //print_r($services);
 ?>
 </main>

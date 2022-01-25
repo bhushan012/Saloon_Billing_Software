@@ -2,7 +2,7 @@
 include "../operations.php";
 $operationInstance = new Operations();
 $billDiscount = htmlentities($_POST['billDiscount'],ENT_QUOTES,'utf-8', TRUE);
-$gstAmount = htmlentities($_POST['gstAmount'],ENT_QUOTES,'utf-8', TRUE);
+$gstAmount = round(htmlentities($_POST['gstAmount'],ENT_QUOTES,'utf-8', TRUE));
 $billTotal = htmlentities($_POST['billTotal'],ENT_QUOTES,'utf-8', TRUE);
 $billAmountPayable = htmlentities($_POST['billAmountPayable'],ENT_QUOTES,'utf-8', TRUE);
 $customerType = htmlentities($_POST['customerType'],ENT_QUOTES,'utf-8', TRUE);

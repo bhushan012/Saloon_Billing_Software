@@ -213,6 +213,7 @@ if (isset($_GET['success'])) {
                 echo '<div class="invalid-feedback">Something went wrong. Try again.</div>';
             }
             ?>
+            <!-- <input type="hidden" name="gstAmount" id="gst_form_hid" value=""> -->
         </form>
     </div>
     <div class="col-md-4 border-primary border border-right-0 border-top-0 border-bottom-0" style="position: relative;min-height: 92vh;">
