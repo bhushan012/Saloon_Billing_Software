@@ -150,3 +150,12 @@ if(isset($_POST['staffFormSubmit'])):
         header("Location: $actual_link");
     endif;
 endif;
+
+//UPDATE PRODUCT NAMES
+if(isset($_POST['productUpdateNames'])):
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $result = $operationInstance->updateProductName($product_name,$product_id);
+    $actual_link = $formUrl."/product-editform.php?success=1";
+    header("Location: $actual_link");
+endif;

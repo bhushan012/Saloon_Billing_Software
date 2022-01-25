@@ -18,30 +18,32 @@ $(document).ready(function () {
         autoclose: true,
         endDate: "today",
     });
-    $("#productUpdateName").click(function(){
-        var product_id = $("#productIDno").val();
-        var product_name = $("#productNameUpdate").val();
-        console.log("Product Name : "+product_name+"\n Product Id: "+product_id);
-        $.ajax({
-            url: siteUrl + '/logic/updateProductName.php',
-            type: 'POST',
-            data: { 
-                product_id: product_id, 
-                product_name: product_name 
-            },
-            success: function (data) {
-                console.log(data);
-            },
-            error: function (data) {
-                console.log('failed ajax with error : ' + data);
-            }
-        });
-    });
+    // $("#productUpdateName").click(function(){
+    //     var product_id = $("#productIDno").val();
+    //     var product_name = $("#productNameUpdate").val();
+    //     console.log("Product Name : "+product_name+"\n Product Id: "+product_id);
+    //     $.ajax({
+    //         url: siteUrl + '/logic/updateProductName.php',
+    //         type: 'POST',
+    //         data: { 
+    //             product_id: product_id, 
+    //             product_name: product_name 
+    //         },
+    //         success: function (data) {
+    //             console.log(data);
+    //         },
+    //         error: function (data) {
+    //             console.log('failed ajax with error : ' + data);
+    //         }
+    //     });
+    // });
     $("#editProduct .editProd").click(function(e){
         // e.preventDefault();
         var id = $(this).data("prodid");
         console.log("EDIT PRODUCT ID: ",id);
+        var productOldName = $(this).data("old_productName")
         $("#productIDno").val(id);
+        $("#oldProductName").text(productOldName);
         // $($(this).attr("data-target")).modal("exampleModal");
         
     });

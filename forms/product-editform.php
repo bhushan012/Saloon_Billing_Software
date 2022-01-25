@@ -33,7 +33,7 @@ if(isset($_GET['success'])){
                 <td><?php echo $i;?></td>
                 <td><?= $row['productName']; ?></td>
                
-                <td><button type="button" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary editProd" data-toggle="modal" data-target="#exampleModal">
+                <td><button type="button" data-old_productName = "<?= $row['productName']; ?>" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary editProd" data-toggle="modal" data-target="#exampleModal">
                 <!-- data-toggle="modal" data-target="#exampleModal" -->
   EDIT
 </button></td>
@@ -65,16 +65,16 @@ if(isset($_GET['success'])){
       </div>
       <div class="modal-body">
         <form method="POST" action="../submitData.php">
-    <h1 class="display-5 mt-3">Update Products Name</h1>
+    <h1 class="display-5 mt-3" id="oldProductName"></h1>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
-            <label for="firstName">Product Name</label>
-             <input type="hidden" name="productID" class="form-control" id="productIDno">
-            <input type="text" name="productName" class="form-control" id="productNameUpdate" required>
+            <label for="firstName">New Name</label>
+             <input type="hidden" name="product_id" class="form-control" id="productIDno">
+            <input type="text" name="product_name" class="form-control" id="productNameUpdate" required>
         </div>
         
     </div>
-    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productFormSubmit" value="servicesFormSubmit" id="productUpdateName" type="submit">Submit form</button>
+    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productUpdateNames" value="servicesFormSubmit" id="productUpdateName" type="submit">Submit form</button>
         <?php 
             $response = "";
             if($successResponse == 1){
