@@ -42,6 +42,7 @@ $(document).ready(function () {
         var id = $(this).data("prodID");
         console.log("EDIT PRODUCT ID: ",id);
         $("#productIDno").val(id);
+        $($(this).attr("data-target")).modal("exampleModal");
         
     });
 
