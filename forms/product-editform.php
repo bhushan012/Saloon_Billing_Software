@@ -58,7 +58,7 @@ if(isset($_GET['success'])){
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Update Products Name</h5>
+        <h5 class="modal-title">Update Product Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -74,7 +74,7 @@ if(isset($_GET['success'])){
         </div>
         
     </div>
-    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productUpdateNames" value="servicesFormSubmit" id="productUpdateName" type="submit">Submit form</button>
+    <button class="mt-2 btn btn-primary <?=$successResponse == 1 ? 'is-valid' : '';?> <?=$successResponse == 0 ? 'is-invalid' : ''?>" name="productUpdateNames" value="productUpdateNames" type="submit">Submit form</button>
         <?php 
             $response = "";
             if($successResponse == 1){
