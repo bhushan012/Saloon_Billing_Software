@@ -37,7 +37,8 @@ $(document).ready(function () {
             }
         });
     });
-    $("#editProduct .editProd").click(function(){
+    $("#editProduct .editProd").click(function(e){
+        e.preventDefault();
         var id = $(this).data("prodID");
         console.log("EDIT PRODUCT ID: ",id);
         $("#productIDno").val(id);
