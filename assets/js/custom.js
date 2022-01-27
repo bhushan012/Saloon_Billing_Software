@@ -179,7 +179,7 @@ $(document).ready(function () {
         else{
             $('#gstCalculate').css('display', 'block');
             $('#gstRow').css('display', 'block');
-            var total = $('#total').text();
+            var total = parseInt($('#total').text());
             // var totalAmt = $('#subTotal').text();
             var gstCalc = total * 18 / 100;
             $('#gstCalculate').empty().append(gstCalc);
