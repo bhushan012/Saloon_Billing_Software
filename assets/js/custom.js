@@ -171,13 +171,19 @@ $(document).ready(function () {
             $('#gstCalculate').empty();
             $('#gstCalculate').css('display', 'none');
             $('#gstRow').css('display', 'none');
+            var total = $('#total').text();
+            var totalAmt = $('#subTotal').text();
+            var gstCalc = total * 18 / 100;
+            $('#subTotal').empty().append(totalAmt - gstCalc);
         }
         else{
             $('#gstCalculate').css('display', 'block');
             $('#gstRow').css('display', 'block');
             var total = $('#total').text();
+            var totalAmt = $('#subTotal').text();
             var gstCalc = total * 18 / 100;
             $('#gstCalculate').empty().append(gstCalc);
+            $('#subTotal').empty().append(totalAmt + gstCalc);
         }
     });
     $("#partialPaymentCheck").on('click', function (e) {
