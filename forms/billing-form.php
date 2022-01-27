@@ -205,6 +205,16 @@ if (isset($_GET['success'])) {
                 </div>
             </div>
             <div class="dropdown-divider"></div>
+            <div class="row">
+                <div class="col-md-4 text-left mt-3">
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" value="1" id="gstEnable">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Disable GST-TAX
+                        </label>
+                    </div>
+                </div>
+            </div><div class="dropdown-divider"></div>
             <?php
             $response = "";
             if ($successResponse == 1) {

@@ -166,6 +166,18 @@ $(document).ready(function () {
             $('.dicountCol').css('display', 'none');
         }
     });
+    $("#gstEnable").on('click', function (e) {
+        if ($('#gstEnable').is(':checked')) {
+            $('#gstCalculate').css('display', 'block');
+            var total = $('#total').text();
+            var gstCalc = total * 18 / 100;
+            $('#gstCalculate').empty().append(gstCalc);
+        }
+        else{
+            $('#gstCalculate').empty();
+            $('#gstCalculate').css('display', 'none');
+        }
+    });
     $("#partialPaymentCheck").on('click', function (e) {
         if ($('#partialPaymentCheck').is(':checked')) {
             $('.partialPatmentCol').css('display', 'block');
@@ -178,6 +190,7 @@ $(document).ready(function () {
             $('.partialPay').css('display', 'none');
         }
     });
+
     $("#customerTypeSelect").on('change', function (e) {
         var customerTypeId = $(this).val();
         if (customerTypeId == "0" || customerTypeId == "1") {
