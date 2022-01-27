@@ -167,17 +167,17 @@ $(document).ready(function () {
         }
     });
     $("#gstEnable").on('click', function (e) {
-        if ($('#gstEnable').is(':checked')) {
+        if ($('#gstEnable').is(':checked')) {         
+            $('#gstCalculate').empty();
+            $('#gstCalculate').css('display', 'none');
+            $('#gstRow').css('display', 'none');
+        }
+        else{
             $('#gstCalculate').css('display', 'block');
             $('#gstRow').css('display', 'block');
             var total = $('#total').text();
             var gstCalc = total * 18 / 100;
             $('#gstCalculate').empty().append(gstCalc);
-        }
-        else{
-            $('#gstCalculate').empty();
-            $('#gstCalculate').css('display', 'none');
-            $('#gstRow').css('display', 'none');
         }
     });
     $("#partialPaymentCheck").on('click', function (e) {
