@@ -44,12 +44,12 @@ $(document).ready(function () {
             type: 'POST',
             data: { productId: id },
             success: function (data) {
-                console.log(data);
-                if (data == 1) {
+                // console.log(data);
+                // if (data == 1) {
                     window.location.reload(); 
-                } else {
-                    console.log(data);
-                }
+                // } else {
+                //     console.log(data);
+                // }
             },
             error: function (data) {
                 console.log('failed ajax with error : ' + data);
