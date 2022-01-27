@@ -48,7 +48,7 @@ if(isset($_GET['success'])){
                 </button></td>
                 <td>
                     <button type="button" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary deleteProd">
-                        Delete
+                    <i class="fa fa-trash"></i> Delete
                     </button>
                 </td>
 
