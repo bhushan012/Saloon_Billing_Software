@@ -22,7 +22,9 @@ if(isset($_GET['success'])){
             </th>
             <th class="th-sm">Name
             </th>
-            <th class="th-sm">Edit
+            <th class="th-sm">Update
+            </th>
+            <th class="th-sm">Remove
             </th>
             
         </tr>
@@ -42,8 +44,14 @@ if(isset($_GET['success'])){
                
                 <td><button type="button" data-oldproductname = "<?= $row['productName']; ?>" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary editProd" data-toggle="modal" data-target="#exampleModal">
                 <!-- data-toggle="modal" data-target="#exampleModal" -->
-  EDIT
-</button></td>
+                EDIT
+                </button></td>
+                <td>
+                    <button type="button" data-prodID="<?php echo $row["productID"]; ?>" class="btn btn-primary deleteProd">
+                        Delete
+                    </button>
+                </td>
+
             </tr>
         <?php } ?>
 
@@ -54,7 +62,9 @@ if(isset($_GET['success'])){
             </th>
             <th>Name
             </th>
-            <th>Edit
+            <th>Update
+            </th>
+            <th>Remove
             </th>
             
         </tr>

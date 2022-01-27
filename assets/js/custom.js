@@ -37,7 +37,26 @@ $(document).ready(function () {
     //         }
     //     });
     // });
-    $("#editProduct .editProd").click(function(e){
+    $(".deleteProd").click(function(){
+        var id = $(this).data("prodid");
+        $.ajax({
+            url: siteUrl + '/logic/delProduct.php',
+            type: 'POST',
+            data: { productId: id },
+            success: function (data) {
+                console.log(data);
+                if (data == 1) {
+                    window.location.reload(); 
+                } else {
+                    console.log(data);
+                }
+            },
+            error: function (data) {
+                console.log('failed ajax with error : ' + data);
+            }
+        });
+    });
+    $("#editProduct .editProd").click(function(){
         // e.preventDefault();
         var id = $(this).data("prodid");
         console.log("EDIT PRODUCT ID: ",id);
@@ -45,8 +64,7 @@ $(document).ready(function () {
         console.log("EDIT PRODUCT NAME: ",productOldName);
         $("#productIDno").val(id);
         $("#oldProductName").text(productOldName);
-        // $($(this).attr("data-target")).modal("exampleModal");
-        
+        // $($(this).attr("data-target")).modal("exampleModal");    
     });
 
     $('#membership').click(function () {

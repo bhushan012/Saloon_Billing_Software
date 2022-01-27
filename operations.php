@@ -606,6 +606,16 @@ class Operations {
             return "";
         }
     }
+    function deleteProduct($productId){
+        $query = "DELETE FROM `productList` WHERE `productList`.`productID` = $productId";
+        global $conn;
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
+            return $result;
+        }else{
+            return "";
+        }
+    }
     
     
 }
