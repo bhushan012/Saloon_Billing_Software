@@ -180,10 +180,10 @@ $(document).ready(function () {
             $('#gstCalculate').css('display', 'block');
             $('#gstRow').css('display', 'block');
             var total = $('#total').text();
-            var totalAmt = $('#subTotal').text();
+            // var totalAmt = $('#subTotal').text();
             var gstCalc = total * 18 / 100;
             $('#gstCalculate').empty().append(gstCalc);
-            $('#subTotal').empty().append(totalAmt + gstCalc);
+            $('#subTotal').empty().append(total + gstCalc);
         }
     });
     $("#partialPaymentCheck").on('click', function (e) {
