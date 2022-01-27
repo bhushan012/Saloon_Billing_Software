@@ -169,6 +169,7 @@ $(document).ready(function () {
     $("#gstEnable").on('click', function (e) {
         if ($('#gstEnable').is(':checked')) {
             $('#gstCalculate').css('display', 'block');
+            $('#gstRow').css('display', 'block');
             var total = $('#total').text();
             var gstCalc = total * 18 / 100;
             $('#gstCalculate').empty().append(gstCalc);
@@ -176,6 +177,7 @@ $(document).ready(function () {
         else{
             $('#gstCalculate').empty();
             $('#gstCalculate').css('display', 'none');
+            $('#gstRow').css('display', 'none');
         }
     });
     $("#partialPaymentCheck").on('click', function (e) {
